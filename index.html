@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Our Story ♡</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
 
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -25,88 +31,157 @@
             overflow-x: hidden;
         }
 
-        /* ---------------- OPENING ---------------- */
+
+        /* =========================
+           GENERAL SCENE
+        ========================= */
 
         .scene {
             min-height: 100vh;
             width: 100%;
             position: relative;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             text-align: center;
+
             overflow: hidden;
         }
 
+
+        /* =========================
+           OPENING
+        ========================= */
+
         .opening {
+
             background:
-                radial-gradient(circle at 20% 20%, #ffe8eb 0%, transparent 30%),
-                radial-gradient(circle at 80% 80%, #f9dfe3 0%, transparent 30%),
+                radial-gradient(
+                    circle at 20% 20%,
+                    #ffe8eb 0%,
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    #f9dfe3 0%,
+                    transparent 30%
+                ),
+
                 #fff5f5;
         }
 
+
         .content {
+
             position: relative;
             z-index: 5;
+
             max-width: 700px;
+
             padding: 30px;
+
             animation: fadeIn 2s ease;
         }
 
+
         .small-text {
+
             font-size: 15px;
+
             letter-spacing: 4px;
+
             text-transform: uppercase;
+
             opacity: 0.7;
+
             margin-bottom: 25px;
         }
 
+
         h1 {
+
             font-size: clamp(50px, 9vw, 90px);
+
             font-weight: normal;
+
             margin: 0;
+
             line-height: 1;
         }
 
+
         .subtitle {
+
             font-size: 21px;
+
             line-height: 1.8;
+
             margin: 30px auto;
+
             max-width: 550px;
         }
 
-        .begin-button {
+
+        .begin-button,
+        .continue-button {
+
             margin-top: 25px;
+
             padding: 14px 34px;
+
             border: 1px solid #b96d77;
+
             border-radius: 40px;
+
             background: transparent;
+
             color: #6b3038;
+
             font-family: inherit;
+
             font-size: 16px;
+
             cursor: pointer;
+
             transition: all 0.3s ease;
         }
 
-        .begin-button:hover {
+
+        .begin-button:hover,
+        .continue-button:hover {
+
             background: #b96d77;
+
             color: white;
+
             transform: translateY(-3px);
         }
 
-        /* ---------------- FLOWERS ---------------- */
+
+        /* =========================
+           FLOWERS
+        ========================= */
 
         .flower {
+
             position: absolute;
+
             font-size: 35px;
+
             opacity: 0.55;
+
             animation: float 5s ease-in-out infinite;
         }
+
 
         .flower1 {
             top: 12%;
             left: 12%;
         }
+
 
         .flower2 {
             top: 20%;
@@ -114,11 +189,13 @@
             animation-delay: 1s;
         }
 
+
         .flower3 {
             bottom: 15%;
             left: 17%;
             animation-delay: 2s;
         }
+
 
         .flower4 {
             bottom: 12%;
@@ -126,94 +203,464 @@
             animation-delay: 3s;
         }
 
-        /* ---------------- STORY SCENE ---------------- */
+
+        /* =========================
+           STORY 1
+        ========================= */
 
         .story {
+
             display: none;
+
             background:
-                radial-gradient(circle at 50% 20%, #fff9f9 0%, transparent 40%),
+                radial-gradient(
+                    circle at 50% 20%,
+                    #fff9f9 0%,
+                    transparent 40%
+                ),
+
                 #f9e7e9;
+
             padding: 50px 25px;
         }
 
+
         .story-content {
+
             max-width: 720px;
+
             padding: 30px;
         }
 
+
         .story-date {
+
             font-size: 15px;
+
             letter-spacing: 5px;
+
             text-transform: uppercase;
+
             opacity: 0.7;
+
             margin-bottom: 30px;
         }
 
+
         .story h2 {
+
             font-size: clamp(38px, 7vw, 65px);
+
             font-weight: normal;
+
             margin: 0 0 30px;
         }
 
+
         .story-text {
+
             font-size: 21px;
+
             line-height: 2;
+
             opacity: 0;
+
             animation: textAppear 2s ease forwards;
         }
+
 
         .story-text.delay1 {
             animation-delay: 2s;
         }
 
+
         .story-text.delay2 {
             animation-delay: 4s;
         }
 
+
         .message {
+
             margin: 40px auto;
+
             padding: 18px 28px;
+
             background: white;
+
             border-radius: 18px;
+
             display: inline-block;
-            box-shadow: 0 8px 30px rgba(100, 40, 50, 0.08);
+
+            box-shadow:
+                0 8px 30px rgba(100, 40, 50, 0.08);
+
             font-family: Arial, sans-serif;
+
             font-size: 18px;
+
             opacity: 0;
-            animation: messageAppear 1.5s ease forwards;
+
+            animation:
+                messageAppear 1.5s ease forwards;
+
             animation-delay: 6s;
         }
 
+
         .ending-line {
+
             font-size: 22px;
+
             margin-top: 25px;
+
             opacity: 0;
-            animation: textAppear 2s ease forwards;
+
+            animation:
+                textAppear 2s ease forwards;
+
             animation-delay: 7.5s;
         }
 
-        .continue-button {
-            margin-top: 40px;
-            padding: 13px 30px;
-            border: 1px solid #b96d77;
-            border-radius: 30px;
-            background: transparent;
-            color: #6b3038;
-            font-family: inherit;
-            cursor: pointer;
+
+        .story .continue-button {
+
             opacity: 0;
-            animation: textAppear 2s ease forwards;
+
+            animation:
+                textAppear 2s ease forwards;
+
             animation-delay: 9s;
         }
 
-        .continue-button:hover {
+
+        /* =========================
+           SCENE 2
+        ========================= */
+
+        .seminar {
+
+            display: none;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #fffafa,
+                    #f4e2e5
+                );
+
+            padding: 40px 20px;
+        }
+
+
+        .seminar-content {
+
+            width: min(950px, 95vw);
+
+            padding: 25px;
+        }
+
+
+        .seminar-date {
+
+            font-size: 14px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            opacity: 0.65;
+
+            margin-bottom: 15px;
+        }
+
+
+        .seminar-title {
+
+            font-size: clamp(36px, 6vw, 60px);
+
+            font-weight: normal;
+
+            margin: 0 0 10px;
+        }
+
+
+        .seminar-subtitle {
+
+            font-size: 18px;
+
+            opacity: 0.75;
+
+            margin-bottom: 45px;
+        }
+
+
+        /* THE ROOM */
+
+        .room {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 310px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.55);
+
+            box-shadow:
+                0 15px 50px rgba(100,40,50,0.08);
+
+            overflow: hidden;
+
+            border: 1px solid rgba(185,109,119,0.25);
+        }
+
+
+        /* centre aisle */
+
+        .aisle {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            height: 100%;
+
+            width: 2px;
+
+            background: rgba(185,109,119,0.18);
+        }
+
+
+        /* side labels */
+
+        .side-label {
+
+            position: absolute;
+
+            top: 25px;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            opacity: 0.5;
+        }
+
+
+        .girls-label {
+            left: 10%;
+        }
+
+
+        .boys-label {
+            right: 10%;
+        }
+
+
+        /* little seats */
+
+        .seats {
+
+            position: absolute;
+
+            top: 90px;
+
+            width: 42%;
+
+            display: flex;
+
+            justify-content: space-around;
+
+            flex-wrap: wrap;
+
+            gap: 25px;
+        }
+
+
+        .girls-seats {
+            left: 4%;
+        }
+
+
+        .boys-seats {
+            right: 4%;
+        }
+
+
+        .seat {
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            background: #ead1d5;
+
+            opacity: 0.7;
+        }
+
+
+        /* OUR TWO LITTLE CHARACTERS */
+
+        .person {
+
+            position: absolute;
+
+            width: 55px;
+
+            height: 75px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            z-index: 5;
+        }
+
+
+        .person-head {
+
+            width: 28px;
+
+            height: 28px;
+
+            border-radius: 50%;
+
+            background: #d69ba5;
+        }
+
+
+        .person-body {
+
+            width: 40px;
+
+            height: 42px;
+
+            margin-top: 5px;
+
+            border-radius: 20px 20px 8px 8px;
+
             background: #b96d77;
+        }
+
+
+        .girl {
+
+            left: 31%;
+
+            top: 155px;
+
+            animation:
+                girlLook 9s ease-in-out infinite;
+        }
+
+
+        .boy {
+
+            right: 31%;
+
+            top: 155px;
+
+            animation:
+                boyLook 9s ease-in-out infinite;
+        }
+
+
+        /* little heart between them */
+
+        .tiny-heart {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 150px;
+
+            transform: translateX(-50%);
+
+            font-size: 20px;
+
+            opacity: 0;
+
+            animation:
+                heartAppear 9s ease-in-out infinite;
+        }
+
+
+        /* captions */
+
+        .seminar-caption {
+
+            margin-top: 35px;
+
+            font-size: 21px;
+
+            line-height: 1.9;
+
+            min-height: 100px;
+        }
+
+
+        .caption-one {
+
+            animation:
+                captionOne 9s ease-in-out infinite;
+        }
+
+
+        .caption-two {
+
+            display: none;
+        }
+
+
+        .next-memory {
+
+            margin-top: 25px;
+
+            padding: 13px 30px;
+
+            border: 1px solid #b96d77;
+
+            border-radius: 30px;
+
+            background: transparent;
+
+            color: #6b3038;
+
+            font-family: inherit;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .next-memory:hover {
+
+            background: #b96d77;
+
             color: white;
         }
 
-        /* ---------------- ANIMATIONS ---------------- */
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
 
         @keyframes fadeIn {
+
             from {
                 opacity: 0;
                 transform: translateY(20px);
@@ -225,7 +672,9 @@
             }
         }
 
+
         @keyframes float {
+
             0%, 100% {
                 transform: translateY(0);
             }
@@ -235,7 +684,9 @@
             }
         }
 
+
         @keyframes textAppear {
+
             from {
                 opacity: 0;
                 transform: translateY(15px);
@@ -247,131 +698,434 @@
             }
         }
 
+
         @keyframes messageAppear {
+
             from {
                 opacity: 0;
-                transform: translateY(20px) scale(0.95);
+                transform:
+                    translateY(20px)
+                    scale(0.95);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+                transform:
+                    translateY(0)
+                    scale(1);
             }
         }
+
+
+        /* GIRL LOOKS */
+
+        @keyframes girlLook {
+
+            0%,
+            25% {
+                transform: translateX(0);
+            }
+
+            32%,
+            43% {
+                transform: translateX(70px);
+            }
+
+            50%,
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+
+        /* BOY LOOKS */
+
+        @keyframes boyLook {
+
+            0%,
+            25% {
+                transform: translateX(0);
+            }
+
+            32%,
+            43% {
+                transform: translateX(-70px);
+            }
+
+            50%,
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+
+        @keyframes heartAppear {
+
+            0%,
+            30% {
+                opacity: 0;
+                transform:
+                    translateX(-50%)
+                    scale(0.5);
+            }
+
+            34%,
+            44% {
+                opacity: 1;
+                transform:
+                    translateX(-50%)
+                    scale(1);
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+
+        @keyframes captionOne {
+
+            0%,
+            10% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            15%,
+            65% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            75%,
+            100% {
+                opacity: 0;
+            }
+        }
+
 
         @media (max-width: 600px) {
 
             .subtitle,
             .story-text {
+
                 font-size: 18px;
             }
 
             .story {
+
                 padding: 30px 15px;
             }
+
+            .room {
+
+                height: 270px;
+            }
+
+            .girl {
+
+                left: 22%;
+            }
+
+            .boy {
+
+                right: 22%;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- OPENING -->
 
-    <section class="scene opening" id="opening">
+<!-- =====================================
+     OPENING
+===================================== -->
 
-        <div class="flower flower1">🌸</div>
-        <div class="flower flower2">🌷</div>
-        <div class="flower flower3">🌸</div>
-        <div class="flower flower4">🌷</div>
+<section
+    class="scene opening"
+    id="opening"
+>
 
-        <div class="content">
+    <div class="flower flower1">🌸</div>
+    <div class="flower flower2">🌷</div>
+    <div class="flower flower3">🌸</div>
+    <div class="flower flower4">🌷</div>
 
-            <div class="small-text">
-                30 October 2024
+
+    <div class="content">
+
+        <div class="small-text">
+            30 October 2024
+        </div>
+
+
+        <h1>
+            Our Story ♡
+        </h1>
+
+
+        <p class="subtitle">
+            It started with something very small...
+        </p>
+
+
+        <button
+            class="begin-button"
+            onclick="beginStory()"
+        >
+            Begin ♡
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     STORY 1
+===================================== -->
+
+<section
+    class="scene story"
+    id="story1"
+>
+
+    <div class="story-content">
+
+        <div class="story-date">
+            30 October 2024
+        </div>
+
+
+        <h2>
+            Before you...
+        </h2>
+
+
+        <p class="story-text">
+            I never really believed in teenage love.
+        </p>
+
+
+        <p class="story-text delay1">
+            I didn't believe something that started so young
+            could become something worth carrying into the future.
+        </p>
+
+
+        <p class="story-text delay2">
+            I didn't even want a partner.
+        </p>
+
+
+        <div class="message">
+            hey
+        </div>
+
+
+        <p class="ending-line">
+            And then, in Grade 11 English Literature tuition...
+            you texted me.
+        </p>
+
+
+        <button
+            class="continue-button"
+            onclick="nextScene()"
+        >
+            Continue ♡
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     STORY 2
+===================================== -->
+
+<section
+    class="scene seminar"
+    id="story2"
+>
+
+    <div class="seminar-content">
+
+        <div class="seminar-date">
+            December 2024 — February 2025
+        </div>
+
+
+        <h2 class="seminar-title">
+            Across the room
+        </h2>
+
+
+        <p class="seminar-subtitle">
+            We were both on opposite sides.
+        </p>
+
+
+
+        <div class="room">
+
+            <div class="side-label girls-label">
+                Girls' side
             </div>
 
-            <h1>Our Story ♡</h1>
 
-            <p class="subtitle">
-                It started with something very small...
-            </p>
+            <div class="side-label boys-label">
+                Boys' side
+            </div>
 
-            <button class="begin-button" onclick="beginStory()">
-                Begin ♡
-            </button>
+
+            <div class="aisle"></div>
+
+
+
+            <!-- GIRLS -->
+
+            <div class="seats girls-seats">
+
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+
+            </div>
+
+
+
+            <!-- BOYS -->
+
+            <div class="seats boys-seats">
+
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+
+            </div>
+
+
+
+            <!-- YOU -->
+
+            <div class="person girl">
+
+                <div class="person-head"></div>
+
+                <div class="person-body"></div>
+
+            </div>
+
+
+
+            <!-- HIM -->
+
+            <div class="person boy">
+
+                <div class="person-head"></div>
+
+                <div class="person-body"></div>
+
+            </div>
+
+
+
+            <div class="tiny-heart">
+                ♡
+            </div>
 
         </div>
 
-    </section>
 
 
-    <!-- FIRST MEMORY -->
+        <div class="seminar-caption">
 
-    <section class="scene story" id="story1">
+            <div class="caption-one">
 
-        <div class="story-content">
+                We were both so shy.<br>
 
-            <div class="story-date">
-                30 October 2024
+                Sometimes all we had<br>
+                were little glances.
+
             </div>
-
-            <h2>
-                Before you...
-            </h2>
-
-            <p class="story-text">
-                I never really believed in teenage love.
-            </p>
-
-            <p class="story-text delay1">
-                I didn't believe something that started so young
-                could become something worth carrying into the future.
-            </p>
-
-            <p class="story-text delay2">
-                I didn't even want a partner.
-            </p>
-
-            <div class="message">
-                hey
-            </div>
-
-            <p class="ending-line">
-                And then, in Grade 11 English Literature tuition...
-                you texted me.
-            </p>
-
-            <button class="continue-button" onclick="nextScene()">
-                Continue ♡
-            </button>
 
         </div>
 
-    </section>
 
 
-    <script>
+        <button
+            class="next-memory"
+            onclick="showNextMemory()"
+        >
+            February 14 ♡
+        </button>
 
-        function beginStory() {
+    </div>
 
-            document.getElementById("opening").style.display = "none";
+</section>
 
-            document.getElementById("story1").style.display = "flex";
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
 
-        }
+<script>
 
-        function nextScene() {
 
-            alert("Our next memory is coming soon ♡");
+    function beginStory() {
 
-        }
+        document.getElementById("opening").style.display = "none";
 
-    </script>
+        document.getElementById("story1").style.display = "flex";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+
+    function nextScene() {
+
+        document.getElementById("story1").style.display = "none";
+
+        document.getElementById("story2").style.display = "flex";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+
+    function showNextMemory() {
+
+        alert(
+            "February 14, 2025 ♡\n\n" +
+            "His birthday.\n" +
+            "And the first time you said:\n\n" +
+            "I love you."
+        );
+
+    }
+
+
+</script>
+
 
 </body>
+
 </html>
