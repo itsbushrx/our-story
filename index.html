@@ -668,8 +668,6 @@ h1 {
 }
 
 
-/* soft glow */
-
 .valentine::before {
 
     content: "";
@@ -697,8 +695,6 @@ h1 {
     pointer-events: none;
 }
 
-
-/* floating petals */
 
 .petal {
 
@@ -756,8 +752,6 @@ h1 {
 }
 
 
-/* date */
-
 .val-date {
 
     font-size: 14px;
@@ -772,8 +766,6 @@ h1 {
         valFade 2s ease forwards;
 }
 
-
-/* birthday */
 
 .birthday {
 
@@ -790,8 +782,6 @@ h1 {
 }
 
 
-/* cake */
-
 .cake {
 
     margin: 35px auto 25px;
@@ -806,8 +796,6 @@ h1 {
     animation-delay: 2s;
 }
 
-
-/* envelope */
 
 .envelope {
 
@@ -840,8 +828,6 @@ h1 {
 }
 
 
-/* envelope flap */
-
 .envelope::before {
 
     content: "";
@@ -872,8 +858,6 @@ h1 {
 }
 
 
-/* little heart */
-
 .envelope-heart {
 
     position: absolute;
@@ -890,8 +874,6 @@ h1 {
     z-index: 3;
 }
 
-
-/* text */
 
 .val-text {
 
@@ -915,8 +897,6 @@ h1 {
     animation-delay: 7s;
 }
 
-
-/* I LOVE YOU */
 
 .love-reveal {
 
@@ -959,8 +939,6 @@ h1 {
 }
 
 
-/* final button */
-
 .valentine .continue-button {
 
     opacity: 0;
@@ -969,6 +947,374 @@ h1 {
         valFade 2s ease forwards;
 
     animation-delay: 12.5s;
+}
+
+
+/* =========================================
+   MARCH 6
+========================================= */
+
+.call-scene {
+
+    display: none;
+
+    position: relative;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            #fffdfd 0%,
+            #f8e8eb 45%,
+            #ead0d6 100%
+        );
+
+    padding: 40px 20px;
+}
+
+
+.call-scene::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+
+    height: 550px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.3);
+
+    filter: blur(80px);
+
+    top: 5%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+.call-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width:
+        min(900px, 95vw);
+
+    padding: 30px;
+}
+
+
+.call-date {
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        callFade 2s ease forwards;
+}
+
+
+.call-title {
+
+    font-size:
+        clamp(38px, 7vw, 65px);
+
+    font-weight: normal;
+
+    margin: 20px 0 10px;
+
+    opacity: 0;
+
+    animation:
+        callFade 2s ease forwards;
+
+    animation-delay: 1s;
+}
+
+
+.call-subtitle {
+
+    font-size: 18px;
+
+    opacity: 0;
+
+    animation:
+        callFade 2s ease forwards;
+
+    animation-delay: 2s;
+}
+
+
+/* phones */
+
+.phones {
+
+    position: relative;
+
+    height: 300px;
+
+    margin-top: 40px;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+}
+
+
+/* phone body */
+
+.phone {
+
+    position: relative;
+
+    width: 150px;
+
+    height: 230px;
+
+    border-radius: 25px;
+
+    background: #fffafa;
+
+    border:
+        2px solid
+        #c98a94;
+
+    box-shadow:
+        0 18px 45px
+        rgba(100,40,50,0.12);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    animation:
+        phoneAppear 2s ease forwards;
+}
+
+
+.phone.left {
+    animation-delay: 2.5s;
+}
+
+
+.phone.right {
+    animation-delay: 3s;
+}
+
+
+/* screen */
+
+.phone-screen {
+
+    width: 120px;
+
+    height: 195px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fff5f6,
+            #f4dce1
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    font-family: Arial, sans-serif;
+}
+
+
+.phone-icon {
+
+    font-size: 42px;
+
+    animation:
+        phonePulse
+        1.8s ease-in-out infinite;
+}
+
+
+.phone-name {
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    opacity: 0.65;
+}
+
+
+.call-status {
+
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+
+/* connection */
+
+.connection {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 250px;
+
+    height: 4px;
+
+    opacity: 0;
+
+    animation:
+        connectionAppear
+        2s ease forwards;
+
+    animation-delay: 5s;
+}
+
+
+.connection-line {
+
+    width: 100%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #c98a94,
+            transparent
+        );
+}
+
+
+.connection-heart {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: -18px;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 25px;
+
+    animation:
+        connectionHeart
+        2s ease-in-out infinite;
+}
+
+
+/* call connected */
+
+.connected {
+
+    margin-top: 5px;
+
+    font-size: 18px;
+
+    opacity: 0;
+
+    animation:
+        callFade 2s ease forwards;
+
+    animation-delay: 6.5s;
+}
+
+
+.call-story {
+
+    margin: 30px auto 0;
+
+    max-width: 650px;
+
+    font-size: 21px;
+
+    line-height: 2;
+
+    opacity: 0;
+
+    animation:
+        callFade 2s ease forwards;
+
+    animation-delay: 8s;
+}
+
+
+.call-story.second {
+
+    animation-delay: 10s;
+}
+
+
+.call-ended {
+
+    margin-top: 25px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        callFade 2s ease forwards;
+
+    animation-delay: 12s;
+}
+
+
+.call-scene .continue-button {
+
+    opacity: 0;
+
+    animation:
+        callFade 2s ease forwards;
+
+    animation-delay: 13.5s;
 }
 
 
@@ -1254,6 +1600,108 @@ h1 {
 
 
 /* =========================================
+   CALL ANIMATIONS
+========================================= */
+
+@keyframes callFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes phoneAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.9);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes phonePulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.12);
+    }
+}
+
+
+@keyframes connectionAppear {
+
+    from {
+
+        opacity: 0;
+
+        width: 0;
+    }
+
+    to {
+
+        opacity: 1;
+
+        width: 250px;
+    }
+}
+
+
+@keyframes connectionHeart {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            translateX(-50%)
+            translateY(-8px)
+            scale(1.15);
+    }
+}
+
+
+/* =========================================
    MOBILE
 ========================================= */
 
@@ -1261,7 +1709,8 @@ h1 {
 
     .subtitle,
     .story-text,
-    .val-text {
+    .val-text,
+    .call-story {
 
         font-size: 18px;
     }
@@ -1279,6 +1728,47 @@ h1 {
     .boy {
 
         right: 22%;
+    }
+
+    .phones {
+
+        height: 260px;
+    }
+
+    .phone {
+
+        width: 115px;
+
+        height: 185px;
+    }
+
+    .phone-screen {
+
+        width: 90px;
+
+        height: 155px;
+    }
+
+    .connection {
+
+        width: 100px;
+    }
+
+    @keyframes connectionAppear {
+
+        from {
+
+            opacity: 0;
+
+            width: 0;
+        }
+
+        to {
+
+            opacity: 1;
+
+            width: 100px;
+        }
     }
 
 }
@@ -1506,8 +1996,6 @@ h1 {
 >
 
 
-    <!-- FLOATING PETALS -->
-
     <div class="petal petal1">🌸</div>
 
     <div class="petal petal2">🌷</div>
@@ -1580,7 +2068,158 @@ h1 {
 
         <button
             class="continue-button"
-            onclick="nextAfterValentine()"
+            onclick="showCallScene()"
+        >
+
+            Continue ♡
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MARCH 6
+========================================= -->
+
+<section
+    class="scene call-scene"
+    id="callScene"
+>
+
+
+    <div class="call-content">
+
+
+        <div class="call-date">
+
+            6 March 2025
+
+        </div>
+
+
+        <h2 class="call-title">
+
+            The first call
+
+        </h2>
+
+
+        <p class="call-subtitle">
+
+            One little call. Two very nervous people.
+
+        </p>
+
+
+
+        <div class="phones">
+
+
+            <!-- YOUR PHONE -->
+
+            <div class="phone left">
+
+                <div class="phone-screen">
+
+                    <div class="phone-icon">
+                        📞
+                    </div>
+
+                    <div class="phone-name">
+                        You
+                    </div>
+
+                    <div class="call-status">
+                        calling...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HIS PHONE -->
+
+            <div class="phone right">
+
+                <div class="phone-screen">
+
+                    <div class="phone-icon">
+                        📱
+                    </div>
+
+                    <div class="phone-name">
+                        Him
+                    </div>
+
+                    <div class="call-status">
+                        answering...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONNECTION -->
+
+            <div class="connection">
+
+                <div class="connection-line"></div>
+
+                <div class="connection-heart">
+                    ♡
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="connected">
+
+            ● Call connected
+
+        </div>
+
+
+
+        <div class="call-story">
+
+            The first time we heard each other's voices.
+
+        </div>
+
+
+        <div class="call-story second">
+
+            Two people who were still too shy
+            to say everything face to face...
+            finally found a little courage over a call.
+
+        </div>
+
+
+        <div class="call-ended">
+
+            Call ended ♡
+
+        </div>
+
+
+
+        <button
+            class="continue-button"
+            onclick="nextAfterCall()"
         >
 
             Continue ♡
@@ -1673,14 +2312,39 @@ function showValentine() {
 
 
 /* =========================================
-   VALENTINE → NEXT MEMORY
+   VALENTINE → CALL
 ========================================= */
 
-function nextAfterValentine() {
+function showCallScene() {
+
+    document.getElementById(
+        "valentine"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "callScene"
+    ).style.display = "flex";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+/* =========================================
+   CALL → NEXT MEMORY
+========================================= */
+
+function nextAfterCall() {
 
     alert(
-        "6 March 2025 ♡\n\n" +
-        "The first audio call."
+        "27 March 2025 ♡\n\n" +
+        "The first time we met in person."
     );
 
 }
