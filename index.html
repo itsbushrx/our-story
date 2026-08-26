@@ -3,839 +3,1287 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>Our Story ♡</title>
+<title>Our Story ♡</title>
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-        }
+/* =========================================
+   BASIC
+========================================= */
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100%;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: #fff5f5;
-            color: #6b3038;
-            overflow-x: hidden;
-        }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
 
+body {
 
-        /* =========================
-           GENERAL SCENE
-        ========================= */
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-        .scene {
-            min-height: 100vh;
-            width: 100%;
-            position: relative;
+    background: #fff5f5;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    color: #6b3038;
 
-            text-align: center;
+    overflow-x: hidden;
+}
 
-            overflow: hidden;
-        }
 
+/* =========================================
+   GENERAL SCENES
+========================================= */
 
-        /* =========================
-           OPENING
-        ========================= */
+.scene {
 
-        .opening {
+    min-height: 100vh;
 
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    #ffe8eb 0%,
-                    transparent 30%
-                ),
+    width: 100%;
 
-                radial-gradient(
-                    circle at 80% 80%,
-                    #f9dfe3 0%,
-                    transparent 30%
-                ),
+    position: relative;
 
-                #fff5f5;
-        }
+    display: flex;
 
+    justify-content: center;
 
-        .content {
+    align-items: center;
 
-            position: relative;
-            z-index: 5;
+    text-align: center;
 
-            max-width: 700px;
+    overflow: hidden;
+}
 
-            padding: 30px;
 
-            animation: fadeIn 2s ease;
-        }
+/* =========================================
+   OPENING
+========================================= */
 
+.opening {
 
-        .small-text {
+    background:
 
-            font-size: 15px;
+        radial-gradient(
+            circle at 20% 20%,
+            #ffe8eb 0%,
+            transparent 30%
+        ),
 
-            letter-spacing: 4px;
+        radial-gradient(
+            circle at 80% 80%,
+            #f9dfe3 0%,
+            transparent 30%
+        ),
 
-            text-transform: uppercase;
+        #fff5f5;
+}
 
-            opacity: 0.7;
 
-            margin-bottom: 25px;
-        }
+.content {
 
+    position: relative;
 
-        h1 {
+    z-index: 5;
 
-            font-size: clamp(50px, 9vw, 90px);
+    max-width: 700px;
 
-            font-weight: normal;
+    padding: 30px;
 
-            margin: 0;
+    animation: fadeIn 2s ease;
+}
 
-            line-height: 1;
-        }
 
+.small-text {
 
-        .subtitle {
+    font-size: 15px;
 
-            font-size: 21px;
+    letter-spacing: 4px;
 
-            line-height: 1.8;
+    text-transform: uppercase;
 
-            margin: 30px auto;
+    opacity: 0.7;
 
-            max-width: 550px;
-        }
+    margin-bottom: 25px;
+}
 
 
-        .begin-button,
-        .continue-button {
+h1 {
 
-            margin-top: 25px;
+    font-size:
+        clamp(50px, 9vw, 90px);
 
-            padding: 14px 34px;
+    font-weight: normal;
 
-            border: 1px solid #b96d77;
+    margin: 0;
 
-            border-radius: 40px;
+    line-height: 1;
+}
 
-            background: transparent;
 
-            color: #6b3038;
+.subtitle {
 
-            font-family: inherit;
+    font-size: 21px;
 
-            font-size: 16px;
+    line-height: 1.8;
 
-            cursor: pointer;
+    margin: 30px auto;
 
-            transition: all 0.3s ease;
-        }
+    max-width: 550px;
+}
 
 
-        .begin-button:hover,
-        .continue-button:hover {
+.begin-button,
+.continue-button,
+.next-memory {
 
-            background: #b96d77;
+    margin-top: 25px;
 
-            color: white;
+    padding: 14px 34px;
 
-            transform: translateY(-3px);
-        }
+    border: 1px solid #b96d77;
 
+    border-radius: 40px;
 
-        /* =========================
-           FLOWERS
-        ========================= */
+    background: transparent;
 
-        .flower {
+    color: #6b3038;
 
-            position: absolute;
+    font-family: inherit;
 
-            font-size: 35px;
+    font-size: 16px;
 
-            opacity: 0.55;
+    cursor: pointer;
 
-            animation: float 5s ease-in-out infinite;
-        }
+    transition:
+        all 0.3s ease;
+}
 
 
-        .flower1 {
-            top: 12%;
-            left: 12%;
-        }
+.begin-button:hover,
+.continue-button:hover,
+.next-memory:hover {
 
+    background: #b96d77;
 
-        .flower2 {
-            top: 20%;
-            right: 13%;
-            animation-delay: 1s;
-        }
+    color: white;
 
+    transform: translateY(-3px);
+}
 
-        .flower3 {
-            bottom: 15%;
-            left: 17%;
-            animation-delay: 2s;
-        }
 
+/* =========================================
+   FLOWERS
+========================================= */
 
-        .flower4 {
-            bottom: 12%;
-            right: 15%;
-            animation-delay: 3s;
-        }
+.flower {
 
+    position: absolute;
 
-        /* =========================
-           STORY 1
-        ========================= */
+    font-size: 35px;
 
-        .story {
+    opacity: 0.55;
 
-            display: none;
+    animation:
+        float 5s ease-in-out infinite;
+}
 
-            background:
-                radial-gradient(
-                    circle at 50% 20%,
-                    #fff9f9 0%,
-                    transparent 40%
-                ),
 
-                #f9e7e9;
+.flower1 {
+    top: 12%;
+    left: 12%;
+}
 
-            padding: 50px 25px;
-        }
 
+.flower2 {
+    top: 20%;
+    right: 13%;
+    animation-delay: 1s;
+}
 
-        .story-content {
 
-            max-width: 720px;
+.flower3 {
+    bottom: 15%;
+    left: 17%;
+    animation-delay: 2s;
+}
 
-            padding: 30px;
-        }
 
+.flower4 {
+    bottom: 12%;
+    right: 15%;
+    animation-delay: 3s;
+}
 
-        .story-date {
 
-            font-size: 15px;
+/* =========================================
+   STORY 1
+========================================= */
 
-            letter-spacing: 5px;
+.story {
 
-            text-transform: uppercase;
+    display: none;
 
-            opacity: 0.7;
+    background:
 
-            margin-bottom: 30px;
-        }
+        radial-gradient(
+            circle at 50% 20%,
+            #fff9f9 0%,
+            transparent 40%
+        ),
 
+        #f9e7e9;
 
-        .story h2 {
+    padding: 50px 25px;
+}
 
-            font-size: clamp(38px, 7vw, 65px);
 
-            font-weight: normal;
+.story-content {
 
-            margin: 0 0 30px;
-        }
+    max-width: 720px;
 
+    padding: 30px;
+}
 
-        .story-text {
 
-            font-size: 21px;
+.story-date {
 
-            line-height: 2;
+    font-size: 15px;
 
-            opacity: 0;
+    letter-spacing: 5px;
 
-            animation: textAppear 2s ease forwards;
-        }
+    text-transform: uppercase;
 
+    opacity: 0.7;
 
-        .story-text.delay1 {
-            animation-delay: 2s;
-        }
+    margin-bottom: 30px;
+}
 
 
-        .story-text.delay2 {
-            animation-delay: 4s;
-        }
+.story h2 {
 
+    font-size:
+        clamp(38px, 7vw, 65px);
 
-        .message {
+    font-weight: normal;
 
-            margin: 40px auto;
+    margin: 0 0 30px;
+}
 
-            padding: 18px 28px;
 
-            background: white;
+.story-text {
 
-            border-radius: 18px;
+    font-size: 21px;
 
-            display: inline-block;
+    line-height: 2;
 
-            box-shadow:
-                0 8px 30px rgba(100, 40, 50, 0.08);
+    opacity: 0;
 
-            font-family: Arial, sans-serif;
+    animation:
+        textAppear 2s ease forwards;
+}
 
-            font-size: 18px;
 
-            opacity: 0;
+.story-text.delay1 {
+    animation-delay: 2s;
+}
 
-            animation:
-                messageAppear 1.5s ease forwards;
 
-            animation-delay: 6s;
-        }
+.story-text.delay2 {
+    animation-delay: 4s;
+}
 
 
-        .ending-line {
+.message {
 
-            font-size: 22px;
+    margin: 40px auto;
 
-            margin-top: 25px;
+    padding: 18px 28px;
 
-            opacity: 0;
+    background: white;
 
-            animation:
-                textAppear 2s ease forwards;
+    border-radius: 18px;
 
-            animation-delay: 7.5s;
-        }
+    display: inline-block;
 
+    box-shadow:
+        0 8px 30px
+        rgba(100, 40, 50, 0.08);
 
-        .story .continue-button {
+    font-family: Arial, sans-serif;
 
-            opacity: 0;
+    font-size: 18px;
 
-            animation:
-                textAppear 2s ease forwards;
+    opacity: 0;
 
-            animation-delay: 9s;
-        }
+    animation:
+        messageAppear 1.5s ease forwards;
 
+    animation-delay: 6s;
+}
 
-        /* =========================
-           SCENE 2
-        ========================= */
 
-        .seminar {
+.ending-line {
 
-            display: none;
+    font-size: 22px;
 
-            background:
-                linear-gradient(
-                    to bottom,
-                    #fffafa,
-                    #f4e2e5
-                );
+    margin-top: 25px;
 
-            padding: 40px 20px;
-        }
+    opacity: 0;
 
+    animation:
+        textAppear 2s ease forwards;
 
-        .seminar-content {
+    animation-delay: 7.5s;
+}
 
-            width: min(950px, 95vw);
 
-            padding: 25px;
-        }
+.story .continue-button {
 
+    opacity: 0;
 
-        .seminar-date {
+    animation:
+        textAppear 2s ease forwards;
 
-            font-size: 14px;
+    animation-delay: 9s;
+}
 
-            letter-spacing: 5px;
 
-            text-transform: uppercase;
+/* =========================================
+   SEMINAR
+========================================= */
 
-            opacity: 0.65;
+.seminar {
 
-            margin-bottom: 15px;
-        }
+    display: none;
 
+    background:
 
-        .seminar-title {
+        linear-gradient(
+            to bottom,
+            #fffafa,
+            #f4e2e5
+        );
 
-            font-size: clamp(36px, 6vw, 60px);
+    padding: 40px 20px;
+}
 
-            font-weight: normal;
 
-            margin: 0 0 10px;
-        }
+.seminar-content {
 
+    width:
+        min(950px, 95vw);
 
-        .seminar-subtitle {
+    padding: 25px;
+}
 
-            font-size: 18px;
 
-            opacity: 0.75;
+.seminar-date {
 
-            margin-bottom: 45px;
-        }
+    font-size: 14px;
 
+    letter-spacing: 5px;
 
-        /* THE ROOM */
+    text-transform: uppercase;
 
-        .room {
+    opacity: 0.65;
 
-            position: relative;
+    margin-bottom: 15px;
+}
 
-            width: 100%;
 
-            height: 310px;
+.seminar-title {
 
-            border-radius: 30px;
+    font-size:
+        clamp(36px, 6vw, 60px);
 
-            background: rgba(255,255,255,0.55);
+    font-weight: normal;
 
-            box-shadow:
-                0 15px 50px rgba(100,40,50,0.08);
+    margin: 0 0 10px;
+}
 
-            overflow: hidden;
 
-            border: 1px solid rgba(185,109,119,0.25);
-        }
+.seminar-subtitle {
 
+    font-size: 18px;
 
-        /* centre aisle */
+    opacity: 0.75;
 
-        .aisle {
+    margin-bottom: 45px;
+}
 
-            position: absolute;
 
-            top: 0;
+.room {
 
-            left: 50%;
+    position: relative;
 
-            transform: translateX(-50%);
+    width: 100%;
 
-            height: 100%;
+    height: 310px;
 
-            width: 2px;
+    border-radius: 30px;
 
-            background: rgba(185,109,119,0.18);
-        }
+    background:
+        rgba(255,255,255,0.55);
 
+    box-shadow:
+        0 15px 50px
+        rgba(100,40,50,0.08);
 
-        /* side labels */
+    overflow: hidden;
 
-        .side-label {
+    border:
+        1px solid
+        rgba(185,109,119,0.25);
+}
 
-            position: absolute;
 
-            top: 25px;
+.aisle {
 
-            font-size: 12px;
+    position: absolute;
 
-            letter-spacing: 3px;
+    top: 0;
 
-            text-transform: uppercase;
+    left: 50%;
 
-            opacity: 0.5;
-        }
+    transform:
+        translateX(-50%);
 
+    height: 100%;
 
-        .girls-label {
-            left: 10%;
-        }
+    width: 2px;
 
+    background:
+        rgba(185,109,119,0.18);
+}
 
-        .boys-label {
-            right: 10%;
-        }
 
+.side-label {
 
-        /* little seats */
+    position: absolute;
 
-        .seats {
+    top: 25px;
 
-            position: absolute;
+    font-size: 12px;
 
-            top: 90px;
+    letter-spacing: 3px;
 
-            width: 42%;
+    text-transform: uppercase;
 
-            display: flex;
+    opacity: 0.5;
+}
 
-            justify-content: space-around;
 
-            flex-wrap: wrap;
+.girls-label {
+    left: 10%;
+}
 
-            gap: 25px;
-        }
 
+.boys-label {
+    right: 10%;
+}
 
-        .girls-seats {
-            left: 4%;
-        }
 
+.seats {
 
-        .boys-seats {
-            right: 4%;
-        }
+    position: absolute;
 
+    top: 90px;
 
-        .seat {
+    width: 42%;
 
-            width: 45px;
+    display: flex;
 
-            height: 45px;
+    justify-content: space-around;
 
-            border-radius: 50%;
+    flex-wrap: wrap;
 
-            background: #ead1d5;
+    gap: 25px;
+}
 
-            opacity: 0.7;
-        }
 
+.girls-seats {
+    left: 4%;
+}
 
-        /* OUR TWO LITTLE CHARACTERS */
 
-        .person {
+.boys-seats {
+    right: 4%;
+}
 
-            position: absolute;
 
-            width: 55px;
+.seat {
 
-            height: 75px;
+    width: 45px;
 
-            display: flex;
+    height: 45px;
 
-            flex-direction: column;
+    border-radius: 50%;
 
-            align-items: center;
+    background: #ead1d5;
 
-            z-index: 5;
-        }
+    opacity: 0.7;
+}
 
 
-        .person-head {
+.person {
 
-            width: 28px;
+    position: absolute;
 
-            height: 28px;
+    width: 55px;
 
-            border-radius: 50%;
+    height: 75px;
 
-            background: #d69ba5;
-        }
+    display: flex;
 
+    flex-direction: column;
 
-        .person-body {
+    align-items: center;
 
-            width: 40px;
+    z-index: 5;
+}
 
-            height: 42px;
 
-            margin-top: 5px;
+.person-head {
 
-            border-radius: 20px 20px 8px 8px;
+    width: 28px;
 
-            background: #b96d77;
-        }
+    height: 28px;
 
+    border-radius: 50%;
 
-        .girl {
+    background: #d69ba5;
+}
 
-            left: 31%;
 
-            top: 155px;
+.person-body {
 
-            animation:
-                girlLook 9s ease-in-out infinite;
-        }
+    width: 40px;
 
+    height: 42px;
 
-        .boy {
+    margin-top: 5px;
 
-            right: 31%;
+    border-radius:
+        20px 20px 8px 8px;
 
-            top: 155px;
+    background: #b96d77;
+}
 
-            animation:
-                boyLook 9s ease-in-out infinite;
-        }
 
+.girl {
 
-        /* little heart between them */
+    left: 31%;
 
-        .tiny-heart {
+    top: 155px;
 
-            position: absolute;
+    animation:
+        girlLook 9s ease-in-out infinite;
+}
 
-            left: 50%;
 
-            top: 150px;
+.boy {
 
-            transform: translateX(-50%);
+    right: 31%;
 
-            font-size: 20px;
+    top: 155px;
 
-            opacity: 0;
+    animation:
+        boyLook 9s ease-in-out infinite;
+}
 
-            animation:
-                heartAppear 9s ease-in-out infinite;
-        }
 
+.tiny-heart {
 
-        /* captions */
+    position: absolute;
 
-        .seminar-caption {
+    left: 50%;
 
-            margin-top: 35px;
+    top: 150px;
 
-            font-size: 21px;
+    transform:
+        translateX(-50%);
 
-            line-height: 1.9;
+    font-size: 20px;
 
-            min-height: 100px;
-        }
+    opacity: 0;
 
+    animation:
+        heartAppear
+        9s ease-in-out infinite;
+}
 
-        .caption-one {
 
-            animation:
-                captionOne 9s ease-in-out infinite;
-        }
+.seminar-caption {
 
+    margin-top: 35px;
 
-        .caption-two {
+    font-size: 21px;
 
-            display: none;
-        }
+    line-height: 1.9;
 
+    min-height: 100px;
+}
 
-        .next-memory {
 
-            margin-top: 25px;
+.caption-one {
 
-            padding: 13px 30px;
+    animation:
+        captionOne
+        9s ease-in-out infinite;
+}
 
-            border: 1px solid #b96d77;
 
-            border-radius: 30px;
+/* =========================================
+   FEBRUARY 14
+========================================= */
 
-            background: transparent;
+.valentine {
 
-            color: #6b3038;
+    display: none;
 
-            font-family: inherit;
+    position: relative;
 
-            cursor: pointer;
+    background:
 
-            transition: 0.3s;
-        }
+        radial-gradient(
+            circle at 50% 35%,
+            #fffdfd 0%,
+            #fff1f3 42%,
+            #f6dce1 100%
+        );
 
+    padding: 40px 20px;
+}
 
-        .next-memory:hover {
 
-            background: #b96d77;
+/* soft glow */
 
-            color: white;
-        }
+.valentine::before {
 
+    content: "";
 
-        /* =========================
-           ANIMATIONS
-        ========================= */
+    position: absolute;
 
-        @keyframes fadeIn {
+    width: 500px;
 
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+    height: 500px;
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    border-radius: 50%;
 
+    background:
+        rgba(255,255,255,0.35);
 
-        @keyframes float {
+    filter: blur(70px);
 
-            0%, 100% {
-                transform: translateY(0);
-            }
+    top: 10%;
 
-            50% {
-                transform: translateY(-12px);
-            }
-        }
+    left: 50%;
 
+    transform:
+        translateX(-50%);
 
-        @keyframes textAppear {
+    pointer-events: none;
+}
 
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* floating petals */
 
+.petal {
 
-        @keyframes messageAppear {
+    position: absolute;
 
-            from {
-                opacity: 0;
-                transform:
-                    translateY(20px)
-                    scale(0.95);
-            }
+    font-size: 24px;
 
-            to {
-                opacity: 1;
-                transform:
-                    translateY(0)
-                    scale(1);
-            }
-        }
+    opacity: 0;
 
+    animation:
+        petalFall
+        8s linear infinite;
+}
 
-        /* GIRL LOOKS */
 
-        @keyframes girlLook {
+.petal1 {
+    left: 10%;
+    top: -5%;
+    animation-delay: 0s;
+}
 
-            0%,
-            25% {
-                transform: translateX(0);
-            }
 
-            32%,
-            43% {
-                transform: translateX(70px);
-            }
+.petal2 {
+    left: 25%;
+    top: -10%;
+    animation-delay: 2s;
+}
 
-            50%,
-            100% {
-                transform: translateX(0);
-            }
-        }
 
+.petal3 {
+    right: 20%;
+    top: -8%;
+    animation-delay: 4s;
+}
 
-        /* BOY LOOKS */
 
-        @keyframes boyLook {
+.petal4 {
+    right: 8%;
+    top: -15%;
+    animation-delay: 6s;
+}
 
-            0%,
-            25% {
-                transform: translateX(0);
-            }
 
-            32%,
-            43% {
-                transform: translateX(-70px);
-            }
+.valentine-content {
 
-            50%,
-            100% {
-                transform: translateX(0);
-            }
-        }
+    position: relative;
 
+    z-index: 5;
 
-        @keyframes heartAppear {
+    max-width: 700px;
 
-            0%,
-            30% {
-                opacity: 0;
-                transform:
-                    translateX(-50%)
-                    scale(0.5);
-            }
+    width: 100%;
 
-            34%,
-            44% {
-                opacity: 1;
-                transform:
-                    translateX(-50%)
-                    scale(1);
-            }
+    padding: 30px;
+}
 
-            50%,
-            100% {
-                opacity: 0;
-            }
-        }
 
+/* date */
 
-        @keyframes captionOne {
+.val-date {
 
-            0%,
-            10% {
-                opacity: 0;
-                transform: translateY(10px);
-            }
+    font-size: 14px;
 
-            15%,
-            65% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+    letter-spacing: 5px;
 
-            75%,
-            100% {
-                opacity: 0;
-            }
-        }
+    text-transform: uppercase;
 
+    opacity: 0;
 
-        @media (max-width: 600px) {
+    animation:
+        valFade 2s ease forwards;
+}
 
-            .subtitle,
-            .story-text {
 
-                font-size: 18px;
-            }
+/* birthday */
 
-            .story {
+.birthday {
 
-                padding: 30px 15px;
-            }
+    margin-top: 25px;
 
-            .room {
+    font-size: 19px;
 
-                height: 270px;
-            }
+    opacity: 0;
 
-            .girl {
+    animation:
+        valFade 2s ease forwards;
 
-                left: 22%;
-            }
+    animation-delay: 1s;
+}
 
-            .boy {
 
-                right: 22%;
-            }
+/* cake */
 
-        }
+.cake {
 
-    </style>
+    margin: 35px auto 25px;
+
+    font-size: 70px;
+
+    opacity: 0;
+
+    animation:
+        cakeAppear 2s ease forwards;
+
+    animation-delay: 2s;
+}
+
+
+/* envelope */
+
+.envelope {
+
+    position: relative;
+
+    width: 150px;
+
+    height: 105px;
+
+    margin: 25px auto;
+
+    background: #fffafa;
+
+    border:
+        1px solid
+        #dfb0b7;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(100,40,50,0.12);
+
+    opacity: 0;
+
+    animation:
+        envelopeAppear 2s ease forwards;
+
+    animation-delay: 3s;
+}
+
+
+/* envelope flap */
+
+.envelope::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+
+    top: 8px;
+
+    width: 128px;
+
+    height: 75px;
+
+    background: #fff5f6;
+
+    border-left:
+        1px solid #dfb0b7;
+
+    border-bottom:
+        1px solid #dfb0b7;
+
+    transform:
+        rotate(-45deg)
+        scale(0.72);
+
+    transform-origin: top left;
+}
+
+
+/* little heart */
+
+.envelope-heart {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 42px;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 25px;
+
+    z-index: 3;
+}
+
+
+/* text */
+
+.val-text {
+
+    margin-top: 35px;
+
+    font-size: 21px;
+
+    line-height: 2;
+
+    opacity: 0;
+
+    animation:
+        valFade 2s ease forwards;
+
+    animation-delay: 5s;
+}
+
+
+.val-text.second {
+
+    animation-delay: 7s;
+}
+
+
+/* I LOVE YOU */
+
+.love-reveal {
+
+    margin-top: 35px;
+
+    font-size:
+        clamp(38px, 7vw, 65px);
+
+    font-weight: normal;
+
+    opacity: 0;
+
+    transform:
+        scale(0.8);
+
+    animation:
+        loveReveal
+        2.5s ease forwards;
+
+    animation-delay: 9s;
+}
+
+
+.love-small {
+
+    margin-top: 10px;
+
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        valFade 2s ease forwards;
+
+    animation-delay: 11s;
+}
+
+
+/* final button */
+
+.valentine .continue-button {
+
+    opacity: 0;
+
+    animation:
+        valFade 2s ease forwards;
+
+    animation-delay: 12.5s;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+}
+
+
+@keyframes textAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes girlLook {
+
+    0%,
+    25% {
+        transform:
+            translateX(0);
+    }
+
+    32%,
+    43% {
+        transform:
+            translateX(70px);
+    }
+
+    50%,
+    100% {
+        transform:
+            translateX(0);
+    }
+}
+
+
+@keyframes boyLook {
+
+    0%,
+    25% {
+        transform:
+            translateX(0);
+    }
+
+    32%,
+    43% {
+        transform:
+            translateX(-70px);
+    }
+
+    50%,
+    100% {
+        transform:
+            translateX(0);
+    }
+}
+
+
+@keyframes heartAppear {
+
+    0%,
+    30% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.5);
+    }
+
+    34%,
+    44% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes captionOne {
+
+    0%,
+    10% {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    15%,
+    65% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+    75%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes petalFall {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes valFade {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes cakeAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes envelopeAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes loveReveal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.8);
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .subtitle,
+    .story-text,
+    .val-text {
+
+        font-size: 18px;
+    }
+
+    .room {
+
+        height: 270px;
+    }
+
+    .girl {
+
+        left: 22%;
+    }
+
+    .boy {
+
+        right: 22%;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -843,9 +1291,9 @@
 <body>
 
 
-<!-- =====================================
+<!-- =========================================
      OPENING
-===================================== -->
+========================================= -->
 
 <section
     class="scene opening"
@@ -853,8 +1301,11 @@
 >
 
     <div class="flower flower1">🌸</div>
+
     <div class="flower flower2">🌷</div>
+
     <div class="flower flower3">🌸</div>
+
     <div class="flower flower4">🌷</div>
 
 
@@ -864,16 +1315,13 @@
             30 October 2024
         </div>
 
-
         <h1>
             Our Story ♡
         </h1>
 
-
         <p class="subtitle">
             It started with something very small...
         </p>
-
 
         <button
             class="begin-button"
@@ -888,9 +1336,9 @@
 
 
 
-<!-- =====================================
+<!-- =========================================
      STORY 1
-===================================== -->
+========================================= -->
 
 <section
     class="scene story"
@@ -903,38 +1351,31 @@
             30 October 2024
         </div>
 
-
         <h2>
             Before you...
         </h2>
 
-
         <p class="story-text">
             I never really believed in teenage love.
         </p>
-
 
         <p class="story-text delay1">
             I didn't believe something that started so young
             could become something worth carrying into the future.
         </p>
 
-
         <p class="story-text delay2">
             I didn't even want a partner.
         </p>
-
 
         <div class="message">
             hey
         </div>
 
-
         <p class="ending-line">
             And then, in Grade 11 English Literature tuition...
             you texted me.
         </p>
-
 
         <button
             class="continue-button"
@@ -949,9 +1390,9 @@
 
 
 
-<!-- =====================================
-     STORY 2
-===================================== -->
+<!-- =========================================
+     SEMINAR
+========================================= -->
 
 <section
     class="scene seminar"
@@ -964,16 +1405,13 @@
             December 2024 — February 2025
         </div>
 
-
         <h2 class="seminar-title">
             Across the room
         </h2>
 
-
         <p class="seminar-subtitle">
             We were both on opposite sides.
         </p>
-
 
 
         <div class="room">
@@ -982,17 +1420,12 @@
                 Girls' side
             </div>
 
-
             <div class="side-label boys-label">
                 Boys' side
             </div>
 
-
             <div class="aisle"></div>
 
-
-
-            <!-- GIRLS -->
 
             <div class="seats girls-seats">
 
@@ -1004,9 +1437,6 @@
             </div>
 
 
-
-            <!-- BOYS -->
-
             <div class="seats boys-seats">
 
                 <div class="seat"></div>
@@ -1017,9 +1447,6 @@
             </div>
 
 
-
-            <!-- YOU -->
-
             <div class="person girl">
 
                 <div class="person-head"></div>
@@ -1028,9 +1455,6 @@
 
             </div>
 
-
-
-            <!-- HIM -->
 
             <div class="person boy">
 
@@ -1041,7 +1465,6 @@
             </div>
 
 
-
             <div class="tiny-heart">
                 ♡
             </div>
@@ -1049,25 +1472,20 @@
         </div>
 
 
-
         <div class="seminar-caption">
 
-            <div class="caption-one">
+            We were both so shy.<br>
 
-                We were both so shy.<br>
+            Sometimes all we had<br>
 
-                Sometimes all we had<br>
-                were little glances.
-
-            </div>
+            were little glances.
 
         </div>
 
 
-
         <button
             class="next-memory"
-            onclick="showNextMemory()"
+            onclick="showValentine()"
         >
             February 14 ♡
         </button>
@@ -1078,50 +1496,194 @@
 
 
 
+<!-- =========================================
+     FEBRUARY 14
+========================================= -->
+
+<section
+    class="scene valentine"
+    id="valentine"
+>
+
+
+    <!-- FLOATING PETALS -->
+
+    <div class="petal petal1">🌸</div>
+
+    <div class="petal petal2">🌷</div>
+
+    <div class="petal petal3">🌸</div>
+
+    <div class="petal petal4">🌷</div>
+
+
+    <div class="valentine-content">
+
+
+        <div class="val-date">
+
+            14 February 2025
+
+        </div>
+
+
+        <div class="birthday">
+
+            His birthday. 🎂
+
+        </div>
+
+
+        <div class="cake">
+
+            🎂
+
+        </div>
+
+
+        <div class="envelope">
+
+            <div class="envelope-heart">
+                ♡
+            </div>
+
+        </div>
+
+
+        <div class="val-text">
+
+            Somewhere between the shy glances...
+
+        </div>
+
+
+        <div class="val-text second">
+
+            and everything we were too nervous to say...
+
+        </div>
+
+
+        <div class="love-reveal">
+
+            I love you. ♡
+
+        </div>
+
+
+        <div class="love-small">
+
+            The first time I ever said it.
+
+        </div>
+
+
+        <button
+            class="continue-button"
+            onclick="nextAfterValentine()"
+        >
+
+            Continue ♡
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
 <script>
 
 
-    function beginStory() {
+/* =========================================
+   BEGIN
+========================================= */
 
-        document.getElementById("opening").style.display = "none";
+function beginStory() {
 
-        document.getElementById("story1").style.display = "flex";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
+    document.getElementById(
+        "opening"
+    ).style.display = "none";
 
 
+    document.getElementById(
+        "story1"
+    ).style.display = "flex";
 
-    function nextScene() {
 
-        document.getElementById("story1").style.display = "none";
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-        document.getElementById("story2").style.display = "flex";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
+}
 
 
 
-    function showNextMemory() {
+/* =========================================
+   STORY 1 → SEMINAR
+========================================= */
 
-        alert(
-            "February 14, 2025 ♡\n\n" +
-            "His birthday.\n" +
-            "And the first time you said:\n\n" +
-            "I love you."
-        );
+function nextScene() {
 
-    }
+    document.getElementById(
+        "story1"
+    ).style.display = "none";
 
+
+    document.getElementById(
+        "story2"
+    ).style.display = "flex";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+/* =========================================
+   SEMINAR → VALENTINE
+========================================= */
+
+function showValentine() {
+
+    document.getElementById(
+        "story2"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "valentine"
+    ).style.display = "flex";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+/* =========================================
+   VALENTINE → NEXT MEMORY
+========================================= */
+
+function nextAfterValentine() {
+
+    alert(
+        "6 March 2025 ♡\n\n" +
+        "The first audio call."
+    );
+
+}
 
 </script>
 
