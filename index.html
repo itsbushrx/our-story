@@ -11,42 +11,58 @@
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
             margin: 0;
-            min-height: 100vh;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
             font-family: Georgia, "Times New Roman", serif;
             background: #fff5f5;
             color: #6b3038;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
-        .opening {
+        /* ---------------- OPENING ---------------- */
+
+        .scene {
             min-height: 100vh;
+            width: 100%;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
-            padding: 30px;
+            overflow: hidden;
+        }
+
+        .opening {
+            background:
+                radial-gradient(circle at 20% 20%, #ffe8eb 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, #f9dfe3 0%, transparent 30%),
+                #fff5f5;
         }
 
         .content {
             position: relative;
-            z-index: 2;
+            z-index: 5;
             max-width: 700px;
+            padding: 30px;
             animation: fadeIn 2s ease;
         }
 
         .small-text {
-            font-size: 17px;
-            letter-spacing: 3px;
+            font-size: 15px;
+            letter-spacing: 4px;
             text-transform: uppercase;
+            opacity: 0.7;
             margin-bottom: 25px;
-            opacity: 0.75;
         }
 
         h1 {
-            font-size: clamp(45px, 8vw, 85px);
+            font-size: clamp(50px, 9vw, 90px);
             font-weight: normal;
             margin: 0;
             line-height: 1;
@@ -59,17 +75,11 @@
             max-width: 550px;
         }
 
-        .date {
-            font-size: 16px;
-            letter-spacing: 4px;
-            margin-top: 35px;
-        }
-
         .begin-button {
-            margin-top: 35px;
-            padding: 14px 32px;
-            border: 1px solid #c9828a;
-            border-radius: 30px;
+            margin-top: 25px;
+            padding: 14px 34px;
+            border: 1px solid #b96d77;
+            border-radius: 40px;
             background: transparent;
             color: #6b3038;
             font-family: inherit;
@@ -79,10 +89,12 @@
         }
 
         .begin-button:hover {
-            background: #c9828a;
+            background: #b96d77;
             color: white;
             transform: translateY(-3px);
         }
+
+        /* ---------------- FLOWERS ---------------- */
 
         .flower {
             position: absolute;
@@ -114,6 +126,93 @@
             animation-delay: 3s;
         }
 
+        /* ---------------- STORY SCENE ---------------- */
+
+        .story {
+            display: none;
+            background:
+                radial-gradient(circle at 50% 20%, #fff9f9 0%, transparent 40%),
+                #f9e7e9;
+            padding: 50px 25px;
+        }
+
+        .story-content {
+            max-width: 720px;
+            padding: 30px;
+        }
+
+        .story-date {
+            font-size: 15px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        .story h2 {
+            font-size: clamp(38px, 7vw, 65px);
+            font-weight: normal;
+            margin: 0 0 30px;
+        }
+
+        .story-text {
+            font-size: 21px;
+            line-height: 2;
+            opacity: 0;
+            animation: textAppear 2s ease forwards;
+        }
+
+        .story-text.delay1 {
+            animation-delay: 2s;
+        }
+
+        .story-text.delay2 {
+            animation-delay: 4s;
+        }
+
+        .message {
+            margin: 40px auto;
+            padding: 18px 28px;
+            background: white;
+            border-radius: 18px;
+            display: inline-block;
+            box-shadow: 0 8px 30px rgba(100, 40, 50, 0.08);
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            opacity: 0;
+            animation: messageAppear 1.5s ease forwards;
+            animation-delay: 6s;
+        }
+
+        .ending-line {
+            font-size: 22px;
+            margin-top: 25px;
+            opacity: 0;
+            animation: textAppear 2s ease forwards;
+            animation-delay: 7.5s;
+        }
+
+        .continue-button {
+            margin-top: 40px;
+            padding: 13px 30px;
+            border: 1px solid #b96d77;
+            border-radius: 30px;
+            background: transparent;
+            color: #6b3038;
+            font-family: inherit;
+            cursor: pointer;
+            opacity: 0;
+            animation: textAppear 2s ease forwards;
+            animation-delay: 9s;
+        }
+
+        .continue-button:hover {
+            background: #b96d77;
+            color: white;
+        }
+
+        /* ---------------- ANIMATIONS ---------------- */
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -136,13 +235,39 @@
             }
         }
 
+        @keyframes textAppear {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
         @media (max-width: 600px) {
-            .subtitle {
+
+            .subtitle,
+            .story-text {
                 font-size: 18px;
             }
 
-            .small-text {
-                font-size: 13px;
+            .story {
+                padding: 30px 15px;
             }
         }
     </style>
@@ -150,7 +275,9 @@
 
 <body>
 
-    <section class="opening">
+    <!-- OPENING -->
+
+    <section class="scene opening" id="opening">
 
         <div class="flower flower1">🌸</div>
         <div class="flower flower2">🌷</div>
@@ -169,17 +296,82 @@
                 It started with something very small...
             </p>
 
-            <div class="date">
-                AND SOMEHOW, IT BECAME US
-            </div>
-
-            <button class="begin-button">
+            <button class="begin-button" onclick="beginStory()">
                 Begin ♡
             </button>
 
         </div>
 
     </section>
+
+
+    <!-- FIRST MEMORY -->
+
+    <section class="scene story" id="story1">
+
+        <div class="story-content">
+
+            <div class="story-date">
+                30 October 2024
+            </div>
+
+            <h2>
+                Before you...
+            </h2>
+
+            <p class="story-text">
+                I never really believed in teenage love.
+            </p>
+
+            <p class="story-text delay1">
+                I didn't believe something that started so young
+                could become something worth carrying into the future.
+            </p>
+
+            <p class="story-text delay2">
+                I didn't even want a partner.
+            </p>
+
+            <div class="message">
+                hey
+            </div>
+
+            <p class="ending-line">
+                And then, in Grade 11 English Literature tuition...
+                you texted me.
+            </p>
+
+            <button class="continue-button" onclick="nextScene()">
+                Continue ♡
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        function beginStory() {
+
+            document.getElementById("opening").style.display = "none";
+
+            document.getElementById("story1").style.display = "flex";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+        function nextScene() {
+
+            alert("Our next memory is coming soon ♡");
+
+        }
+
+    </script>
 
 </body>
 </html>
