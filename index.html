@@ -12,9 +12,9 @@
 
 <style>
 
-/* =========================================
+/* =========================================================
    BASIC
-========================================= */
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -42,10 +42,14 @@ body {
     overflow-x: hidden;
 }
 
+button {
+    font-family: inherit;
+}
 
-/* =========================================
+
+/* =========================================================
    GENERAL SCENES
-========================================= */
+========================================================= */
 
 .scene {
 
@@ -67,9 +71,9 @@ body {
 }
 
 
-/* =========================================
+/* =========================================================
    BUTTONS
-========================================= */
+========================================================= */
 
 .begin-button,
 .continue-button,
@@ -87,8 +91,6 @@ body {
 
     color: #6b3038;
 
-    font-family: inherit;
-
     font-size: 16px;
 
     cursor: pointer;
@@ -96,7 +98,6 @@ body {
     transition:
         all 0.3s ease;
 }
-
 
 .begin-button:hover,
 .continue-button:hover,
@@ -110,9 +111,9 @@ body {
 }
 
 
-/* =========================================
+/* =========================================================
    OPENING
-========================================= */
+========================================================= */
 
 .opening {
 
@@ -187,9 +188,9 @@ h1 {
 }
 
 
-/* =========================================
+/* =========================================================
    FLOWERS
-========================================= */
+========================================================= */
 
 .flower {
 
@@ -203,12 +204,10 @@ h1 {
         float 5s ease-in-out infinite;
 }
 
-
 .flower1 {
     top: 12%;
     left: 12%;
 }
-
 
 .flower2 {
     top: 20%;
@@ -216,13 +215,11 @@ h1 {
     animation-delay: 1s;
 }
 
-
 .flower3 {
     bottom: 15%;
     left: 17%;
     animation-delay: 2s;
 }
-
 
 .flower4 {
     bottom: 12%;
@@ -231,9 +228,9 @@ h1 {
 }
 
 
-/* =========================================
+/* =========================================================
    STORY 1
-========================================= */
+========================================================= */
 
 .story {
 
@@ -298,11 +295,9 @@ h1 {
         textAppear 2s ease forwards;
 }
 
-
 .story-text.delay1 {
     animation-delay: 2s;
 }
-
 
 .story-text.delay2 {
     animation-delay: 4s;
@@ -364,9 +359,9 @@ h1 {
 }
 
 
-/* =========================================
-   SEMINAR
-========================================= */
+/* =========================================================
+   SEMINAR / SHY GLANCES
+========================================================= */
 
 .seminar {
 
@@ -493,7 +488,6 @@ h1 {
     left: 10%;
 }
 
-
 .boys-label {
     right: 10%;
 }
@@ -520,7 +514,6 @@ h1 {
 .girls-seats {
     left: 4%;
 }
-
 
 .boys-seats {
     right: 4%;
@@ -641,17 +634,9 @@ h1 {
 }
 
 
-.caption-one {
-
-    animation:
-        captionOne
-        9s ease-in-out infinite;
-}
-
-
-/* =========================================
-   FEBRUARY 14
-========================================= */
+/* =========================================================
+   VALENTINE
+========================================================= */
 
 .valentine {
 
@@ -717,9 +702,7 @@ h1 {
 .petal1 {
     left: 10%;
     top: -5%;
-    animation-delay: 0s;
 }
-
 
 .petal2 {
     left: 25%;
@@ -727,13 +710,11 @@ h1 {
     animation-delay: 2s;
 }
 
-
 .petal3 {
     right: 20%;
     top: -8%;
     animation-delay: 4s;
 }
-
 
 .petal4 {
     right: 8%;
@@ -832,36 +813,6 @@ h1 {
 }
 
 
-.envelope::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 10px;
-
-    top: 8px;
-
-    width: 128px;
-
-    height: 75px;
-
-    background: #fff5f6;
-
-    border-left:
-        1px solid #dfb0b7;
-
-    border-bottom:
-        1px solid #dfb0b7;
-
-    transform:
-        rotate(-45deg)
-        scale(0.72);
-
-    transform-origin: top left;
-}
-
-
 .envelope-heart {
 
     position: absolute;
@@ -897,7 +848,6 @@ h1 {
 
 
 .val-text.second {
-
     animation-delay: 7s;
 }
 
@@ -954,9 +904,9 @@ h1 {
 }
 
 
-/* =========================================
-   MARCH 6
-========================================= */
+/* =========================================================
+   FIRST CALL
+========================================================= */
 
 .call-scene {
 
@@ -992,6 +942,15 @@ h1 {
     text-transform: uppercase;
 
     opacity: 0.65;
+}
+
+
+.call-content h2 {
+
+    font-size:
+        clamp(40px, 7vw, 65px);
+
+    font-weight: normal;
 }
 
 
@@ -1095,10 +1054,9 @@ h1 {
 }
 
 
-/* =========================================
-   MARCH 27
-   FIRST TIME MEETING
-========================================= */
+/* =========================================================
+   FIRST MEETING
+========================================================= */
 
 .meeting {
 
@@ -1167,12 +1125,10 @@ h1 {
         starTwinkle 3s ease-in-out infinite;
 }
 
-
 .star1 {
     top: 12%;
     left: 15%;
 }
-
 
 .star2 {
     top: 20%;
@@ -1180,13 +1136,11 @@ h1 {
     animation-delay: 1s;
 }
 
-
 .star3 {
     top: 10%;
     right: 25%;
     animation-delay: 2s;
 }
-
 
 .star4 {
     top: 28%;
@@ -1252,10 +1206,6 @@ h1 {
     animation-delay: 2s;
 }
 
-
-/* =========================================
-   STREET SCENE
-========================================= */
 
 .street {
 
@@ -1420,10 +1370,6 @@ h1 {
 }
 
 
-/* =========================================
-   MEETING CHARACTERS
-========================================= */
-
 .meet-person {
 
     position: absolute;
@@ -1572,7 +1518,6 @@ h1 {
     animation-delay: 8s;
 }
 
-
 .meeting-line2 {
 
     opacity: 0;
@@ -1582,7 +1527,6 @@ h1 {
 
     animation-delay: 10s;
 }
-
 
 .meeting-line3 {
 
@@ -1606,10 +1550,10 @@ h1 {
 }
 
 
-/* =========================================
+/* =========================================================
    JUNE - OCTOBER 2025
    THE PAUSE
-========================================= */
+========================================================= */
 
 .pause-one {
 
@@ -1633,19 +1577,13 @@ h1 {
 
     color: #60353b;
 
-    padding: 60px 25px;
+    padding: 70px 25px;
 }
 
 
 .pause-content {
 
-    position: relative;
-
-    z-index: 5;
-
-    max-width: 720px;
-
-    width: 100%;
+    width: min(760px, 94vw);
 
     padding: 30px;
 }
@@ -1659,91 +1597,103 @@ h1 {
 
     text-transform: uppercase;
 
-    opacity: 0;
-
-    animation:
-        pauseFade 2s ease forwards;
+    opacity: 0.6;
 }
 
 
 .pause-title {
 
     font-size:
-        clamp(38px, 7vw, 65px);
+        clamp(40px, 7vw, 68px);
 
     font-weight: normal;
 
-    margin: 25px 0;
+    margin: 25px 0 15px;
+}
 
-    opacity: 0;
 
-    animation:
-        pauseFade 2s ease forwards;
+.pause-subtitle {
 
-    animation-delay: 1s;
+    font-size: 20px;
+
+    opacity: 0.7;
+
+    margin-bottom: 45px;
+}
+
+
+.pause-card {
+
+    background:
+        rgba(255,255,255,0.65);
+
+    border:
+        1px solid
+        rgba(185,109,119,0.22);
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    margin: 25px auto;
+
+    box-shadow:
+        0 15px 50px
+        rgba(100,40,50,0.08);
+
+    font-size: 20px;
+
+    line-height: 2;
+}
+
+
+.pause-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
 }
 
 
 .pause-line {
 
+    margin: 22px 0;
+}
+
+
+.pause-quote {
+
+    font-size: 23px;
+
+    font-style: italic;
+
+    margin-top: 30px;
+
+    color: #7c4650;
+}
+
+
+.pause-ending {
+
     font-size: 21px;
 
     line-height: 2;
 
-    margin: 20px auto;
+    margin: 40px auto;
 
-    opacity: 0;
-
-    animation:
-        pauseFade 2s ease forwards;
-}
-
-
-.pause-line.one {
-    animation-delay: 3s;
-}
-
-
-.pause-line.two {
-    animation-delay: 5s;
-}
-
-
-.pause-line.three {
-    animation-delay: 7s;
-}
-
-
-.pause-heart {
-
-    font-size: 55px;
-
-    margin: 25px auto;
-
-    opacity: 0;
-
-    animation:
-        softHeart 3s ease forwards;
-
-    animation-delay: 8.5s;
+    max-width: 650px;
 }
 
 
 .pause-one .continue-button {
-
-    opacity: 0;
-
-    animation:
-        pauseFade 2s ease forwards;
-
-    animation-delay: 10s;
+    margin-top: 10px;
 }
 
 
-/* =========================================
+/* =========================================================
    FEBRUARY 8 2026
    THE RING
-========================================= */
+========================================================= */
 
 .ring-scene {
 
@@ -1755,26 +1705,23 @@ h1 {
 
         radial-gradient(
             circle at 50% 35%,
-            #fffdfd 0%,
-            #f8eaed 45%,
-            #eed8dd 100%
+            #fffdfd,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            to bottom,
+            #fff8f8,
+            #f3dfe3
         );
 
-    color: #63343b;
-
-    padding: 50px 20px;
+    padding: 60px 25px;
 }
 
 
 .ring-content {
 
-    position: relative;
-
-    z-index: 5;
-
-    max-width: 750px;
-
-    width: 100%;
+    width: min(750px, 94vw);
 
     padding: 30px;
 }
@@ -1788,64 +1735,51 @@ h1 {
 
     text-transform: uppercase;
 
-    opacity: 0;
-
-    animation:
-        ringFade 2s ease forwards;
+    opacity: 0.6;
 }
 
 
 .ring-title {
 
     font-size:
-        clamp(40px, 7vw, 68px);
+        clamp(42px, 7vw, 70px);
 
     font-weight: normal;
 
     margin: 25px 0 10px;
-
-    opacity: 0;
-
-    animation:
-        ringFade 2s ease forwards;
-
-    animation-delay: 1s;
 }
 
 
 .ring-subtitle {
 
-    font-size: 19px;
+    font-size: 20px;
 
-    opacity: 0;
+    opacity: 0.7;
 
-    animation:
-        ringFade 2s ease forwards;
-
-    animation-delay: 2s;
+    margin-bottom: 35px;
 }
 
 
 .ring-box {
 
-    width: 190px;
+    width: 210px;
 
-    height: 150px;
+    height: 145px;
 
-    margin: 45px auto 30px;
+    margin: 35px auto;
 
-    border-radius: 22px;
+    border-radius: 18px;
 
     background:
         linear-gradient(
             145deg,
-            #f5d9df,
-            #d9aeb7
+            #8d5d66,
+            #b77b85
         );
 
     box-shadow:
         0 20px 55px
-        rgba(100,40,50,0.18);
+        rgba(100,40,50,0.2);
 
     display: flex;
 
@@ -1853,33 +1787,20 @@ h1 {
 
     justify-content: center;
 
-    opacity: 0;
-
-    transform:
-        translateY(25px)
-        scale(0.8);
-
     animation:
-        ringBoxAppear 2s ease forwards;
-
-    animation-delay: 3s;
+        boxFloat 4s ease-in-out infinite;
 }
 
 
-.ring {
+.ring-symbol {
 
-    font-size: 78px;
+    font-size: 85px;
 
     filter:
         drop-shadow(
-            0 8px 10px
-            rgba(100,40,50,0.18)
+            0 5px 10px
+            rgba(0,0,0,0.12)
         );
-
-    animation:
-        ringFloat 3s ease-in-out infinite;
-
-    animation-delay: 5s;
 }
 
 
@@ -1889,49 +1810,26 @@ h1 {
 
     line-height: 2;
 
-    opacity: 0;
+    max-width: 620px;
 
-    animation:
-        ringFade 2s ease forwards;
-
-    animation-delay: 5.5s;
+    margin: 30px auto;
 }
 
 
-.ring-small {
+.ring-final {
 
-    font-size: 15px;
+    font-size: 24px;
 
-    letter-spacing: 3px;
+    margin-top: 35px;
 
-    text-transform: uppercase;
-
-    margin-top: 20px;
-
-    opacity: 0;
-
-    animation:
-        ringFade 2s ease forwards;
-
-    animation-delay: 7s;
+    color: #7a3f49;
 }
 
 
-.ring-scene .continue-button {
-
-    opacity: 0;
-
-    animation:
-        ringFade 2s ease forwards;
-
-    animation-delay: 8.5s;
-}
-
-
-/* =========================================
+/* =========================================================
    FEBRUARY 15 2026
    FLOWERS + CHOCOLATE
-========================================= */
+========================================================= */
 
 .gift-scene {
 
@@ -1942,30 +1840,24 @@ h1 {
     background:
 
         radial-gradient(
-            circle at 50% 25%,
-            #fffefe 0%,
-            transparent 40%
+            circle at 50% 30%,
+            #fffefe,
+            transparent 42%
         ),
 
         linear-gradient(
             to bottom,
-            #fff5f6,
-            #f3dfe3
+            #fff9fa,
+            #f7e0e4
         );
 
-    padding: 50px 20px;
+    padding: 60px 25px;
 }
 
 
 .gift-content {
 
-    position: relative;
-
-    z-index: 5;
-
-    max-width: 750px;
-
-    width: 100%;
+    width: min(750px, 94vw);
 
     padding: 30px;
 }
@@ -1979,41 +1871,28 @@ h1 {
 
     text-transform: uppercase;
 
-    opacity: 0;
-
-    animation:
-        giftFade 2s ease forwards;
+    opacity: 0.6;
 }
 
 
 .gift-title {
 
     font-size:
-        clamp(38px, 7vw, 65px);
+        clamp(40px, 7vw, 66px);
 
     font-weight: normal;
 
     margin: 25px 0 10px;
-
-    opacity: 0;
-
-    animation:
-        giftFade 2s ease forwards;
-
-    animation-delay: 1s;
 }
 
 
 .gift-subtitle {
 
-    font-size: 19px;
+    font-size: 20px;
 
-    opacity: 0;
+    opacity: 0.7;
 
-    animation:
-        giftFade 2s ease forwards;
-
-    animation-delay: 2s;
+    margin-bottom: 35px;
 }
 
 
@@ -2023,87 +1902,75 @@ h1 {
 
     justify-content: center;
 
-    align-items: center;
+    gap: 35px;
 
-    gap: 45px;
+    flex-wrap: wrap;
 
-    margin: 50px auto 40px;
-
-    opacity: 0;
-
-    animation:
-        giftsAppear 2s ease forwards;
-
-    animation-delay: 3s;
+    margin: 35px auto;
 }
 
 
 .gift-item {
 
-    font-size: 75px;
+    width: 170px;
 
-    animation:
-        giftFloat 3s ease-in-out infinite;
+    min-height: 170px;
+
+    background:
+        rgba(255,255,255,0.72);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(100,40,50,0.08);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
 }
 
 
-.gift-item:nth-child(2) {
+.gift-emoji {
 
-    animation-delay: 0.7s;
+    font-size: 65px;
+
+    margin-bottom: 12px;
 }
 
 
-.gift-message {
+.gift-label {
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+}
+
+
+.gift-text {
 
     font-size: 21px;
 
     line-height: 2;
 
-    opacity: 0;
+    margin: 35px auto;
 
-    animation:
-        giftFade 2s ease forwards;
-
-    animation-delay: 5s;
+    max-width: 620px;
 }
 
 
-.gift-small {
-
-    margin-top: 20px;
-
-    font-size: 15px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    opacity: 0;
-
-    animation:
-        giftFade 2s ease forwards;
-
-    animation-delay: 6.5s;
-}
-
-
-.gift-scene .continue-button {
-
-    opacity: 0;
-
-    animation:
-        giftFade 2s ease forwards;
-
-    animation-delay: 8s;
-}
-
-
-/* =========================================
+/* =========================================================
    JULY - AUGUST 2026
    PAINFUL PAUSE
-========================================= */
+========================================================= */
 
-.pause-two {
+.pain-scene {
 
     display: none;
 
@@ -2112,58 +1979,33 @@ h1 {
     background:
 
         radial-gradient(
-            circle at 50% 20%,
-            rgba(255,255,255,0.06),
+            circle at 50% 15%,
+            rgba(255,255,255,0.08),
             transparent 35%
         ),
 
         linear-gradient(
             to bottom,
             #171525,
-            #252034,
+            #242039,
             #30263d
         );
 
-    color: #f9eeee;
+    color: #fff3f3;
 
-    padding: 60px 25px;
+    padding: 65px 25px;
 }
 
 
-.pause-two::before {
+.pain-content {
 
-    content: "♡";
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 20%;
-
-    transform:
-        translateX(-50%);
-
-    font-size: 220px;
-
-    opacity: 0.025;
-}
-
-
-.pause-two-content {
-
-    position: relative;
-
-    z-index: 5;
-
-    max-width: 750px;
-
-    width: 100%;
+    width: min(780px, 94vw);
 
     padding: 30px;
 }
 
 
-.pause-two-date {
+.pain-date {
 
     font-size: 14px;
 
@@ -2171,97 +2013,96 @@ h1 {
 
     text-transform: uppercase;
 
-    opacity: 0;
-
-    animation:
-        darkFade 2s ease forwards;
+    opacity: 0.6;
 }
 
 
-.pause-two-title {
+.pain-title {
 
     font-size:
-        clamp(38px, 7vw, 65px);
+        clamp(40px, 7vw, 68px);
 
     font-weight: normal;
 
-    margin: 25px 0;
-
-    opacity: 0;
-
-    animation:
-        darkFade 2s ease forwards;
-
-    animation-delay: 1s;
+    margin: 25px 0 15px;
 }
 
 
-.pause-two-line {
+.pain-subtitle {
 
-    font-size: 21px;
+    font-size: 20px;
+
+    opacity: 0.72;
+
+    margin-bottom: 40px;
+}
+
+
+.pain-card {
+
+    background:
+        rgba(255,255,255,0.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    margin: 25px auto;
 
     line-height: 2;
 
-    margin: 22px auto;
+    font-size: 20px;
 
-    opacity: 0;
-
-    animation:
-        darkFade 2s ease forwards;
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.18);
 }
 
 
-.pause-two-line.one {
-    animation-delay: 3s;
+.pain-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
 }
 
 
-.pause-two-line.two {
-    animation-delay: 5s;
+.pain-card p {
+
+    margin: 18px 0;
 }
 
 
-.pause-two-line.three {
-    animation-delay: 7s;
+.pain-ending {
+
+    font-size: 22px;
+
+    line-height: 2;
+
+    margin: 40px auto;
+
+    max-width: 650px;
 }
 
 
-.pause-two-heart {
+.pain-scene .continue-button {
 
-    font-size: 50px;
+    color: #fff3f3;
 
-    margin: 30px auto;
-
-    opacity: 0;
-
-    animation:
-        brokenHeart 3s ease forwards;
-
-    animation-delay: 8.5s;
+    border-color: #c98994;
 }
 
 
-.pause-two .continue-button {
+/* =========================================================
+   AUGUST 23 2026
+   FINDING THE WAY BACK
+========================================================= */
 
-    color: #f9eeee;
-
-    border-color: #c68792;
-
-    opacity: 0;
-
-    animation:
-        darkFade 2s ease forwards;
-
-    animation-delay: 10s;
-}
-
-
-/* =========================================
-   OCTOBER 30 2026
-   TWO YEARS
-========================================= */
-
-.final-scene {
+.return-scene {
 
     display: none;
 
@@ -2270,27 +2111,140 @@ h1 {
     background:
 
         radial-gradient(
-            circle at 50% 40%,
-            #fffdfd 0%,
-            #fff0f2 42%,
-            #f3d6dc 100%
+            circle at 50% 25%,
+            #fffdfd,
+            transparent 42%
+        ),
+
+        linear-gradient(
+            to bottom,
+            #fff8f9,
+            #efd9de
         );
 
-    color: #63323a;
+    padding: 65px 25px;
+}
 
-    padding: 60px 20px;
+
+.return-content {
+
+    width: min(780px, 94vw);
+
+    padding: 30px;
+}
+
+
+.return-date {
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+
+.return-title {
+
+    font-size:
+        clamp(40px, 7vw, 68px);
+
+    font-weight: normal;
+
+    margin: 25px 0 15px;
+}
+
+
+.return-subtitle {
+
+    font-size: 20px;
+
+    opacity: 0.72;
+
+    margin-bottom: 40px;
+}
+
+
+.return-heart {
+
+    font-size: 80px;
+
+    margin: 30px auto;
+
+    animation:
+        heartBeat 1.8s ease-in-out infinite;
+}
+
+
+.return-text {
+
+    font-size: 21px;
+
+    line-height: 2;
+
+    max-width: 650px;
+
+    margin: 30px auto;
+}
+
+
+.return-quote {
+
+    margin: 35px auto;
+
+    padding: 25px;
+
+    max-width: 620px;
+
+    border-left:
+        2px solid #b96d77;
+
+    font-size: 23px;
+
+    font-style: italic;
+
+    color: #71414a;
+}
+
+
+/* =========================================================
+   TWO YEARS
+========================================================= */
+
+.final-scene {
+
+    display: none;
+
+    position: relative;
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,245,245,0.14),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            to bottom,
+            #171525,
+            #221d34,
+            #30253c
+        );
+
+    color: #fff5f5;
+
+    padding: 70px 25px;
 }
 
 
 .final-content {
 
-    position: relative;
-
-    z-index: 5;
-
-    max-width: 800px;
-
-    width: 100%;
+    width: min(850px, 94vw);
 
     padding: 30px;
 }
@@ -2304,28 +2258,18 @@ h1 {
 
     text-transform: uppercase;
 
-    opacity: 0;
-
-    animation:
-        finalFade 2s ease forwards;
+    opacity: 0.65;
 }
 
 
 .final-title {
 
     font-size:
-        clamp(48px, 9vw, 85px);
+        clamp(45px, 8vw, 82px);
 
     font-weight: normal;
 
     margin: 25px 0;
-
-    opacity: 0;
-
-    animation:
-        finalFade 2s ease forwards;
-
-    animation-delay: 1s;
 }
 
 
@@ -2333,84 +2277,63 @@ h1 {
 
     font-size: 90px;
 
-    margin: 20px auto;
-
-    opacity: 0;
-
-    transform: scale(0.5);
+    margin: 25px auto;
 
     animation:
-        finalHeart 2.5s ease forwards;
-
-    animation-delay: 2.5s;
+        heartBeat 1.8s ease-in-out infinite;
 }
 
 
-.final-line {
+.final-text {
 
     font-size: 22px;
 
     line-height: 2;
 
-    margin: 25px auto;
+    max-width: 680px;
 
-    opacity: 0;
-
-    animation:
-        finalFade 2s ease forwards;
-
+    margin: 30px auto;
 }
 
 
-.final-line.one {
-    animation-delay: 4.5s;
+.final-list {
+
+    margin: 45px auto;
+
+    max-width: 650px;
+
+    text-align: left;
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    opacity: 0.85;
 }
 
 
-.final-line.two {
-    animation-delay: 6.5s;
+.final-line {
+
+    font-size: 25px;
+
+    margin-top: 45px;
 }
 
 
-.final-small {
+.forever {
 
-    margin-top: 30px;
+    font-size:
+        clamp(35px, 6vw, 60px);
 
-    font-size: 15px;
+    margin-top: 25px;
 
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-
-    opacity: 0;
-
-    animation:
-        finalFade 2s ease forwards;
-
-    animation-delay: 8.5s;
+    font-weight: normal;
 }
 
 
-.final-message {
-
-    margin-top: 30px;
-
-    font-size: 20px;
-
-    font-style: italic;
-
-    opacity: 0;
-
-    animation:
-        finalFade 2s ease forwards;
-
-    animation-delay: 10s;
-}
-
-
-/* =========================================
+/* =========================================================
    ANIMATIONS
-========================================= */
+========================================================= */
 
 @keyframes fadeIn {
 
@@ -2548,31 +2471,6 @@ h1 {
 }
 
 
-@keyframes captionOne {
-
-    0%,
-    10% {
-        opacity: 0;
-
-        transform:
-            translateY(10px);
-    }
-
-    15%,
-    65% {
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-
-    75%,
-    100% {
-        opacity: 0;
-    }
-}
-
-
 @keyframes petalFall {
 
     0% {
@@ -2689,10 +2587,6 @@ h1 {
 }
 
 
-/* =========================================
-   PHONE ANIMATIONS
-========================================= */
-
 @keyframes phoneFloat {
 
     0%,
@@ -2722,10 +2616,6 @@ h1 {
     }
 }
 
-
-/* =========================================
-   MEETING ANIMATIONS
-========================================= */
 
 @keyframes meetingFade {
 
@@ -2873,16 +2763,7 @@ h1 {
             scale(1.2);
     }
 
-    65% {
-
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1);
-    }
-
-    80%,
+    65%,
     100% {
 
         opacity: 0.8;
@@ -2894,142 +2775,7 @@ h1 {
 }
 
 
-/* =========================================
-   PAUSE ANIMATIONS
-========================================= */
-
-@keyframes pauseFade {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0);
-    }
-}
-
-
-@keyframes softHeart {
-
-    from {
-        opacity: 0;
-        transform:
-            scale(0.6);
-    }
-
-    60% {
-        opacity: 1;
-        transform:
-            scale(1.1);
-    }
-
-    to {
-        opacity: 0.8;
-        transform:
-            scale(1);
-    }
-}
-
-
-/* =========================================
-   RING ANIMATIONS
-========================================= */
-
-@keyframes ringFade {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(18px);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0);
-    }
-}
-
-
-@keyframes ringBoxAppear {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(25px)
-            scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-@keyframes ringFloat {
-
-    0%,
-    100% {
-        transform:
-            translateY(0)
-            rotate(-3deg);
-    }
-
-    50% {
-        transform:
-            translateY(-8px)
-            rotate(3deg);
-    }
-}
-
-
-/* =========================================
-   GIFT ANIMATIONS
-========================================= */
-
-@keyframes giftFade {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(18px);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0);
-    }
-}
-
-
-@keyframes giftsAppear {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(30px)
-            scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-@keyframes giftFloat {
+@keyframes boxFloat {
 
     0%,
     100% {
@@ -3039,247 +2785,102 @@ h1 {
 
     50% {
         transform:
-            translateY(-10px)
-            rotate(2deg);
+            translateY(-8px);
     }
 }
 
 
-/* =========================================
-   DARK PAUSE ANIMATIONS
-========================================= */
-
-@keyframes darkFade {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0);
-    }
-}
-
-
-@keyframes brokenHeart {
-
-    0% {
-        opacity: 0;
-        transform:
-            scale(0.5);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            scale(1.1);
-    }
-
-    100% {
-        opacity: 0.8;
-        transform:
-            scale(1);
-    }
-}
-
-
-/* =========================================
-   FINAL ANIMATIONS
-========================================= */
-
-@keyframes finalFade {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0);
-    }
-}
-
-
-@keyframes finalHeart {
-
-    0% {
-        opacity: 0;
-        transform:
-            scale(0.5);
-    }
-
-    60% {
-        opacity: 1;
-        transform:
-            scale(1.15);
-    }
-
-    100% {
-        opacity: 1;
-        transform:
-            scale(1);
-    }
-}
-
-
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 600px) {
 
+    .subtitle,
+    .story-text,
+    .val-text,
+    .call-text {
+
+        font-size: 18px;
+    }
+
     .content,
     .story-content,
-    .seminar-content,
     .valentine-content,
     .call-content,
     .meeting-content,
     .pause-content,
     .ring-content,
     .gift-content,
-    .pause-two-content,
+    .pain-content,
+    .return-content,
     .final-content {
 
         padding: 20px;
     }
 
-
-    .subtitle,
-    .story-text,
-    .val-text,
-    .call-text,
-    .pause-line,
-    .pause-two-line,
-    .ring-text,
-    .gift-message,
-    .final-line {
-
-        font-size: 18px;
-    }
-
-
     .room {
-
         height: 270px;
     }
 
-
     .girl {
-
         left: 22%;
     }
 
-
     .boy {
-
         right: 22%;
     }
 
-
     .street {
-
         height: 340px;
     }
 
-
     .meet-girl {
-
         left: 8%;
     }
 
-
     .meet-boy {
-
         right: 8%;
     }
 
-
     .meeting-caption {
-
         font-size: 18px;
     }
 
-
-    .gifts {
-
-        gap: 25px;
+    .pause-card,
+    .pain-card {
+        padding: 25px;
+        font-size: 18px;
     }
 
-
-    .gift-item {
-
-        font-size: 60px;
+    .pause-ending,
+    .pain-ending,
+    .return-text,
+    .final-text {
+        font-size: 19px;
     }
-
 
     .ring-box {
-
-        width: 165px;
-
-        height: 130px;
+        width: 180px;
+        height: 125px;
     }
 
-
-    .ring {
-
-        font-size: 65px;
+    .ring-symbol {
+        font-size: 70px;
     }
-
-}
-
-
-/* =========================================
-   EXTRA SMALL PHONES
-========================================= */
-
-@media (max-width: 380px) {
-
-    .meeting-title,
-    .pause-title,
-    .pause-two-title,
-    .ring-title,
-    .gift-title {
-
-        font-size: 38px;
-    }
-
-
-    .street {
-
-        height: 300px;
-    }
-
-
-    .meet-girl {
-
-        left: 3%;
-    }
-
-
-    .meet-boy {
-
-        right: 3%;
-    }
-
-
-    .gifts {
-
-        gap: 15px;
-    }
-
 
     .gift-item {
-
-        font-size: 50px;
+        width: 145px;
+        min-height: 145px;
     }
 
+    .gift-emoji {
+        font-size: 52px;
+    }
+
+    .final-list {
+        font-size: 15px;
+    }
 }
 
 </style>
@@ -3290,9 +2891,9 @@ h1 {
 <body>
 
 
-<!-- =========================================
-     OPENING
-========================================= -->
+<!-- =========================================================
+     1. OPENING
+========================================================= -->
 
 <section
     class="scene opening"
@@ -3300,13 +2901,9 @@ h1 {
 >
 
     <div class="flower flower1">🌸</div>
-
     <div class="flower flower2">🌷</div>
-
     <div class="flower flower3">🌸</div>
-
     <div class="flower flower4">🌷</div>
-
 
     <div class="content">
 
@@ -3334,10 +2931,9 @@ h1 {
 </section>
 
 
-
-<!-- =========================================
-     STORY 1
-========================================= -->
+<!-- =========================================================
+     2. FIRST TEXT
+========================================================= -->
 
 <section
     class="scene story"
@@ -3388,10 +2984,9 @@ h1 {
 </section>
 
 
-
-<!-- =========================================
-     SEMINAR
-========================================= -->
+<!-- =========================================================
+     3. SHY GLANCES
+========================================================= -->
 
 <section
     class="scene seminar"
@@ -3412,7 +3007,6 @@ h1 {
             We were both on opposite sides.
         </p>
 
-
         <div class="room">
 
             <div class="side-label girls-label">
@@ -3425,7 +3019,6 @@ h1 {
 
             <div class="aisle"></div>
 
-
             <div class="seats girls-seats">
 
                 <div class="seat"></div>
@@ -3434,7 +3027,6 @@ h1 {
                 <div class="seat"></div>
 
             </div>
-
 
             <div class="seats boys-seats">
 
@@ -3445,24 +3037,19 @@ h1 {
 
             </div>
 
-
             <div class="person girl">
 
                 <div class="person-head"></div>
-
                 <div class="person-body"></div>
 
             </div>
-
 
             <div class="person boy">
 
                 <div class="person-head"></div>
-
                 <div class="person-body"></div>
 
             </div>
-
 
             <div class="tiny-heart">
                 ♡
@@ -3470,17 +3057,13 @@ h1 {
 
         </div>
 
-
         <div class="seminar-caption">
 
             We were both so shy.<br>
-
             Sometimes all we had<br>
-
             were little glances.
 
         </div>
-
 
         <button
             class="next-memory"
@@ -3494,10 +3077,9 @@ h1 {
 </section>
 
 
-
-<!-- =========================================
-     FEBRUARY 14
-========================================= -->
+<!-- =========================================================
+     4. FEBRUARY 14
+========================================================= -->
 
 <section
     class="scene valentine"
@@ -3505,13 +3087,9 @@ h1 {
 >
 
     <div class="petal petal1">🌸</div>
-
     <div class="petal petal2">🌷</div>
-
     <div class="petal petal3">🌸</div>
-
     <div class="petal petal4">🌷</div>
-
 
     <div class="valentine-content">
 
@@ -3519,16 +3097,13 @@ h1 {
             14 February 2025
         </div>
 
-
         <div class="birthday">
             His birthday. 🎂
         </div>
 
-
         <div class="cake">
             🎂
         </div>
-
 
         <div class="envelope">
 
@@ -3538,26 +3113,21 @@ h1 {
 
         </div>
 
-
         <div class="val-text">
             Somewhere between the shy glances...
         </div>
-
 
         <div class="val-text second">
             and everything we were too nervous to say...
         </div>
 
-
         <div class="love-reveal">
             I love you. ♡
         </div>
 
-
         <div class="love-small">
             The first time I ever said it.
         </div>
-
 
         <button
             class="continue-button"
@@ -3571,10 +3141,9 @@ h1 {
 </section>
 
 
-
-<!-- =========================================
-     MARCH 6
-========================================= -->
+<!-- =========================================================
+     5. FIRST CALL
+========================================================= -->
 
 <section
     class="scene call-scene"
@@ -3587,11 +3156,9 @@ h1 {
             6 March 2025
         </div>
 
-
         <h2>
             The first call
         </h2>
-
 
         <div class="phone">
 
@@ -3609,7 +3176,6 @@ h1 {
 
         </div>
 
-
         <div class="call-text">
 
             The first time we heard<br>
@@ -3626,7 +3192,6 @@ h1 {
 
         </div>
 
-
         <button
             class="continue-button"
             onclick="showMeeting()"
@@ -3639,11 +3204,9 @@ h1 {
 </section>
 
 
-
-<!-- =========================================
-     MARCH 27
-     FIRST TIME MEETING
-========================================= -->
+<!-- =========================================================
+     6. FIRST MEETING
+========================================================= -->
 
 <section
     class="scene meeting"
@@ -3655,23 +3218,19 @@ h1 {
     <div class="star star3">✦</div>
     <div class="star star4">✧</div>
 
-
     <div class="meeting-content">
 
         <div class="meeting-date">
             27 March 2025
         </div>
 
-
         <h2 class="meeting-title">
             We finally met.
         </h2>
 
-
         <p class="meeting-subtitle">
             After months of messages, calls and shy glances...
         </p>
-
 
         <div class="street">
 
@@ -3683,35 +3242,27 @@ h1 {
 
             <div class="street-ground"></div>
 
-
             <div class="meet-person meet-girl">
 
                 <div class="meet-head"></div>
-
                 <div class="meet-body"></div>
-
                 <div class="meet-legs"></div>
 
             </div>
-
 
             <div class="meet-person meet-boy">
 
                 <div class="meet-head"></div>
-
                 <div class="meet-body"></div>
-
                 <div class="meet-legs"></div>
 
             </div>
-
 
             <div class="meeting-heart">
                 ♡
             </div>
 
         </div>
-
 
         <div class="meeting-caption">
 
@@ -3722,14 +3273,12 @@ h1 {
 
             </div>
 
-
             <div class="meeting-line2">
 
                 Two ridiculously shy souls<br>
                 who suddenly didn't know what to do.
 
             </div>
-
 
             <div class="meeting-line3">
 
@@ -3744,14 +3293,11 @@ h1 {
 
         </div>
 
-
         <button
             class="continue-button meeting-button"
-            onclick="showPauseOne()"
+            onclick="showPause()"
         >
-
             Continue our story ♡
-
         </button>
 
     </div>
@@ -3759,10 +3305,9 @@ h1 {
 </section>
 
 
-
-<!-- =========================================
-     JUNE - OCTOBER 2025
-========================================= -->
+<!-- =========================================================
+     7. JUNE - OCTOBER 2025
+========================================================= -->
 
 <section
     class="scene pause-one"
@@ -3775,39 +3320,77 @@ h1 {
             June — 30 October 2025
         </div>
 
-
         <h2 class="pause-title">
-            A quiet chapter.
+            The quiet chapter.
         </h2>
 
-
-        <p class="pause-line one">
-            Not every part of our story was easy.
+        <p class="pause-subtitle">
+            Sometimes loving someone means knowing when to let them be.
         </p>
 
+        <div class="pause-card">
 
-        <p class="pause-line two">
-            Somewhere along the way,
-            we had to pause.
-        </p>
+            <div class="pause-icon">
+                🌙
+            </div>
 
+            <div class="pause-line">
+                I missed you.
+            </div>
 
-        <p class="pause-line three">
-            But even in the silence...
-            somehow, we found our way back to each other.
-        </p>
+            <div class="pause-line">
+                More than I wanted to admit.
+            </div>
 
+            <div class="pause-line">
+                But I also knew we needed some distance.
+            </div>
 
-        <div class="pause-heart">
-            ♡
         </div>
 
+        <div class="pause-card">
+
+            <div class="pause-icon">
+                🤍
+            </div>
+
+            <div class="pause-line">
+                It wasn't because I stopped caring.
+            </div>
+
+            <div class="pause-line">
+                It was because I wanted us to stay
+                within what our religion allowed.
+            </div>
+
+            <div class="pause-quote">
+                "I'll come back."
+            </div>
+
+        </div>
+
+        <p class="pause-ending">
+
+            And somehow, that promise made the silence
+            a little easier to carry.
+
+            <br><br>
+
+            I still missed you.
+            But beneath all that missing,
+            there was peace.
+
+            <br><br>
+
+            Because I believed you would find your way back.
+
+        </p>
 
         <button
             class="continue-button"
             onclick="showRing()"
         >
-            8 February 2026 ♡
+            February 8, 2026 ♡
         </button>
 
     </div>
@@ -3815,10 +3398,9 @@ h1 {
 </section>
 
 
-
-<!-- =========================================
-     FEBRUARY 8 2026
-========================================= -->
+<!-- =========================================================
+     8. FEBRUARY 8 2026
+========================================================= -->
 
 <section
     class="scene ring-scene"
@@ -3831,44 +3413,44 @@ h1 {
             8 February 2026
         </div>
 
-
         <h2 class="ring-title">
-            You gave me a ring.
+            You came back.
         </h2>
 
-
         <p class="ring-subtitle">
-            Some moments don't need many words.
+            And this time, you came carrying something small...
         </p>
-
 
         <div class="ring-box">
 
-            <div class="ring">
+            <div class="ring-symbol">
                 💍
             </div>
 
         </div>
 
-
         <div class="ring-text">
 
-            A little circle of something
-            that somehow carried so much meaning.
+            After all the waiting,
+            all the silence,
+            and all the moments where I wondered
+            what the future would look like...
+
+            <br><br>
+
+            you gave me the ring.
 
         </div>
 
-
-        <div class="ring-small">
-            One little ring. One very big memory.
+        <div class="ring-final">
+            A little circle that somehow held so much meaning. ♡
         </div>
-
 
         <button
             class="continue-button"
             onclick="showGifts()"
         >
-            Continue ♡
+            February 15 ♡
         </button>
 
     </div>
@@ -3876,10 +3458,9 @@ h1 {
 </section>
 
 
-
-<!-- =========================================
-     FEBRUARY 15 2026
-========================================= -->
+<!-- =========================================================
+     9. FEBRUARY 15 2026
+========================================================= -->
 
 <section
     class="scene gift-scene"
@@ -3892,52 +3473,66 @@ h1 {
             15 February 2026
         </div>
 
-
         <h2 class="gift-title">
-            Flowers & chocolate.
+            The little things.
         </h2>
 
-
         <p class="gift-subtitle">
-            The day after Valentine's.
+            Flowers. Chocolate. And a day I still remember.
         </p>
-
 
         <div class="gifts">
 
             <div class="gift-item">
-                🌷
+
+                <div class="gift-emoji">
+                    🌷
+                </div>
+
+                <div class="gift-label">
+                    Flowers
+                </div>
+
             </div>
 
             <div class="gift-item">
-                🍫
+
+                <div class="gift-emoji">
+                    🍫
+                </div>
+
+                <div class="gift-label">
+                    Chocolate
+                </div>
+
             </div>
 
         </div>
 
+        <div class="gift-text">
 
-        <div class="gift-message">
+            Sometimes it isn't the grand gestures
+            that stay with you.
 
-            Flowers to make me smile.
-            <br>
-            Chocolate to make the day sweeter.
             <br><br>
-            And another little memory
-            to keep forever. 🤍
+
+            Sometimes it's flowers in your hands,
+            chocolate beside you,
+            and the quiet happiness of knowing
+            that someone remembered.
+
+            <br><br>
+
+            And for me,
+            this became one of those memories.
 
         </div>
-
-
-        <div class="gift-small">
-            Some things are remembered in tiny details.
-        </div>
-
 
         <button
             class="continue-button"
-            onclick="showPauseTwo()"
+            onclick="showPain()"
         >
-            Continue our story ♡
+            July 2, 2026 ♡
         </button>
 
     </div>
@@ -3945,50 +3540,151 @@ h1 {
 </section>
 
 
-
-<!-- =========================================
-     JULY - AUGUST 2026
-========================================= -->
+<!-- =========================================================
+     10. JULY - AUGUST 2026
+========================================================= -->
 
 <section
-    class="scene pause-two"
-    id="pauseTwo"
+    class="scene pain-scene"
+    id="painScene"
 >
 
-    <div class="pause-two-content">
+    <div class="pain-content">
 
-        <div class="pause-two-date">
+        <div class="pain-date">
             2 July — 23 August 2026
         </div>
 
-
-        <h2 class="pause-two-title">
+        <h2 class="pain-title">
             Another quiet chapter.
         </h2>
 
-
-        <p class="pause-two-line one">
+        <p class="pain-subtitle">
             This time, the silence hurt a little more.
         </p>
 
+        <div class="pain-card">
 
-        <p class="pause-two-line two">
-            There were days when everything felt
-            uncertain and painfully far away.
-        </p>
+            <div class="pain-icon">
+                🌧️
+            </div>
 
+            <p>
+                There were days when I missed you
+                so badly that everything seemed quieter
+                without you.
+            </p>
 
-        <p class="pause-two-line three">
-            But somehow...
-            after all of it,
+            <p>
+                There were questions.
+                There was uncertainty.
+                There were moments when I didn't know
+                where our story was going.
+            </p>
+
+        </div>
+
+        <div class="pain-card">
+
+            <div class="pain-icon">
+                🤍
+            </div>
+
+            <p>
+                But even through the hurt,
+                a part of me still remembered
+                everything we'd already survived.
+            </p>
+
+            <p>
+                We had already found our way back once.
+            </p>
+
+        </div>
+
+        <p class="pain-ending">
+
+            And eventually...
+
+            <br><br>
+
             we found our way back again.
+
         </p>
 
+        <button
+            class="continue-button"
+            onclick="showReturn()"
+        >
+            August 23 ♡
+        </button>
 
-        <div class="pause-two-heart">
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     11. AUGUST 23 2026
+========================================================= -->
+
+<section
+    class="scene return-scene"
+    id="returnScene"
+>
+
+    <div class="return-content">
+
+        <div class="return-date">
+            23 August 2026
+        </div>
+
+        <h2 class="return-title">
+            We found our way back.
+        </h2>
+
+        <p class="return-subtitle">
+            Not because everything had been easy...
+        </p>
+
+        <div class="return-heart">
             ♡
         </div>
 
+        <div class="return-text">
+
+            But because, somehow,
+            after all the distance,
+            all the hurt,
+            and all the things we couldn't control...
+
+            <br><br>
+
+            we were still here.
+
+        </div>
+
+        <div class="return-quote">
+
+            Some chapters are about finding each other.
+            Some are about learning how to keep each other.
+
+        </div>
+
+        <div class="return-text">
+
+            And maybe this chapter
+            was about learning that love isn't only
+            about holding on.
+
+            <br><br>
+
+            Sometimes,
+            it's about letting go for the right reasons
+            and trusting that what is meant to return
+            will find its way back.
+
+        </div>
 
         <button
             class="continue-button"
@@ -4002,11 +3698,9 @@ h1 {
 </section>
 
 
-
-<!-- =========================================
-     OCTOBER 30 2026
-     TWO YEARS
-========================================= -->
+<!-- =========================================================
+     12. TWO YEARS
+========================================================= -->
 
 <section
     class="scene final-scene"
@@ -4019,51 +3713,64 @@ h1 {
             30 October 2026
         </div>
 
-
-        <h1 class="final-title">
-            Two years.
-        </h1>
-
+        <h2 class="final-title">
+            Two years. ❤️
+        </h2>
 
         <div class="final-heart">
-            ❤️
+            ♡
         </div>
 
-
-        <div class="final-line one">
+        <div class="final-text">
 
             Two years since one tiny
-            <br>
-            "hey"
-            changed everything.
-
-        </div>
-
-
-        <div class="final-line two">
-
-            We've had beginnings,
-            pauses, memories,
-            distance, laughter,
-            and somehow...
+            <strong>hey</strong>
+            quietly changed everything.
 
             <br><br>
 
-            we're still here.
+            Two years of messages,
+            glances,
+            calls,
+            awkward meetings,
+            distance,
+            promises,
+            coming back,
+            and growing together.
 
         </div>
 
+        <div class="final-list">
 
-        <div class="final-small">
-            30 October 2024 → 30 October 2026
+            💌 30 October 2024 — The first text<br>
+
+            👀 December 2024 — February 2025 —
+            The shy glances<br>
+
+            🎂 14 February 2025 — The first "I love you"<br>
+
+            📞 6 March 2025 — The first call<br>
+
+            🌙 27 March 2025 — The first meeting<br>
+
+            🤍 June — October 2025 — The quiet chapter<br>
+
+            💍 8 February 2026 — The ring<br>
+
+            🌷 15 February 2026 — Flowers + chocolate<br>
+
+            🌧️ 2 July — 23 August 2026 — The painful pause<br>
+
+            ❤️ 30 October 2026 — Two years
+
         </div>
 
+        <div class="final-line">
+            And somehow...
+        </div>
 
-        <div class="final-message">
-
-            And this is only another chapter,
-            not the end of our story. ♡
-
+        <div class="forever">
+            this is still our story. ♡
         </div>
 
     </div>
@@ -4071,31 +3778,29 @@ h1 {
 </section>
 
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
 
 
-/* =========================================
-   HELPER
-========================================= */
+function showScene(current, next) {
 
-function showScene(hideId, showId) {
+    document.getElementById(current).style.display = "none";
 
-    document.getElementById(hideId).style.display = "none";
-
-    document.getElementById(showId).style.display = "flex";
+    document.getElementById(next).style.display = "flex";
 
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
-
 }
 
 
-/* =========================================
-   BEGIN
-========================================= */
+/* =========================================================
+   OPENING → FIRST TEXT
+========================================================= */
 
 function beginStory() {
 
@@ -4107,9 +3812,9 @@ function beginStory() {
 }
 
 
-/* =========================================
-   STORY 1 → SEMINAR
-========================================= */
+/* =========================================================
+   FIRST TEXT → SHY GLANCES
+========================================================= */
 
 function nextScene() {
 
@@ -4121,9 +3826,9 @@ function nextScene() {
 }
 
 
-/* =========================================
-   SEMINAR → VALENTINE
-========================================= */
+/* =========================================================
+   SHY GLANCES → VALENTINE
+========================================================= */
 
 function showValentine() {
 
@@ -4135,9 +3840,9 @@ function showValentine() {
 }
 
 
-/* =========================================
-   VALENTINE → CALL
-========================================= */
+/* =========================================================
+   VALENTINE → FIRST CALL
+========================================================= */
 
 function showCallScene() {
 
@@ -4149,9 +3854,9 @@ function showCallScene() {
 }
 
 
-/* =========================================
+/* =========================================================
    CALL → FIRST MEETING
-========================================= */
+========================================================= */
 
 function showMeeting() {
 
@@ -4163,11 +3868,11 @@ function showMeeting() {
 }
 
 
-/* =========================================
-   FIRST MEETING → PAUSE
-========================================= */
+/* =========================================================
+   MEETING → JUNE-OCTOBER PAUSE
+========================================================= */
 
-function showPauseOne() {
+function showPause() {
 
     showScene(
         "meeting",
@@ -4177,9 +3882,9 @@ function showPauseOne() {
 }
 
 
-/* =========================================
+/* =========================================================
    PAUSE → RING
-========================================= */
+========================================================= */
 
 function showRing() {
 
@@ -4191,9 +3896,9 @@ function showRing() {
 }
 
 
-/* =========================================
+/* =========================================================
    RING → FLOWERS + CHOCOLATE
-========================================= */
+========================================================= */
 
 function showGifts() {
 
@@ -4205,35 +3910,49 @@ function showGifts() {
 }
 
 
-/* =========================================
+/* =========================================================
    GIFTS → PAINFUL PAUSE
-========================================= */
+========================================================= */
 
-function showPauseTwo() {
+function showPain() {
 
     showScene(
         "giftScene",
-        "pauseTwo"
+        "painScene"
     );
 
 }
 
 
-/* =========================================
-   PAINFUL PAUSE → TWO YEARS
-========================================= */
+/* =========================================================
+   PAINFUL PAUSE → RETURN
+========================================================= */
+
+function showReturn() {
+
+    showScene(
+        "painScene",
+        "returnScene"
+    );
+
+}
+
+
+/* =========================================================
+   RETURN → TWO YEARS
+========================================================= */
 
 function showFinal() {
 
     showScene(
-        "pauseTwo",
+        "returnScene",
         "finalScene"
     );
 
 }
 
-</script>
 
+</script>
 
 </body>
 
