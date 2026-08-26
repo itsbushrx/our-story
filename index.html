@@ -958,55 +958,22 @@ h1 {
 
     display: none;
 
-    position: relative;
-
     background:
-
-        radial-gradient(
-            circle at 50% 40%,
-            #fffdfd 0%,
-            #f8e8eb 45%,
-            #ead0d6 100%
+        linear-gradient(
+            135deg,
+            #f8e8ec,
+            #fff8f8
         );
 
     padding: 40px 20px;
 }
 
 
-.call-scene::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 550px;
-
-    height: 550px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,255,255,0.3);
-
-    filter: blur(80px);
-
-    top: 5%;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
 .call-content {
 
-    position: relative;
+    max-width: 650px;
 
-    z-index: 5;
-
-    width:
-        min(900px, 95vw);
+    width: 100%;
 
     padding: 30px;
 }
@@ -1020,123 +987,27 @@ h1 {
 
     text-transform: uppercase;
 
-    opacity: 0;
-
-    animation:
-        callFade 2s ease forwards;
+    opacity: 0.65;
 }
 
-
-.call-title {
-
-    font-size:
-        clamp(38px, 7vw, 65px);
-
-    font-weight: normal;
-
-    margin: 20px 0 10px;
-
-    opacity: 0;
-
-    animation:
-        callFade 2s ease forwards;
-
-    animation-delay: 1s;
-}
-
-
-.call-subtitle {
-
-    font-size: 18px;
-
-    opacity: 0;
-
-    animation:
-        callFade 2s ease forwards;
-
-    animation-delay: 2s;
-}
-
-
-/* phones */
-
-.phones {
-
-    position: relative;
-
-    height: 300px;
-
-    margin-top: 40px;
-
-    display: flex;
-
-    justify-content: space-around;
-
-    align-items: center;
-}
-
-
-/* phone body */
 
 .phone {
 
-    position: relative;
+    width: 210px;
 
-    width: 150px;
+    height: 370px;
 
-    height: 230px;
-
-    border-radius: 25px;
+    margin: 40px auto;
 
     background: #fffafa;
 
-    border:
-        2px solid
-        #c98a94;
+    border: 5px solid #6b3038;
+
+    border-radius: 32px;
 
     box-shadow:
-        0 18px 45px
-        rgba(100,40,50,0.12);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    opacity: 0;
-
-    animation:
-        phoneAppear 2s ease forwards;
-}
-
-
-.phone.left {
-    animation-delay: 2.5s;
-}
-
-
-.phone.right {
-    animation-delay: 3s;
-}
-
-
-/* screen */
-
-.phone-screen {
-
-    width: 120px;
-
-    height: 195px;
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #fff5f6,
-            #f4dce1
-        );
+        0 20px 60px
+        rgba(100,40,50,0.15);
 
     display: flex;
 
@@ -1146,164 +1017,66 @@ h1 {
 
     justify-content: center;
 
-    gap: 12px;
-
-    font-family: Arial, sans-serif;
+    animation:
+        phoneFloat 4s ease-in-out infinite;
 }
 
 
-.phone-icon {
+.phone-heart {
 
-    font-size: 42px;
+    font-size: 55px;
 
     animation:
-        phonePulse
-        1.8s ease-in-out infinite;
+        heartBeat 1.5s ease-in-out infinite;
 }
 
 
 .phone-name {
 
-    font-size: 14px;
+    margin-top: 20px;
 
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    opacity: 0.65;
+    font-size: 20px;
 }
 
 
-.call-status {
-
-    font-size: 12px;
-
-    opacity: 0.7;
-}
-
-
-/* connection */
-
-.connection {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    width: 250px;
-
-    height: 4px;
-
-    opacity: 0;
-
-    animation:
-        connectionAppear
-        2s ease forwards;
-
-    animation-delay: 5s;
-}
-
-
-.connection-line {
-
-    width: 100%;
-
-    height: 2px;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            #c98a94,
-            transparent
-        );
-}
-
-
-.connection-heart {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: -18px;
-
-    transform:
-        translateX(-50%);
-
-    font-size: 25px;
-
-    animation:
-        connectionHeart
-        2s ease-in-out infinite;
-}
-
-
-/* call connected */
-
-.connected {
-
-    margin-top: 5px;
-
-    font-size: 18px;
-
-    opacity: 0;
-
-    animation:
-        callFade 2s ease forwards;
-
-    animation-delay: 6.5s;
-}
-
-
-.call-story {
-
-    margin: 30px auto 0;
-
-    max-width: 650px;
-
-    font-size: 21px;
-
-    line-height: 2;
-
-    opacity: 0;
-
-    animation:
-        callFade 2s ease forwards;
-
-    animation-delay: 8s;
-}
-
-
-.call-story.second {
-
-    animation-delay: 10s;
-}
-
-
-.call-ended {
+.call-icon {
 
     margin-top: 25px;
 
-    font-family: Arial, sans-serif;
+    width: 55px;
 
-    font-size: 13px;
+    height: 55px;
 
-    letter-spacing: 3px;
+    border-radius: 50%;
 
-    text-transform: uppercase;
+    background: #b96d77;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+
+.call-text {
+
+    font-size: 22px;
+
+    line-height: 1.9;
+
+    margin-top: 30px;
 
     opacity: 0;
 
     animation:
-        callFade 2s ease forwards;
+        textAppear 2s ease forwards;
 
-    animation-delay: 12s;
+    animation-delay: 2s;
 }
 
 
@@ -1312,9 +1085,541 @@ h1 {
     opacity: 0;
 
     animation:
-        callFade 2s ease forwards;
+        textAppear 2s ease forwards;
 
-    animation-delay: 13.5s;
+    animation-delay: 4s;
+}
+
+
+/* =========================================
+   MARCH 27
+   FIRST TIME MEETING
+========================================= */
+
+.meeting {
+
+    display: none;
+
+    position: relative;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(105, 90, 120, 0.22),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            to bottom,
+            #171525 0%,
+            #242039 55%,
+            #30263d 100%
+        );
+
+    color: #fff4f4;
+
+    padding: 40px 20px;
+}
+
+
+/* moon glow */
+
+.meeting::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,245,240,0.08);
+
+    filter: blur(45px);
+
+    top: 5%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* tiny stars */
+
+.star {
+
+    position: absolute;
+
+    color: #fff8e8;
+
+    font-size: 10px;
+
+    opacity: 0.7;
+
+    animation:
+        starTwinkle 3s ease-in-out infinite;
+}
+
+
+.star1 {
+    top: 12%;
+    left: 15%;
+}
+
+
+.star2 {
+    top: 20%;
+    left: 30%;
+    animation-delay: 1s;
+}
+
+
+.star3 {
+    top: 10%;
+    right: 25%;
+    animation-delay: 2s;
+}
+
+
+.star4 {
+    top: 28%;
+    right: 12%;
+    animation-delay: 1.5s;
+}
+
+
+.meeting-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(900px, 95vw);
+
+    padding: 25px;
+}
+
+
+.meeting-date {
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        meetingFade 2s ease forwards;
+}
+
+
+.meeting-title {
+
+    font-size:
+        clamp(38px, 7vw, 68px);
+
+    font-weight: normal;
+
+    margin: 20px 0 10px;
+
+    opacity: 0;
+
+    animation:
+        meetingFade 2s ease forwards;
+
+    animation-delay: 1s;
+}
+
+
+.meeting-subtitle {
+
+    font-size: 19px;
+
+    opacity: 0;
+
+    animation:
+        meetingFade 2s ease forwards;
+
+    animation-delay: 2s;
+}
+
+
+/* =========================================
+   STREET SCENE
+========================================= */
+
+.street {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 390px;
+
+    margin-top: 35px;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #181629,
+            #242036
+        );
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.25);
+}
+
+
+/* ground */
+
+.street-ground {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 95px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #332a39,
+            #201d2b
+        );
+}
+
+
+/* lane */
+
+.lane {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 55%;
+
+    height: 100px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    clip-path:
+        polygon(
+            25% 0,
+            75% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+
+/* streetlight */
+
+.streetlight {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 25px;
+
+    width: 5px;
+
+    height: 225px;
+
+    background: #393444;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 3;
+}
+
+
+.streetlight::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 65px;
+
+    height: 8px;
+
+    background: #393444;
+
+    top: 0;
+
+    left: -30px;
+
+    border-radius: 10px;
+}
+
+
+.streetlight::after {
+
+    content: "💡";
+
+    position: absolute;
+
+    top: 5px;
+
+    left: -15px;
+
+    font-size: 25px;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(255,240,190,0.8)
+        );
+}
+
+
+/* streetlight glow */
+
+.light-glow {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,235,180,0.08);
+
+    filter: blur(25px);
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   MEETING CHARACTERS
+========================================= */
+
+.meet-person {
+
+    position: absolute;
+
+    bottom: 70px;
+
+    width: 70px;
+
+    height: 125px;
+
+    z-index: 6;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.meet-head {
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: #d9a3a6;
+}
+
+
+.meet-body {
+
+    width: 48px;
+
+    height: 65px;
+
+    margin-top: 7px;
+
+    border-radius:
+        24px 24px 8px 8px;
+
+    background: #9e5c68;
+}
+
+
+.meet-legs {
+
+    width: 38px;
+
+    height: 30px;
+
+    border-left: 7px solid #423b4b;
+
+    border-right: 7px solid #423b4b;
+
+}
+
+
+.meet-girl {
+
+    left: 15%;
+
+    animation:
+        girlMeet 7s ease-in-out forwards;
+
+    animation-delay: 2s;
+}
+
+
+.meet-boy {
+
+    right: 15%;
+
+    animation:
+        boyMeet 7s ease-in-out forwards;
+
+    animation-delay: 2s;
+}
+
+
+/* shy head movement */
+
+.meet-girl .meet-head {
+
+    animation:
+        girlShy 7s ease-in-out forwards;
+
+    animation-delay: 2s;
+
+}
+
+
+.meet-boy .meet-head {
+
+    animation:
+        boyShy 7s ease-in-out forwards;
+
+    animation-delay: 2s;
+
+}
+
+
+/* heart between them */
+
+.meeting-heart {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 48%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    font-size: 35px;
+
+    z-index: 8;
+
+    opacity: 0;
+
+    animation:
+        meetingHeart 7s ease-in-out forwards;
+
+    animation-delay: 2s;
+}
+
+
+/* caption */
+
+.meeting-caption {
+
+    margin: 35px auto 0;
+
+    max-width: 650px;
+
+    font-size: 21px;
+
+    line-height: 2;
+
+    min-height: 160px;
+}
+
+
+.meeting-line1 {
+
+    opacity: 0;
+
+    animation:
+        meetingFade 2s ease forwards;
+
+    animation-delay: 8s;
+}
+
+
+.meeting-line2 {
+
+    opacity: 0;
+
+    animation:
+        meetingFade 2s ease forwards;
+
+    animation-delay: 10s;
+}
+
+
+.meeting-line3 {
+
+    opacity: 0;
+
+    animation:
+        meetingFade 2s ease forwards;
+
+    animation-delay: 12s;
+}
+
+
+.meeting-button {
+
+    opacity: 0;
+
+    animation:
+        meetingFade 2s ease forwards;
+
+    animation-delay: 14s;
 }
 
 
@@ -1600,17 +1905,51 @@ h1 {
 
 
 /* =========================================
-   CALL ANIMATIONS
+   PHONE ANIMATIONS
 ========================================= */
 
-@keyframes callFade {
+@keyframes phoneFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-10px);
+    }
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.18);
+    }
+}
+
+
+/* =========================================
+   MEETING ANIMATIONS
+========================================= */
+
+@keyframes meetingFade {
 
     from {
 
         opacity: 0;
 
         transform:
-            translateY(18px);
+            translateY(20px);
     }
 
     to {
@@ -1623,80 +1962,197 @@ h1 {
 }
 
 
-@keyframes phoneAppear {
+@keyframes starTwinkle {
 
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(30px)
-            scale(0.9);
+    0%,
+    100% {
+        opacity: 0.3;
     }
 
-    to {
-
+    50% {
         opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
     }
 }
 
 
-@keyframes phonePulse {
+@keyframes girlMeet {
 
-    0%,
+    0% {
+
+        transform:
+            translateX(0);
+    }
+
+    35% {
+
+        transform:
+            translateX(45px);
+    }
+
+    55% {
+
+        transform:
+            translateX(45px);
+    }
+
+    70% {
+
+        transform:
+            translateX(45px);
+    }
+
     100% {
 
         transform:
-            scale(1);
+            translateX(45px);
+    }
+}
+
+
+@keyframes boyMeet {
+
+    0% {
+
+        transform:
+            translateX(0);
+    }
+
+    35% {
+
+        transform:
+            translateX(-45px);
+    }
+
+    55% {
+
+        transform:
+            translateX(-45px);
+    }
+
+    70% {
+
+        transform:
+            translateX(-45px);
+    }
+
+    100% {
+
+        transform:
+            translateX(-45px);
+    }
+}
+
+
+@keyframes girlShy {
+
+    0%,
+    35% {
+
+        transform:
+            rotate(0deg);
+    }
+
+    42% {
+
+        transform:
+            rotate(-12deg);
     }
 
     50% {
 
         transform:
-            scale(1.12);
-    }
-}
-
-
-@keyframes connectionAppear {
-
-    from {
-
-        opacity: 0;
-
-        width: 0;
+            rotate(8deg);
     }
 
-    to {
+    58% {
 
-        opacity: 1;
-
-        width: 250px;
+        transform:
+            rotate(-5deg);
     }
-}
 
-
-@keyframes connectionHeart {
-
-    0%,
+    70%,
     100% {
 
         transform:
-            translateX(-50%)
-            translateY(0)
-            scale(1);
+            rotate(0deg);
+    }
+}
+
+
+@keyframes boyShy {
+
+    0%,
+    35% {
+
+        transform:
+            rotate(0deg);
+    }
+
+    42% {
+
+        transform:
+            rotate(12deg);
     }
 
     50% {
 
         transform:
-            translateX(-50%)
-            translateY(-8px)
-            scale(1.15);
+            rotate(-8deg);
+    }
+
+    58% {
+
+        transform:
+            rotate(5deg);
+    }
+
+    70%,
+    100% {
+
+        transform:
+            rotate(0deg);
+    }
+}
+
+
+@keyframes meetingHeart {
+
+    0%,
+    45% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+    }
+
+    55% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.2);
+    }
+
+    65% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    80%,
+    100% {
+
+        opacity: 0.8;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
     }
 }
 
@@ -1710,7 +2166,7 @@ h1 {
     .subtitle,
     .story-text,
     .val-text,
-    .call-story {
+    .call-text {
 
         font-size: 18px;
     }
@@ -1730,45 +2186,24 @@ h1 {
         right: 22%;
     }
 
-    .phones {
+    .street {
 
-        height: 260px;
+        height: 340px;
     }
 
-    .phone {
+    .meet-girl {
 
-        width: 115px;
-
-        height: 185px;
+        left: 8%;
     }
 
-    .phone-screen {
+    .meet-boy {
 
-        width: 90px;
-
-        height: 155px;
+        right: 8%;
     }
 
-    .connection {
+    .meeting-caption {
 
-        width: 100px;
-    }
-
-    @keyframes connectionAppear {
-
-        from {
-
-            opacity: 0;
-
-            width: 0;
-        }
-
-        to {
-
-            opacity: 1;
-
-            width: 100px;
-        }
+        font-size: 18px;
     }
 
 }
@@ -2091,138 +2526,188 @@ h1 {
     id="callScene"
 >
 
-
     <div class="call-content">
 
-
         <div class="call-date">
-
             6 March 2025
-
         </div>
 
 
-        <h2 class="call-title">
-
+        <h2>
             The first call
-
         </h2>
 
 
-        <p class="call-subtitle">
+        <div class="phone">
 
-            One little call. Two very nervous people.
-
-        </p>
-
-
-
-        <div class="phones">
-
-
-            <!-- YOUR PHONE -->
-
-            <div class="phone left">
-
-                <div class="phone-screen">
-
-                    <div class="phone-icon">
-                        📞
-                    </div>
-
-                    <div class="phone-name">
-                        You
-                    </div>
-
-                    <div class="call-status">
-                        calling...
-                    </div>
-
-                </div>
-
+            <div class="phone-heart">
+                ♡
             </div>
 
-
-
-            <!-- HIS PHONE -->
-
-            <div class="phone right">
-
-                <div class="phone-screen">
-
-                    <div class="phone-icon">
-                        📱
-                    </div>
-
-                    <div class="phone-name">
-                        Him
-                    </div>
-
-                    <div class="call-status">
-                        answering...
-                    </div>
-
-                </div>
-
+            <div class="phone-name">
+                You & Me
             </div>
 
-
-
-            <!-- CONNECTION -->
-
-            <div class="connection">
-
-                <div class="connection-line"></div>
-
-                <div class="connection-heart">
-                    ♡
-                </div>
-
+            <div class="call-icon">
+                ☎
             </div>
 
-
         </div>
 
 
+        <div class="call-text">
 
-        <div class="connected">
+            The first time we heard<br>
+            each other's voices.
 
-            ● Call connected
+            <br><br>
 
-        </div>
+            A tiny step...
 
+            <br>
 
-
-        <div class="call-story">
-
-            The first time we heard each other's voices.
-
-        </div>
-
-
-        <div class="call-story second">
-
-            Two people who were still too shy
-            to say everything face to face...
-            finally found a little courage over a call.
+            but it made everything feel
+            a little more real. 🤍
 
         </div>
-
-
-        <div class="call-ended">
-
-            Call ended ♡
-
-        </div>
-
 
 
         <button
             class="continue-button"
-            onclick="nextAfterCall()"
+            onclick="showMeeting()"
         >
 
-            Continue ♡
+            March 27 ♡
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MARCH 27
+     FIRST TIME MEETING
+========================================= -->
+
+<section
+    class="scene meeting"
+    id="meeting"
+>
+
+
+    <div class="star star1">✦</div>
+    <div class="star star2">✧</div>
+    <div class="star star3">✦</div>
+    <div class="star star4">✧</div>
+
+
+    <div class="meeting-content">
+
+
+        <div class="meeting-date">
+            27 March 2025
+        </div>
+
+
+        <h2 class="meeting-title">
+            We finally met.
+        </h2>
+
+
+        <p class="meeting-subtitle">
+            After months of messages, calls and shy glances...
+        </p>
+
+
+        <div class="street">
+
+
+            <div class="light-glow"></div>
+
+
+            <div class="streetlight"></div>
+
+
+            <div class="lane"></div>
+
+            <div class="street-ground"></div>
+
+
+            <!-- GIRL -->
+
+            <div class="meet-person meet-girl">
+
+                <div class="meet-head"></div>
+
+                <div class="meet-body"></div>
+
+                <div class="meet-legs"></div>
+
+            </div>
+
+
+            <!-- BOY -->
+
+            <div class="meet-person meet-boy">
+
+                <div class="meet-head"></div>
+
+                <div class="meet-body"></div>
+
+                <div class="meet-legs"></div>
+
+            </div>
+
+
+            <div class="meeting-heart">
+                ♡
+            </div>
+
+
+        </div>
+
+
+        <div class="meeting-caption">
+
+            <div class="meeting-line1">
+
+                A quiet lane.<br>
+                A streetlight above us.
+
+            </div>
+
+
+            <div class="meeting-line2">
+
+                Two ridiculously shy souls<br>
+                who suddenly didn't know what to do.
+
+            </div>
+
+
+            <div class="meeting-line3">
+
+                And somehow...
+
+                <br>
+
+                that awkward little moment
+                became one of my favourite memories.
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="continue-button meeting-button"
+            onclick="afterMeeting()"
+        >
+
+            Continue our story ♡
 
         </button>
 
@@ -2337,14 +2822,39 @@ function showCallScene() {
 
 
 /* =========================================
-   CALL → NEXT MEMORY
+   CALL → FIRST MEETING
 ========================================= */
 
-function nextAfterCall() {
+function showMeeting() {
+
+    document.getElementById(
+        "callScene"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "meeting"
+    ).style.display = "flex";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+/* =========================================
+   AFTER FIRST MEETING
+========================================= */
+
+function afterMeeting() {
 
     alert(
-        "27 March 2025 ♡\n\n" +
-        "The first time we met in person."
+        "June — October 2025 ♡\n\n" +
+        "Some stories have quiet chapters too..."
     );
 
 }
