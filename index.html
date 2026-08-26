@@ -13,7 +13,7 @@
 <style>
 
 /* =========================================================
-   BASIC
+   RESET
 ========================================================= */
 
 * {
@@ -29,40 +29,31 @@ body {
 }
 
 body {
-
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
     background: #fff5f5;
-
     color: #6b3038;
 
     overflow-x: hidden;
 }
 
-button {
-    font-family: inherit;
-}
-
 
 /* =========================================================
-   GENERAL SCENES
+   SCENES
 ========================================================= */
 
 .scene {
-
     min-height: 100vh;
-
     width: 100%;
 
     position: relative;
 
-    display: flex;
+    display: none;
 
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
@@ -70,16 +61,18 @@ button {
     overflow: hidden;
 }
 
+.scene.active {
+    display: flex;
+}
+
 
 /* =========================================================
    BUTTONS
 ========================================================= */
 
-.begin-button,
-.continue-button,
-.next-memory {
+.story-button {
 
-    margin-top: 25px;
+    margin-top: 35px;
 
     padding: 14px 34px;
 
@@ -91,17 +84,19 @@ button {
 
     color: #6b3038;
 
+    font-family: inherit;
+
     font-size: 16px;
 
     cursor: pointer;
 
     transition:
         all 0.3s ease;
+
+    opacity: 0;
 }
 
-.begin-button:hover,
-.continue-button:hover,
-.next-memory:hover {
+.story-button:hover {
 
     background: #b96d77;
 
@@ -134,20 +129,16 @@ button {
         #fff5f5;
 }
 
+.opening-content {
 
-.content {
+    max-width: 750px;
+    padding: 30px;
 
     position: relative;
-
     z-index: 5;
-
-    max-width: 700px;
-
-    padding: 30px;
 
     animation: fadeIn 2s ease;
 }
-
 
 .small-text {
 
@@ -162,8 +153,7 @@ button {
     margin-bottom: 25px;
 }
 
-
-h1 {
+.opening h1 {
 
     font-size:
         clamp(50px, 9vw, 90px);
@@ -175,8 +165,7 @@ h1 {
     line-height: 1;
 }
 
-
-.subtitle {
+.opening-subtitle {
 
     font-size: 21px;
 
@@ -185,6 +174,10 @@ h1 {
     margin: 30px auto;
 
     max-width: 550px;
+}
+
+.begin-button {
+    opacity: 1;
 }
 
 
@@ -229,166 +222,32 @@ h1 {
 
 
 /* =========================================================
-   STORY 1
+   SLIDE 2
+   THE BEGINNING
 ========================================================= */
 
-.story {
-
-    display: none;
+.beginning {
 
     background:
 
         radial-gradient(
-            circle at 50% 20%,
-            #fff9f9 0%,
-            transparent 40%
-        ),
-
-        #f9e7e9;
-
-    padding: 50px 25px;
-}
-
-
-.story-content {
-
-    max-width: 720px;
-
-    padding: 30px;
-}
-
-
-.story-date {
-
-    font-size: 15px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    opacity: 0.7;
-
-    margin-bottom: 30px;
-}
-
-
-.story h2 {
-
-    font-size:
-        clamp(38px, 7vw, 65px);
-
-    font-weight: normal;
-
-    margin: 0 0 30px;
-}
-
-
-.story-text {
-
-    font-size: 21px;
-
-    line-height: 2;
-
-    opacity: 0;
-
-    animation:
-        textAppear 2s ease forwards;
-}
-
-.story-text.delay1 {
-    animation-delay: 2s;
-}
-
-.story-text.delay2 {
-    animation-delay: 4s;
-}
-
-
-.message {
-
-    margin: 40px auto;
-
-    padding: 18px 28px;
-
-    background: white;
-
-    border-radius: 18px;
-
-    display: inline-block;
-
-    box-shadow:
-        0 8px 30px
-        rgba(100, 40, 50, 0.08);
-
-    font-family: Arial, sans-serif;
-
-    font-size: 18px;
-
-    opacity: 0;
-
-    animation:
-        messageAppear 1.5s ease forwards;
-
-    animation-delay: 6s;
-}
-
-
-.ending-line {
-
-    font-size: 22px;
-
-    margin-top: 25px;
-
-    opacity: 0;
-
-    animation:
-        textAppear 2s ease forwards;
-
-    animation-delay: 7.5s;
-}
-
-
-.story .continue-button {
-
-    opacity: 0;
-
-    animation:
-        textAppear 2s ease forwards;
-
-    animation-delay: 9s;
-}
-
-
-/* =========================================================
-   SEMINAR / SHY GLANCES
-========================================================= */
-
-.seminar {
-
-    display: none;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-            #fffafa,
-            #f4e2e5
+            circle at 50% 30%,
+            #fffafa 0%,
+            #f9e5e8 65%,
+            #f5dfe2 100%
         );
 
     padding: 40px 20px;
 }
 
+.beginning-content {
 
-.seminar-content {
+    width: min(750px, 92vw);
 
-    width:
-        min(950px, 95vw);
-
-    padding: 25px;
+    padding: 30px;
 }
 
-
-.seminar-date {
+.slide-date {
 
     font-size: 14px;
 
@@ -398,292 +257,193 @@ h1 {
 
     opacity: 0.65;
 
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
+.typewriter-area {
 
-.seminar-title {
-
-    font-size:
-        clamp(36px, 6vw, 60px);
-
-    font-weight: normal;
-
-    margin: 0 0 10px;
-}
-
-
-.seminar-subtitle {
-
-    font-size: 18px;
-
-    opacity: 0.75;
-
-    margin-bottom: 45px;
-}
-
-
-.room {
-
-    position: relative;
-
-    width: 100%;
-
-    height: 310px;
-
-    border-radius: 30px;
-
-    background:
-        rgba(255,255,255,0.55);
-
-    box-shadow:
-        0 15px 50px
-        rgba(100,40,50,0.08);
-
-    overflow: hidden;
-
-    border:
-        1px solid
-        rgba(185,109,119,0.25);
-}
-
-
-.aisle {
-
-    position: absolute;
-
-    top: 0;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    height: 100%;
-
-    width: 2px;
-
-    background:
-        rgba(185,109,119,0.18);
-}
-
-
-.side-label {
-
-    position: absolute;
-
-    top: 25px;
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    opacity: 0.5;
-}
-
-
-.girls-label {
-    left: 10%;
-}
-
-.boys-label {
-    right: 10%;
-}
-
-
-.seats {
-
-    position: absolute;
-
-    top: 90px;
-
-    width: 42%;
-
-    display: flex;
-
-    justify-content: space-around;
-
-    flex-wrap: wrap;
-
-    gap: 25px;
-}
-
-
-.girls-seats {
-    left: 4%;
-}
-
-.boys-seats {
-    right: 4%;
-}
-
-
-.seat {
-
-    width: 45px;
-
-    height: 45px;
-
-    border-radius: 50%;
-
-    background: #ead1d5;
-
-    opacity: 0.7;
-}
-
-
-.person {
-
-    position: absolute;
-
-    width: 55px;
-
-    height: 75px;
+    min-height: 440px;
 
     display: flex;
 
     flex-direction: column;
 
-    align-items: center;
-
-    z-index: 5;
+    justify-content: center;
 }
 
+.type-line {
 
-.person-head {
-
-    width: 28px;
-
-    height: 28px;
-
-    border-radius: 50%;
-
-    background: #d69ba5;
-}
-
-
-.person-body {
-
-    width: 40px;
-
-    height: 42px;
-
-    margin-top: 5px;
-
-    border-radius:
-        20px 20px 8px 8px;
-
-    background: #b96d77;
-}
-
-
-.girl {
-
-    left: 31%;
-
-    top: 155px;
-
-    animation:
-        girlLook 9s ease-in-out infinite;
-}
-
-
-.boy {
-
-    right: 31%;
-
-    top: 155px;
-
-    animation:
-        boyLook 9s ease-in-out infinite;
-}
-
-
-.tiny-heart {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 150px;
-
-    transform:
-        translateX(-50%);
-
-    font-size: 20px;
-
-    opacity: 0;
-
-    animation:
-        heartAppear
-        9s ease-in-out infinite;
-}
-
-
-.seminar-caption {
-
-    margin-top: 35px;
-
-    font-size: 21px;
+    font-size: clamp(19px, 3vw, 23px);
 
     line-height: 1.9;
 
-    min-height: 100px;
+    margin: 9px 0;
+
+    opacity: 0;
+
+    min-height: 1.9em;
+}
+
+.type-line.show {
+    opacity: 1;
+}
+
+.type-line.emphasis {
+    font-style: italic;
+}
+
+.type-line.big {
+    font-size: clamp(24px, 4vw, 32px);
+}
+
+.type-cursor {
+
+    display: inline-block;
+
+    width: 2px;
+
+    height: 1em;
+
+    background: #6b3038;
+
+    margin-left: 3px;
+
+    vertical-align: middle;
+
+    animation:
+        cursorBlink 0.8s infinite;
 }
 
 
 /* =========================================================
-   VALENTINE
+   SLIDE 3
+   14 FEBRUARY
 ========================================================= */
 
 .valentine {
-
-    display: none;
-
-    position: relative;
 
     background:
 
         radial-gradient(
             circle at 50% 35%,
             #fffdfd 0%,
-            #fff1f3 42%,
-            #f6dce1 100%
+            #fff1f3 45%,
+            #f5d8de 100%
         );
 
     padding: 40px 20px;
 }
 
+.valentine-content {
 
-.valentine::before {
+    position: relative;
 
-    content: "";
+    z-index: 5;
 
-    position: absolute;
+    width: min(700px, 92vw);
 
-    width: 500px;
-
-    height: 500px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,255,255,0.35);
-
-    filter: blur(70px);
-
-    top: 10%;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    pointer-events: none;
+    padding: 30px;
 }
 
+.val-date {
+
+    opacity: 0;
+
+    animation:
+        valFade 1.5s ease forwards;
+
+    animation-delay: 0.5s;
+}
+
+.birthday {
+
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    opacity: 0;
+
+    animation:
+        valFade 1.5s ease forwards;
+
+    animation-delay: 1.3s;
+}
+
+.cake {
+
+    font-size: 72px;
+
+    margin: 30px auto;
+
+    opacity: 0;
+
+    animation:
+        cakeAppear 1.8s ease forwards;
+
+    animation-delay: 2s;
+}
+
+.valentine-message {
+
+    font-size: 21px;
+
+    line-height: 2;
+
+    margin-top: 20px;
+
+    opacity: 0;
+
+    animation:
+        valFade 2s ease forwards;
+
+    animation-delay: 3.5s;
+}
+
+.love-reveal {
+
+    margin-top: 30px;
+
+    font-size:
+        clamp(40px, 7vw, 68px);
+
+    font-weight: normal;
+
+    opacity: 0;
+
+    animation:
+        loveReveal 2s ease forwards;
+
+    animation-delay: 5.5s;
+}
+
+.love-small {
+
+    margin-top: 10px;
+
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        valFade 1.5s ease forwards;
+
+    animation-delay: 7.3s;
+}
+
+.valentine .story-button {
+
+    animation:
+        buttonAppear 1.5s ease forwards;
+
+    animation-delay: 8.5s;
+}
+
+
+/* petals */
 
 .petal {
 
@@ -694,10 +454,8 @@ h1 {
     opacity: 0;
 
     animation:
-        petalFall
-        8s linear infinite;
+        petalFall 8s linear infinite;
 }
-
 
 .petal1 {
     left: 10%;
@@ -723,196 +481,15 @@ h1 {
 }
 
 
-.valentine-content {
-
-    position: relative;
-
-    z-index: 5;
-
-    max-width: 700px;
-
-    width: 100%;
-
-    padding: 30px;
-}
-
-
-.val-date {
-
-    font-size: 14px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    opacity: 0;
-
-    animation:
-        valFade 2s ease forwards;
-}
-
-
-.birthday {
-
-    margin-top: 25px;
-
-    font-size: 19px;
-
-    opacity: 0;
-
-    animation:
-        valFade 2s ease forwards;
-
-    animation-delay: 1s;
-}
-
-
-.cake {
-
-    margin: 35px auto 25px;
-
-    font-size: 70px;
-
-    opacity: 0;
-
-    animation:
-        cakeAppear 2s ease forwards;
-
-    animation-delay: 2s;
-}
-
-
-.envelope {
-
-    position: relative;
-
-    width: 150px;
-
-    height: 105px;
-
-    margin: 25px auto;
-
-    background: #fffafa;
-
-    border:
-        1px solid
-        #dfb0b7;
-
-    border-radius: 8px;
-
-    box-shadow:
-        0 12px 35px
-        rgba(100,40,50,0.12);
-
-    opacity: 0;
-
-    animation:
-        envelopeAppear 2s ease forwards;
-
-    animation-delay: 3s;
-}
-
-
-.envelope-heart {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 42px;
-
-    transform:
-        translateX(-50%);
-
-    font-size: 25px;
-
-    z-index: 3;
-}
-
-
-.val-text {
-
-    margin-top: 35px;
-
-    font-size: 21px;
-
-    line-height: 2;
-
-    opacity: 0;
-
-    animation:
-        valFade 2s ease forwards;
-
-    animation-delay: 5s;
-}
-
-
-.val-text.second {
-    animation-delay: 7s;
-}
-
-
-.love-reveal {
-
-    margin-top: 35px;
-
-    font-size:
-        clamp(38px, 7vw, 65px);
-
-    font-weight: normal;
-
-    opacity: 0;
-
-    transform:
-        scale(0.8);
-
-    animation:
-        loveReveal
-        2.5s ease forwards;
-
-    animation-delay: 9s;
-}
-
-
-.love-small {
-
-    margin-top: 10px;
-
-    font-size: 15px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    opacity: 0;
-
-    animation:
-        valFade 2s ease forwards;
-
-    animation-delay: 11s;
-}
-
-
-.valentine .continue-button {
-
-    opacity: 0;
-
-    animation:
-        valFade 2s ease forwards;
-
-    animation-delay: 12.5s;
-}
-
-
 /* =========================================================
-   FIRST CALL
+   SLIDE 4
+   MARCH 6
 ========================================================= */
 
 .call-scene {
 
-    display: none;
-
     background:
+
         linear-gradient(
             135deg,
             #f8e8ec,
@@ -922,16 +499,12 @@ h1 {
     padding: 40px 20px;
 }
 
-
 .call-content {
 
-    max-width: 650px;
-
-    width: 100%;
+    width: min(700px, 92vw);
 
     padding: 30px;
 }
-
 
 .call-date {
 
@@ -944,15 +517,15 @@ h1 {
     opacity: 0.65;
 }
 
-
-.call-content h2 {
+.call-title {
 
     font-size:
-        clamp(40px, 7vw, 65px);
+        clamp(38px, 7vw, 62px);
 
     font-weight: normal;
-}
 
+    margin: 20px 0;
+}
 
 .phone {
 
@@ -960,7 +533,7 @@ h1 {
 
     height: 370px;
 
-    margin: 40px auto;
+    margin: 35px auto;
 
     background: #fffafa;
 
@@ -984,7 +557,6 @@ h1 {
         phoneFloat 4s ease-in-out infinite;
 }
 
-
 .phone-heart {
 
     font-size: 55px;
@@ -993,14 +565,12 @@ h1 {
         heartBeat 1.5s ease-in-out infinite;
 }
 
-
 .phone-name {
 
     margin-top: 20px;
 
     font-size: 20px;
 }
-
 
 .call-icon {
 
@@ -1023,16 +593,16 @@ h1 {
     justify-content: center;
 
     font-size: 25px;
-}
 
+    animation:
+        callPulse 2s infinite;
+}
 
 .call-text {
 
-    font-size: 22px;
+    font-size: 21px;
 
     line-height: 1.9;
-
-    margin-top: 30px;
 
     opacity: 0;
 
@@ -1042,33 +612,27 @@ h1 {
     animation-delay: 2s;
 }
 
-
-.call-scene .continue-button {
-
-    opacity: 0;
+.call-scene .story-button {
 
     animation:
-        textAppear 2s ease forwards;
+        buttonAppear 1.5s ease forwards;
 
-    animation-delay: 4s;
+    animation-delay: 4.5s;
 }
 
 
 /* =========================================================
-   FIRST MEETING
+   SLIDE 5
+   27 MARCH
 ========================================================= */
 
 .meeting {
-
-    display: none;
-
-    position: relative;
 
     background:
 
         radial-gradient(
             circle at 50% 30%,
-            rgba(105, 90, 120, 0.22),
+            rgba(105,90,120,0.22),
             transparent 35%
         ),
 
@@ -1084,32 +648,62 @@ h1 {
     padding: 40px 20px;
 }
 
+.meeting-content {
 
-.meeting::before {
+    position: relative;
 
-    content: "";
+    z-index: 5;
 
-    position: absolute;
+    width: min(900px, 95vw);
 
-    width: 280px;
-
-    height: 280px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,245,240,0.08);
-
-    filter: blur(45px);
-
-    top: 5%;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
+    padding: 25px;
 }
 
+.meeting-date {
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        meetingFade 2s ease forwards;
+}
+
+.meeting-title {
+
+    font-size:
+        clamp(38px, 7vw, 68px);
+
+    font-weight: normal;
+
+    margin: 20px 0 10px;
+
+    opacity: 0;
+
+    animation:
+        meetingFade 2s ease forwards;
+
+    animation-delay: 1s;
+}
+
+.meeting-subtitle {
+
+    font-size: 19px;
+
+    opacity: 0;
+
+    animation:
+        meetingFade 2s ease forwards;
+
+    animation-delay: 2s;
+}
+
+
+/* stars */
 
 .star {
 
@@ -1149,63 +743,7 @@ h1 {
 }
 
 
-.meeting-content {
-
-    position: relative;
-
-    z-index: 5;
-
-    width: min(900px, 95vw);
-
-    padding: 25px;
-}
-
-
-.meeting-date {
-
-    font-size: 14px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    opacity: 0;
-
-    animation:
-        meetingFade 2s ease forwards;
-}
-
-
-.meeting-title {
-
-    font-size:
-        clamp(38px, 7vw, 68px);
-
-    font-weight: normal;
-
-    margin: 20px 0 10px;
-
-    opacity: 0;
-
-    animation:
-        meetingFade 2s ease forwards;
-
-    animation-delay: 1s;
-}
-
-
-.meeting-subtitle {
-
-    font-size: 19px;
-
-    opacity: 0;
-
-    animation:
-        meetingFade 2s ease forwards;
-
-    animation-delay: 2s;
-}
-
+/* street */
 
 .street {
 
@@ -1233,7 +771,6 @@ h1 {
         rgba(0,0,0,0.25);
 }
 
-
 .street-ground {
 
     position: absolute;
@@ -1253,7 +790,6 @@ h1 {
             #201d2b
         );
 }
-
 
 .lane {
 
@@ -1282,7 +818,6 @@ h1 {
         );
 }
 
-
 .streetlight {
 
     position: absolute;
@@ -1303,7 +838,6 @@ h1 {
     z-index: 3;
 }
 
-
 .streetlight::before {
 
     content: "";
@@ -1323,7 +857,6 @@ h1 {
     border-radius: 10px;
 }
 
-
 .streetlight::after {
 
     content: "💡";
@@ -1342,7 +875,6 @@ h1 {
             rgba(255,240,190,0.8)
         );
 }
-
 
 .light-glow {
 
@@ -1370,6 +902,8 @@ h1 {
 }
 
 
+/* people */
+
 .meet-person {
 
     position: absolute;
@@ -1389,7 +923,6 @@ h1 {
     align-items: center;
 }
 
-
 .meet-head {
 
     width: 34px;
@@ -1400,7 +933,6 @@ h1 {
 
     background: #d9a3a6;
 }
-
 
 .meet-body {
 
@@ -1416,7 +948,6 @@ h1 {
     background: #9e5c68;
 }
 
-
 .meet-legs {
 
     width: 38px;
@@ -1428,7 +959,6 @@ h1 {
     border-right: 7px solid #423b4b;
 }
 
-
 .meet-girl {
 
     left: 15%;
@@ -1439,7 +969,6 @@ h1 {
     animation-delay: 2s;
 }
 
-
 .meet-boy {
 
     right: 15%;
@@ -1449,25 +978,6 @@ h1 {
 
     animation-delay: 2s;
 }
-
-
-.meet-girl .meet-head {
-
-    animation:
-        girlShy 7s ease-in-out forwards;
-
-    animation-delay: 2s;
-}
-
-
-.meet-boy .meet-head {
-
-    animation:
-        boyShy 7s ease-in-out forwards;
-
-    animation-delay: 2s;
-}
-
 
 .meeting-heart {
 
@@ -1493,7 +1003,6 @@ h1 {
     animation-delay: 2s;
 }
 
-
 .meeting-caption {
 
     margin: 35px auto 0;
@@ -1506,7 +1015,6 @@ h1 {
 
     min-height: 160px;
 }
-
 
 .meeting-line1 {
 
@@ -1538,56 +1046,46 @@ h1 {
     animation-delay: 12s;
 }
 
-
 .meeting-button {
 
-    opacity: 0;
-
     animation:
-        meetingFade 2s ease forwards;
+        buttonAppear 1.5s ease forwards;
 
     animation-delay: 14s;
 }
 
 
 /* =========================================================
+   SLIDE 6
    JUNE - OCTOBER 2025
-   THE PAUSE
 ========================================================= */
 
-.pause-one {
-
-    display: none;
-
-    position: relative;
+.pause-scene {
 
     background:
 
-        radial-gradient(
-            circle at 50% 20%,
-            #fffafa 0%,
-            transparent 38%
-        ),
-
         linear-gradient(
             to bottom,
-            #f3e6e8,
-            #e6d5d9
+            #d8c7ce,
+            #eee4e6 45%,
+            #cfc0c6 100%
         );
 
-    color: #60353b;
+    color: #5d4a52;
 
-    padding: 70px 25px;
+    padding: 40px 20px;
 }
-
 
 .pause-content {
 
-    width: min(760px, 94vw);
+    width: min(750px, 92vw);
 
     padding: 30px;
-}
 
+    position: relative;
+
+    z-index: 5;
+}
 
 .pause-date {
 
@@ -1597,135 +1095,151 @@ h1 {
 
     text-transform: uppercase;
 
-    opacity: 0.6;
-}
+    opacity: 0;
 
+    animation:
+        fadeIn 1.8s ease forwards;
+}
 
 .pause-title {
 
     font-size:
-        clamp(40px, 7vw, 68px);
+        clamp(38px, 7vw, 64px);
 
     font-weight: normal;
 
-    margin: 25px 0 15px;
+    margin: 20px 0 35px;
+
+    opacity: 0;
+
+    animation:
+        fadeIn 2s ease forwards;
+
+    animation-delay: 1s;
 }
-
-
-.pause-subtitle {
-
-    font-size: 20px;
-
-    opacity: 0.7;
-
-    margin-bottom: 45px;
-}
-
-
-.pause-card {
-
-    background:
-        rgba(255,255,255,0.65);
-
-    border:
-        1px solid
-        rgba(185,109,119,0.22);
-
-    border-radius: 25px;
-
-    padding: 35px;
-
-    margin: 25px auto;
-
-    box-shadow:
-        0 15px 50px
-        rgba(100,40,50,0.08);
-
-    font-size: 20px;
-
-    line-height: 2;
-}
-
-
-.pause-icon {
-
-    font-size: 45px;
-
-    margin-bottom: 15px;
-}
-
 
 .pause-line {
 
-    margin: 22px 0;
-}
-
-
-.pause-quote {
-
-    font-size: 23px;
-
-    font-style: italic;
-
-    margin-top: 30px;
-
-    color: #7c4650;
-}
-
-
-.pause-ending {
-
-    font-size: 21px;
+    font-size: 20px;
 
     line-height: 2;
 
-    margin: 40px auto;
+    margin: 10px 0;
 
-    max-width: 650px;
+    opacity: 0;
+
+    animation:
+        pauseAppear 2s ease forwards;
+}
+
+.pause-line:nth-child(1) {
+    animation-delay: 2.2s;
+}
+
+.pause-line:nth-child(2) {
+    animation-delay: 3.5s;
+}
+
+.pause-line:nth-child(3) {
+    animation-delay: 4.8s;
+}
+
+.pause-line:nth-child(4) {
+    animation-delay: 6.1s;
+}
+
+.pause-line:nth-child(5) {
+    animation-delay: 7.4s;
+}
+
+.pause-line:nth-child(6) {
+    animation-delay: 8.7s;
+}
+
+.pause-final {
+
+    margin-top: 28px;
+
+    font-size: 24px;
+
+    opacity: 0;
+
+    animation:
+        pauseFinal 2s ease forwards;
+
+    animation-delay: 10.5s;
+}
+
+.pause-scene .story-button {
+
+    animation:
+        buttonAppear 1.5s ease forwards;
+
+    animation-delay: 12.5s;
 }
 
 
-.pause-one .continue-button {
-    margin-top: 10px;
+/* leaves */
+
+.leaf {
+
+    position: absolute;
+
+    font-size: 25px;
+
+    opacity: 0.35;
+
+    animation:
+        leafFloat 8s ease-in-out infinite;
+}
+
+.leaf1 {
+    left: 10%;
+    top: 20%;
+}
+
+.leaf2 {
+    right: 13%;
+    top: 35%;
+    animation-delay: 2s;
+}
+
+.leaf3 {
+    left: 20%;
+    bottom: 15%;
+    animation-delay: 4s;
 }
 
 
 /* =========================================================
-   FEBRUARY 8 2026
-   THE RING
+   SLIDE 7
+   8 FEBRUARY 2026
 ========================================================= */
 
 .ring-scene {
 
-    display: none;
-
-    position: relative;
-
     background:
 
         radial-gradient(
-            circle at 50% 35%,
-            #fffdfd,
-            transparent 40%
-        ),
-
-        linear-gradient(
-            to bottom,
-            #fff8f8,
-            #f3dfe3
+            circle at 50% 30%,
+            #fffefa 0%,
+            #fff1e9 55%,
+            #f8dfe0 100%
         );
 
-    padding: 60px 25px;
+    padding: 40px 20px;
 }
-
 
 .ring-content {
 
-    width: min(750px, 94vw);
+    width: min(750px, 92vw);
 
     padding: 30px;
-}
 
+    position: relative;
+
+    z-index: 5;
+}
 
 .ring-date {
 
@@ -1735,404 +1249,617 @@ h1 {
 
     text-transform: uppercase;
 
-    opacity: 0.6;
-}
+    opacity: 0;
 
+    animation:
+        valFade 1.5s ease forwards;
+}
 
 .ring-title {
 
     font-size:
-        clamp(42px, 7vw, 70px);
+        clamp(38px, 7vw, 64px);
 
     font-weight: normal;
 
-    margin: 25px 0 10px;
-}
+    margin: 20px 0;
 
-
-.ring-subtitle {
-
-    font-size: 20px;
-
-    opacity: 0.7;
-
-    margin-bottom: 35px;
-}
-
-
-.ring-box {
-
-    width: 210px;
-
-    height: 145px;
-
-    margin: 35px auto;
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #8d5d66,
-            #b77b85
-        );
-
-    box-shadow:
-        0 20px 55px
-        rgba(100,40,50,0.2);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+    opacity: 0;
 
     animation:
-        boxFloat 4s ease-in-out infinite;
+        valFade 1.5s ease forwards;
+
+    animation-delay: 1s;
 }
-
-
-.ring-symbol {
-
-    font-size: 85px;
-
-    filter:
-        drop-shadow(
-            0 5px 10px
-            rgba(0,0,0,0.12)
-        );
-}
-
 
 .ring-text {
 
-    font-size: 21px;
+    font-size: 20px;
 
     line-height: 2;
 
-    max-width: 620px;
+    opacity: 0;
 
-    margin: 30px auto;
+    animation:
+        valFade 2s ease forwards;
 }
 
-
-.ring-final {
-
-    font-size: 24px;
-
-    margin-top: 35px;
-
-    color: #7a3f49;
+.ring-text.one {
+    animation-delay: 2s;
 }
 
-
-/* =========================================================
-   FEBRUARY 15 2026
-   FLOWERS + CHOCOLATE
-========================================================= */
-
-.gift-scene {
-
-    display: none;
-
-    position: relative;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 30%,
-            #fffefe,
-            transparent 42%
-        ),
-
-        linear-gradient(
-            to bottom,
-            #fff9fa,
-            #f7e0e4
-        );
-
-    padding: 60px 25px;
+.ring-text.two {
+    animation-delay: 3.5s;
 }
 
+.ring-display {
 
-.gift-content {
-
-    width: min(750px, 94vw);
-
-    padding: 30px;
-}
-
-
-.gift-date {
-
-    font-size: 14px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    opacity: 0.6;
-}
-
-
-.gift-title {
-
-    font-size:
-        clamp(40px, 7vw, 66px);
-
-    font-weight: normal;
-
-    margin: 25px 0 10px;
-}
-
-
-.gift-subtitle {
-
-    font-size: 20px;
-
-    opacity: 0.7;
-
-    margin-bottom: 35px;
-}
-
-
-.gifts {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 35px;
-
-    flex-wrap: wrap;
-
-    margin: 35px auto;
-}
-
-
-.gift-item {
-
-    width: 170px;
-
-    min-height: 170px;
-
-    background:
-        rgba(255,255,255,0.72);
-
-    border-radius: 25px;
-
-    padding: 25px;
-
-    box-shadow:
-        0 15px 45px
-        rgba(100,40,50,0.08);
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-}
-
-
-.gift-emoji {
-
-    font-size: 65px;
-
-    margin-bottom: 12px;
-}
-
-
-.gift-label {
-
-    font-size: 17px;
-
-    letter-spacing: 2px;
-}
-
-
-.gift-text {
-
-    font-size: 21px;
-
-    line-height: 2;
-
-    margin: 35px auto;
-
-    max-width: 620px;
-}
-
-
-/* =========================================================
-   JULY - AUGUST 2026
-   PAINFUL PAUSE
-========================================================= */
-
-.pain-scene {
-
-    display: none;
-
-    position: relative;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 15%,
-            rgba(255,255,255,0.08),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            to bottom,
-            #171525,
-            #242039,
-            #30263d
-        );
-
-    color: #fff3f3;
-
-    padding: 65px 25px;
-}
-
-
-.pain-content {
-
-    width: min(780px, 94vw);
-
-    padding: 30px;
-}
-
-
-.pain-date {
-
-    font-size: 14px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    opacity: 0.6;
-}
-
-
-.pain-title {
-
-    font-size:
-        clamp(40px, 7vw, 68px);
-
-    font-weight: normal;
-
-    margin: 25px 0 15px;
-}
-
-
-.pain-subtitle {
-
-    font-size: 20px;
-
-    opacity: 0.72;
-
-    margin-bottom: 40px;
-}
-
-
-.pain-card {
-
-    background:
-        rgba(255,255,255,0.055);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.1);
-
-    border-radius: 25px;
-
-    padding: 35px;
+    font-size: 90px;
 
     margin: 25px auto;
 
-    line-height: 2;
+    opacity: 0;
+
+    animation:
+        ringAppear 2s ease forwards;
+
+    animation-delay: 4.8s;
+}
+
+.ring-joke {
 
     font-size: 20px;
 
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,0.18);
+    line-height: 1.9;
+
+    opacity: 0;
+
+    animation:
+        valFade 2s ease forwards;
+
+    animation-delay: 6.5s;
+}
+
+.ring-heart {
+
+    margin-top: 30px;
+
+    font-size: 21px;
+
+    line-height: 1.9;
+
+    opacity: 0;
+
+    animation:
+        valFade 2s ease forwards;
+
+    animation-delay: 8.5s;
+}
+
+.ring-scene .story-button {
+
+    animation:
+        buttonAppear 1.5s ease forwards;
+
+    animation-delay: 10.5s;
 }
 
 
-.pain-icon {
+/* ring sparkle */
 
-    font-size: 45px;
+.ring-sparkle {
 
-    margin-bottom: 15px;
-}
-
-
-.pain-card p {
-
-    margin: 18px 0;
-}
-
-
-.pain-ending {
+    position: absolute;
 
     font-size: 22px;
 
-    line-height: 2;
+    opacity: 0;
 
-    margin: 40px auto;
-
-    max-width: 650px;
+    animation:
+        sparkle 2s ease-in-out infinite;
 }
 
+.ring-sparkle.s1 {
+    top: 30%;
+    left: 37%;
+}
 
-.pain-scene .continue-button {
+.ring-sparkle.s2 {
+    top: 35%;
+    right: 37%;
+    animation-delay: 0.7s;
+}
 
-    color: #fff3f3;
-
-    border-color: #c98994;
+.ring-sparkle.s3 {
+    top: 43%;
+    left: 43%;
+    animation-delay: 1.2s;
 }
 
 
 /* =========================================================
-   AUGUST 23 2026
-   FINDING THE WAY BACK
+   SLIDE 8
+   15 FEBRUARY 2026
+========================================================= */
+
+.flowers-scene {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            #fffdfd,
+            #fff3f4 55%,
+            #f6dfe3 100%
+        );
+
+    padding: 40px 20px;
+}
+
+.flowers-content {
+
+    width: min(700px, 92vw);
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.flowers-date {
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        valFade 1.5s ease forwards;
+}
+
+.flower-bouquet {
+
+    font-size: 75px;
+
+    margin: 25px auto;
+
+    opacity: 0;
+
+    animation:
+        bouquetAppear 2s ease forwards;
+
+    animation-delay: 1.5s;
+}
+
+.chocolate {
+
+    font-size: 55px;
+
+    opacity: 0;
+
+    animation:
+        chocolateAppear 1.5s ease forwards;
+
+    animation-delay: 2.8s;
+}
+
+.flowers-text {
+
+    font-size: 21px;
+
+    line-height: 2;
+
+    margin-top: 30px;
+
+    opacity: 0;
+
+    animation:
+        valFade 2s ease forwards;
+}
+
+.flowers-text.one {
+    animation-delay: 4s;
+}
+
+.flowers-text.two {
+    animation-delay: 5.8s;
+}
+
+.flowers-final {
+
+    font-size: 21px;
+
+    margin-top: 25px;
+
+    opacity: 0;
+
+    animation:
+        valFade 2s ease forwards;
+
+    animation-delay: 7.5s;
+}
+
+.floating-petal {
+
+    position: absolute;
+
+    font-size: 20px;
+
+    opacity: 0;
+
+    animation:
+        softPetal 7s linear infinite;
+}
+
+.fp1 {
+    left: 12%;
+    top: -5%;
+}
+
+.fp2 {
+    left: 30%;
+    top: -10%;
+    animation-delay: 1.5s;
+}
+
+.fp3 {
+    right: 25%;
+    top: -8%;
+    animation-delay: 3s;
+}
+
+.fp4 {
+    right: 10%;
+    top: -15%;
+    animation-delay: 4.5s;
+}
+
+.flowers-scene .story-button {
+
+    animation:
+        buttonAppear 1.5s ease forwards;
+
+    animation-delay: 9.5s;
+}
+
+
+/* =========================================================
+   SLIDE 9
+   2 JULY - 23 AUGUST 2026
+   THE STORM
+========================================================= */
+
+.storm-scene {
+
+    background:
+        linear-gradient(
+            to bottom,
+            #090d16,
+            #111827,
+            #171a28
+        );
+
+    color: #e9edf5;
+
+    padding: 40px 20px;
+
+    transition:
+        background 2s ease;
+}
+
+
+/* dark overlay */
+
+.storm-darkness {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.25);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* rain */
+
+.rain {
+
+    position: absolute;
+
+    inset: -100px 0 0 0;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.drop {
+
+    position: absolute;
+
+    top: -80px;
+
+    width: 1px;
+
+    height: 55px;
+
+    background:
+        rgba(190,210,235,0.45);
+
+    transform:
+        rotate(18deg);
+
+    animation:
+        rainFall linear infinite;
+}
+
+
+/* thunder flash */
+
+.thunder {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(220,230,255,0.7);
+
+    opacity: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    animation:
+        thunderFlash 7s linear infinite;
+}
+
+
+/* storm content */
+
+.storm-content {
+
+    position: relative;
+
+    z-index: 6;
+
+    width: min(750px, 92vw);
+
+    padding: 30px;
+}
+
+.storm-date {
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: #aeb7c9;
+
+    opacity: 0;
+
+    animation:
+        stormFade 2s ease forwards;
+}
+
+.storm-title {
+
+    font-size:
+        clamp(38px, 7vw, 64px);
+
+    font-weight: normal;
+
+    margin: 20px 0 35px;
+
+    opacity: 0;
+
+    animation:
+        stormFade 2s ease forwards;
+
+    animation-delay: 1s;
+}
+
+.storm-line {
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    margin: 8px 0;
+
+    color: #d7dce7;
+
+    opacity: 0;
+
+    animation:
+        stormText 2s ease forwards;
+}
+
+.storm-line.l1 {
+    animation-delay: 2.5s;
+}
+
+.storm-line.l2 {
+    animation-delay: 4s;
+}
+
+.storm-line.l3 {
+    animation-delay: 5.5s;
+}
+
+.storm-line.l4 {
+    animation-delay: 7s;
+}
+
+.storm-line.l5 {
+    animation-delay: 8.5s;
+}
+
+.storm-line.l6 {
+    animation-delay: 10s;
+}
+
+.storm-final {
+
+    margin-top: 30px;
+
+    font-size: 23px;
+
+    line-height: 1.9;
+
+    color: #f5f3f5;
+
+    opacity: 0;
+
+    animation:
+        stormHope 3s ease forwards;
+
+    animation-delay: 12s;
+}
+
+.storm-scene .story-button {
+
+    color: #f4e9ed;
+
+    border-color: #9d8d96;
+
+    animation:
+        buttonAppear 1.5s ease forwards;
+
+    animation-delay: 15s;
+}
+
+.storm-scene .story-button:hover {
+
+    background: #e1b6c0;
+
+    color: #1c1620;
+}
+
+
+/* =========================================================
+   SLIDE 10
+   23 AUGUST 2026
+   THE STORM CLEARS
 ========================================================= */
 
 .return-scene {
 
-    display: none;
-
-    position: relative;
-
     background:
-
-        radial-gradient(
-            circle at 50% 25%,
-            #fffdfd,
-            transparent 42%
-        ),
-
         linear-gradient(
             to bottom,
-            #fff8f9,
-            #efd9de
+            #202231 0%,
+            #45475a 35%,
+            #e6cfd1 75%,
+            #fff1f1 100%
         );
 
-    padding: 65px 25px;
+    color: #fff8f8;
+
+    padding: 40px 20px;
+
+    position: relative;
 }
 
+.return-rain {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    opacity: 0.45;
+
+    animation:
+        rainFadeOut 8s ease forwards;
+}
+
+.return-cloud {
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 100px;
+
+    background:
+        rgba(25,27,40,0.75);
+
+    border-radius: 100px;
+
+    filter: blur(4px);
+
+    animation:
+        cloudMove 12s ease-in-out forwards;
+}
+
+.cloud1 {
+    top: 10%;
+    left: -10%;
+}
+
+.cloud2 {
+    top: 18%;
+    right: -15%;
+    animation-delay: 1s;
+}
+
+.return-sun {
+
+    position: absolute;
+
+    width: 190px;
+
+    height: 190px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,232,192,0.6);
+
+    filter: blur(15px);
+
+    top: 12%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        scale(0.2);
+
+    opacity: 0;
+
+    animation:
+        sunRise 8s ease forwards;
+
+    animation-delay: 4s;
+}
 
 .return-content {
 
-    width: min(780px, 94vw);
+    position: relative;
+
+    z-index: 5;
+
+    width: min(750px, 92vw);
 
     padding: 30px;
 }
-
 
 .return-date {
 
@@ -2142,113 +1869,117 @@ h1 {
 
     text-transform: uppercase;
 
-    opacity: 0.6;
-}
+    opacity: 0;
 
+    animation:
+        returnFade 2s ease forwards;
+}
 
 .return-title {
 
     font-size:
-        clamp(40px, 7vw, 68px);
+        clamp(38px, 7vw, 64px);
 
     font-weight: normal;
 
-    margin: 25px 0 15px;
-}
+    margin: 20px 0 35px;
 
-
-.return-subtitle {
-
-    font-size: 20px;
-
-    opacity: 0.72;
-
-    margin-bottom: 40px;
-}
-
-
-.return-heart {
-
-    font-size: 80px;
-
-    margin: 30px auto;
+    opacity: 0;
 
     animation:
-        heartBeat 1.8s ease-in-out infinite;
+        returnFade 2s ease forwards;
+
+    animation-delay: 1s;
 }
 
-
-.return-text {
+.return-line {
 
     font-size: 21px;
 
     line-height: 2;
 
-    max-width: 650px;
+    margin: 8px 0;
 
-    margin: 30px auto;
+    opacity: 0;
+
+    animation:
+        returnText 2s ease forwards;
 }
 
+.return-line.r1 {
+    animation-delay: 2.5s;
+}
 
-.return-quote {
+.return-line.r2 {
+    animation-delay: 4s;
+}
 
-    margin: 35px auto;
+.return-line.r3 {
+    animation-delay: 5.5s;
+}
 
-    padding: 25px;
+.return-line.r4 {
+    animation-delay: 7s;
+}
 
-    max-width: 620px;
+.return-line.r5 {
+    animation-delay: 8.5s;
+}
 
-    border-left:
-        2px solid #b96d77;
+.return-final {
 
-    font-size: 23px;
+    margin-top: 25px;
 
-    font-style: italic;
+    font-size: 25px;
 
-    color: #71414a;
+    opacity: 0;
+
+    animation:
+        returnFinal 2.5s ease forwards;
+
+    animation-delay: 10s;
+}
+
+.return-scene .story-button {
+
+    animation:
+        buttonAppear 1.5s ease forwards;
+
+    animation-delay: 12s;
 }
 
 
 /* =========================================================
-   TWO YEARS
+   SLIDE 11
+   30 OCTOBER 2026
 ========================================================= */
 
 .final-scene {
 
-    display: none;
-
-    position: relative;
-
-    min-height: 100vh;
-
     background:
 
         radial-gradient(
-            circle at 50% 35%,
-            rgba(255,245,245,0.14),
-            transparent 38%
-        ),
-
-        linear-gradient(
-            to bottom,
-            #171525,
-            #221d34,
-            #30253c
+            circle at 50% 40%,
+            #fffafa,
+            #f9e7e9 55%,
+            #f4dfe2 100%
         );
 
-    color: #fff5f5;
+    padding: 40px 20px;
 
-    padding: 70px 25px;
+    color: #6b3038;
 }
-
 
 .final-content {
 
-    width: min(850px, 94vw);
+    width: min(750px, 92vw);
 
     padding: 30px;
-}
 
+    position: relative;
+
+    z-index: 5;
+}
 
 .final-date {
 
@@ -2258,81 +1989,278 @@ h1 {
 
     text-transform: uppercase;
 
-    opacity: 0.65;
-}
+    opacity: 0;
 
+    animation:
+        finalFade 2s ease forwards;
+}
 
 .final-title {
 
     font-size:
-        clamp(45px, 8vw, 82px);
+        clamp(38px, 7vw, 64px);
 
     font-weight: normal;
 
-    margin: 25px 0;
-}
+    margin: 20px 0 35px;
 
-
-.final-heart {
-
-    font-size: 90px;
-
-    margin: 25px auto;
+    opacity: 0;
 
     animation:
-        heartBeat 1.8s ease-in-out infinite;
+        finalFade 2s ease forwards;
+
+    animation-delay: 1s;
 }
-
-
-.final-text {
-
-    font-size: 22px;
-
-    line-height: 2;
-
-    max-width: 680px;
-
-    margin: 30px auto;
-}
-
-
-.final-list {
-
-    margin: 45px auto;
-
-    max-width: 650px;
-
-    text-align: left;
-
-    font-size: 17px;
-
-    line-height: 2;
-
-    opacity: 0.85;
-}
-
 
 .final-line {
 
-    font-size: 25px;
+    font-size: 20px;
 
-    margin-top: 45px;
+    line-height: 2;
+
+    margin: 8px 0;
+
+    opacity: 0;
+
+    animation:
+        finalText 2s ease forwards;
+}
+
+.final-line.f1 {
+    animation-delay: 2.5s;
+}
+
+.final-line.f2 {
+    animation-delay: 3.8s;
+}
+
+.final-line.f3 {
+    animation-delay: 5.1s;
+}
+
+.final-line.f4 {
+    animation-delay: 6.4s;
+}
+
+.final-line.f5 {
+    animation-delay: 7.7s;
+}
+
+.final-line.f6 {
+    animation-delay: 9s;
+}
+
+.final-emphasis {
+
+    margin-top: 30px;
+
+    font-size:
+        clamp(30px, 6vw, 50px);
+
+    opacity: 0;
+
+    animation:
+        finalHeart 2.5s ease forwards;
+
+    animation-delay: 10.5s;
+}
+
+.final-future {
+
+    margin-top: 30px;
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    opacity: 0;
+
+    animation:
+        finalText 2s ease forwards;
+
+    animation-delay: 12.5s;
+}
+
+.final-scene .story-button {
+
+    animation:
+        buttonAppear 1.5s ease forwards;
+
+    animation-delay: 15s;
 }
 
 
-.forever {
+/* memory icons */
 
-    font-size:
-        clamp(35px, 6vw, 60px);
+.memory {
 
-    margin-top: 25px;
+    position: absolute;
 
-    font-weight: normal;
+    font-size: 23px;
+
+    opacity: 0;
+
+    animation:
+        memoryFloat 7s ease-in-out infinite;
+}
+
+.memory.m1 {
+    top: 18%;
+    left: 12%;
+    animation-delay: 2s;
+}
+
+.memory.m2 {
+    top: 25%;
+    right: 14%;
+    animation-delay: 3s;
+}
+
+.memory.m3 {
+    bottom: 20%;
+    left: 17%;
+    animation-delay: 4s;
+}
+
+.memory.m4 {
+    bottom: 18%;
+    right: 15%;
+    animation-delay: 5s;
 }
 
 
 /* =========================================================
-   ANIMATIONS
+   SLIDE 12
+   FUNNY ENDING
+========================================================= */
+
+.feedback-scene {
+
+    background:
+
+        radial-gradient(
+            circle at 30% 20%,
+            #ffe8ec,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            #f5dfe4,
+            transparent 30%
+        ),
+
+        #fff5f5;
+
+    padding: 40px 20px;
+}
+
+.feedback-content {
+
+    width: min(700px, 92vw);
+
+    padding: 30px;
+}
+
+.feedback-title {
+
+    font-size:
+        clamp(42px, 8vw, 72px);
+
+    font-weight: normal;
+
+    margin: 0 0 30px;
+
+    opacity: 0;
+
+    animation:
+        funnyPop 1.5s ease forwards;
+}
+
+.feedback-line {
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    margin: 10px 0;
+
+    opacity: 0;
+}
+
+.feedback-line.fb1 {
+    animation:
+        funnyAppear 1.5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.feedback-line.fb2 {
+    animation:
+        funnyAppear 1.5s ease forwards;
+    animation-delay: 3s;
+}
+
+.feedback-line.fb3 {
+    animation:
+        funnyAppear 1.5s ease forwards;
+    animation-delay: 4.5s;
+}
+
+.feedback-line.fb4 {
+    animation:
+        funnyShake 1.5s ease forwards;
+    animation-delay: 6s;
+}
+
+.feedback-line.fb5 {
+    animation:
+        funnyAppear 1.5s ease forwards;
+    animation-delay: 7.5s;
+}
+
+.feedback-button {
+
+    margin-top: 35px;
+
+    padding: 15px 32px;
+
+    border: 1px solid #b96d77;
+
+    border-radius: 40px;
+
+    background: transparent;
+
+    color: #6b3038;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    animation:
+        buttonAppear 1.5s ease forwards;
+
+    animation-delay: 9.5s;
+
+    transition:
+        all 0.3s ease;
+}
+
+.feedback-button:hover {
+
+    background: #b96d77;
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   GENERAL ANIMATIONS
 ========================================================= */
 
 @keyframes fadeIn {
@@ -2350,7 +2278,6 @@ h1 {
     }
 }
 
-
 @keyframes float {
 
     0%,
@@ -2365,6 +2292,18 @@ h1 {
     }
 }
 
+@keyframes cursorBlink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
 
 @keyframes textAppear {
 
@@ -2381,14 +2320,48 @@ h1 {
     }
 }
 
-
-@keyframes messageAppear {
+@keyframes buttonAppear {
 
     from {
         opacity: 0;
         transform:
-            translateY(20px)
-            scale(0.95);
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   VALENTINE
+========================================================= */
+
+@keyframes valFade {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes cakeAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            scale(0.7);
     }
 
     to {
@@ -2399,84 +2372,31 @@ h1 {
     }
 }
 
+@keyframes loveReveal {
 
-@keyframes girlLook {
-
-    0%,
-    25% {
-        transform:
-            translateX(0);
-    }
-
-    32%,
-    43% {
-        transform:
-            translateX(70px);
-    }
-
-    50%,
-    100% {
-        transform:
-            translateX(0);
-    }
-}
-
-
-@keyframes boyLook {
-
-    0%,
-    25% {
-        transform:
-            translateX(0);
-    }
-
-    32%,
-    43% {
-        transform:
-            translateX(-70px);
-    }
-
-    50%,
-    100% {
-        transform:
-            translateX(0);
-    }
-}
-
-
-@keyframes heartAppear {
-
-    0%,
-    30% {
+    0% {
         opacity: 0;
-
         transform:
-            translateX(-50%)
-            scale(0.5);
+            scale(0.7);
     }
 
-    34%,
-    44% {
+    60% {
         opacity: 1;
-
         transform:
-            translateX(-50%)
+            scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
             scale(1);
     }
-
-    50%,
-    100% {
-        opacity: 0;
-    }
 }
-
 
 @keyframes petalFall {
 
     0% {
-
         opacity: 0;
-
         transform:
             translateY(-30px)
             rotate(0deg);
@@ -2491,9 +2411,7 @@ h1 {
     }
 
     100% {
-
         opacity: 0;
-
         transform:
             translateY(110vh)
             rotate(360deg);
@@ -2501,91 +2419,9 @@ h1 {
 }
 
 
-@keyframes valFade {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(18px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-@keyframes cakeAppear {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(20px)
-            scale(0.7);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-@keyframes envelopeAppear {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(20px)
-            scale(0.85);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-@keyframes loveReveal {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            scale(0.8);
-    }
-
-    60% {
-
-        opacity: 1;
-
-        transform:
-            scale(1.08);
-    }
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            scale(1);
-    }
-}
-
+/* =========================================================
+   PHONE
+========================================================= */
 
 @keyframes phoneFloat {
 
@@ -2601,7 +2437,6 @@ h1 {
     }
 }
 
-
 @keyframes heartBeat {
 
     0%,
@@ -2616,26 +2451,39 @@ h1 {
     }
 }
 
+@keyframes callPulse {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.1);
+    }
+}
+
+
+/* =========================================================
+   MEETING
+========================================================= */
 
 @keyframes meetingFade {
 
     from {
-
         opacity: 0;
-
         transform:
             translateY(20px);
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateY(0);
     }
 }
-
 
 @keyframes starTwinkle {
 
@@ -2649,7 +2497,6 @@ h1 {
     }
 }
 
-
 @keyframes girlMeet {
 
     0% {
@@ -2657,13 +2504,16 @@ h1 {
             translateX(0);
     }
 
-    35%,
+    35% {
+        transform:
+            translateX(45px);
+    }
+
     100% {
         transform:
             translateX(45px);
     }
 }
-
 
 @keyframes boyMeet {
 
@@ -2672,92 +2522,29 @@ h1 {
             translateX(0);
     }
 
-    35%,
+    35% {
+        transform:
+            translateX(-45px);
+    }
+
     100% {
         transform:
             translateX(-45px);
     }
 }
 
-
-@keyframes girlShy {
-
-    0%,
-    35% {
-        transform:
-            rotate(0deg);
-    }
-
-    42% {
-        transform:
-            rotate(-12deg);
-    }
-
-    50% {
-        transform:
-            rotate(8deg);
-    }
-
-    58% {
-        transform:
-            rotate(-5deg);
-    }
-
-    70%,
-    100% {
-        transform:
-            rotate(0deg);
-    }
-}
-
-
-@keyframes boyShy {
-
-    0%,
-    35% {
-        transform:
-            rotate(0deg);
-    }
-
-    42% {
-        transform:
-            rotate(12deg);
-    }
-
-    50% {
-        transform:
-            rotate(-8deg);
-    }
-
-    58% {
-        transform:
-            rotate(5deg);
-    }
-
-    70%,
-    100% {
-        transform:
-            rotate(0deg);
-    }
-}
-
-
 @keyframes meetingHeart {
 
     0%,
     45% {
-
         opacity: 0;
-
         transform:
             translate(-50%, -50%)
             scale(0);
     }
 
     55% {
-
         opacity: 1;
-
         transform:
             translate(-50%, -50%)
             scale(1.2);
@@ -2765,9 +2552,7 @@ h1 {
 
     65%,
     100% {
-
         opacity: 0.8;
-
         transform:
             translate(-50%, -50%)
             scale(1);
@@ -2775,17 +2560,512 @@ h1 {
 }
 
 
-@keyframes boxFloat {
+/* =========================================================
+   PAUSE
+========================================================= */
+
+@keyframes pauseAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes pauseFinal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes leafFloat {
 
     0%,
     100% {
+        transform:
+            translate(0,0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translate(25px,-18px)
+            rotate(15deg);
+    }
+}
+
+
+/* =========================================================
+   RING
+========================================================= */
+
+@keyframes ringAppear {
+
+    0% {
+        opacity: 0;
+        transform:
+            scale(0.5)
+            rotate(-15deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform:
+            scale(1.15)
+            rotate(8deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            scale(1)
+            rotate(0deg);
+    }
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform:
+            scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            scale(1.3);
+    }
+}
+
+
+/* =========================================================
+   FLOWERS
+========================================================= */
+
+@keyframes bouquetAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes chocolateAppear {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(-20px)
+            scale(0.7)
+            rotate(-10deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform:
+            translateY(5px)
+            scale(1.1)
+            rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0);
+    }
+}
+
+@keyframes softPetal {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+    }
+
+    15% {
+        opacity: 0.65;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateY(110vh)
+            translateX(40px)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   STORM
+========================================================= */
+
+@keyframes rainFall {
+
+    from {
+        transform:
+            translateY(-100px)
+            translateX(0)
+            rotate(18deg);
+    }
+
+    to {
+        transform:
+            translateY(115vh)
+            translateX(-100px)
+            rotate(18deg);
+    }
+}
+
+@keyframes thunderFlash {
+
+    0%,
+    88%,
+    100% {
+        opacity: 0;
+    }
+
+    89% {
+        opacity: 0.7;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    91% {
+        opacity: 0.4;
+    }
+
+    92% {
+        opacity: 0;
+    }
+}
+
+@keyframes stormFade {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes stormText {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes stormHope {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   RETURN
+========================================================= */
+
+@keyframes rainFadeOut {
+
+    from {
+        opacity: 0.55;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes cloudMove {
+
+    from {
+        transform:
+            translateX(0);
+    }
+
+    to {
+        transform:
+            translateX(130%);
+        opacity: 0;
+    }
+}
+
+@keyframes sunRise {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            scale(0.2);
+    }
+
+    60% {
+        opacity: 0.7;
+        transform:
+            translateX(-50%)
+            scale(1.1);
+    }
+
+    100% {
+        opacity: 0.6;
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+}
+
+@keyframes returnFade {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes returnText {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes returnFinal {
+
+    from {
+        opacity: 0;
+        transform:
+            scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+@keyframes finalFade {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes finalText {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes finalHeart {
+
+    0% {
+        opacity: 0;
+        transform:
+            scale(0.75);
+    }
+
+    60% {
+        opacity: 1;
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            scale(1);
+    }
+}
+
+@keyframes memoryFloat {
+
+    0%,
+    100% {
+        opacity: 0.15;
         transform:
             translateY(0);
     }
 
     50% {
+        opacity: 0.5;
         transform:
-            translateY(-8px);
+            translateY(-15px);
+    }
+}
+
+
+/* =========================================================
+   FUNNY END
+========================================================= */
+
+@keyframes funnyPop {
+
+    0% {
+        opacity: 0;
+        transform:
+            scale(0.7)
+            rotate(-3deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform:
+            scale(1.08)
+            rotate(2deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+@keyframes funnyAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes funnyShake {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateX(0);
+    }
+
+    20% {
+        opacity: 1;
+        transform:
+            translateX(-5px);
+    }
+
+    40% {
+        transform:
+            translateX(5px);
+    }
+
+    60% {
+        transform:
+            translateX(-4px);
+    }
+
+    80% {
+        transform:
+            translateX(3px);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateX(0);
     }
 }
 
@@ -2796,39 +3076,32 @@ h1 {
 
 @media (max-width: 600px) {
 
-    .subtitle,
-    .story-text,
-    .val-text,
-    .call-text {
+    .opening-subtitle,
+    .type-line,
+    .valentine-message,
+    .call-text,
+    .pause-line,
+    .ring-text,
+    .ring-joke,
+    .ring-heart,
+    .flowers-text,
+    .flowers-final,
+    .storm-line,
+    .return-line,
+    .final-line,
+    .final-future,
+    .feedback-line {
 
         font-size: 18px;
     }
 
-    .content,
-    .story-content,
-    .valentine-content,
-    .call-content,
-    .meeting-content,
-    .pause-content,
-    .ring-content,
-    .gift-content,
-    .pain-content,
-    .return-content,
-    .final-content {
-
-        padding: 20px;
+    .typewriter-area {
+        min-height: 500px;
     }
 
-    .room {
-        height: 270px;
-    }
-
-    .girl {
-        left: 22%;
-    }
-
-    .boy {
-        right: 22%;
+    .phone {
+        width: 180px;
+        height: 320px;
     }
 
     .street {
@@ -2836,50 +3109,30 @@ h1 {
     }
 
     .meet-girl {
-        left: 8%;
+        left: 7%;
     }
 
     .meet-boy {
-        right: 8%;
+        right: 7%;
     }
 
     .meeting-caption {
         font-size: 18px;
     }
 
-    .pause-card,
-    .pain-card {
-        padding: 25px;
-        font-size: 18px;
+    .flower-bouquet {
+        font-size: 62px;
     }
 
-    .pause-ending,
-    .pain-ending,
-    .return-text,
-    .final-text {
-        font-size: 19px;
+    .ring-display {
+        font-size: 75px;
     }
 
-    .ring-box {
-        width: 180px;
-        height: 125px;
-    }
-
-    .ring-symbol {
-        font-size: 70px;
-    }
-
-    .gift-item {
-        width: 145px;
-        min-height: 145px;
-    }
-
-    .gift-emoji {
-        font-size: 52px;
-    }
-
-    .final-list {
-        font-size: 15px;
+    .storm-content,
+    .return-content,
+    .final-content,
+    .feedback-content {
+        padding: 20px;
     }
 }
 
@@ -2892,12 +3145,12 @@ h1 {
 
 
 <!-- =========================================================
-     1. OPENING
+     SLIDE 1
 ========================================================= -->
 
 <section
-    class="scene opening"
-    id="opening"
+    class="scene opening active"
+    id="slide1"
 >
 
     <div class="flower flower1">🌸</div>
@@ -2905,7 +3158,7 @@ h1 {
     <div class="flower flower3">🌸</div>
     <div class="flower flower4">🌷</div>
 
-    <div class="content">
+    <div class="opening-content">
 
         <div class="small-text">
             30 October 2024
@@ -2915,13 +3168,13 @@ h1 {
             Our Story ♡
         </h1>
 
-        <p class="subtitle">
+        <p class="opening-subtitle">
             It started with something very small...
         </p>
 
         <button
-            class="begin-button"
-            onclick="beginStory()"
+            class="story-button begin-button"
+            onclick="goToSlide(2)"
         >
             Begin ♡
         </button>
@@ -2932,49 +3185,103 @@ h1 {
 
 
 <!-- =========================================================
-     2. FIRST TEXT
+     SLIDE 2
 ========================================================= -->
 
 <section
-    class="scene story"
-    id="story1"
+    class="scene beginning"
+    id="slide2"
 >
 
-    <div class="story-content">
+    <div class="beginning-content">
 
-        <div class="story-date">
-            30 October 2024
+        <div class="slide-date">
+            The beginning
         </div>
 
-        <h2>
-            Before you...
-        </h2>
+        <div class="typewriter-area">
 
-        <p class="story-text">
-            I never really believed in teenage love.
-        </p>
+            <div
+                class="type-line"
+                data-text="I wasn't looking for anyone."
+            ></div>
 
-        <p class="story-text delay1">
-            I didn't believe something that started so young
-            could become something worth carrying into the future.
-        </p>
+            <div
+                class="type-line"
+                data-text="In fact, I was perfectly happy minding my own business."
+            ></div>
 
-        <p class="story-text delay2">
-            I didn't even want a partner.
-        </p>
+            <div
+                class="type-line"
+                data-text="And then you appeared."
+            ></div>
 
-        <div class="message">
-            hey
+            <div
+                class="type-line"
+                data-text="I warned you, yet you still decided to step in."
+            ></div>
+
+            <div
+                class="type-line"
+                data-text="So don't blame me when the little moments of regret flash into your eyes."
+            ></div>
+
+            <div
+                class="type-line"
+                data-text="Then came the texts."
+            ></div>
+
+            <div
+                class="type-line"
+                data-text="One message became another."
+            ></div>
+
+            <div
+                class="type-line"
+                data-text="Another became many messages."
+            ></div>
+
+            <div
+                class="type-line"
+                data-text="And somehow, I started looking forward to seeing your name on my screen. 👀"
+            ></div>
+
+            <div
+                class="type-line"
+                data-text="And then there were the glances."
+            ></div>
+
+            <div
+                class="type-line"
+                data-text="You know the ones."
+            ></div>
+
+            <div
+                class="type-line big"
+                data-text="Look."
+            ></div>
+
+            <div
+                class="type-line big"
+                data-text="Look away."
+            ></div>
+
+            <div
+                class="type-line"
+                data-text="Pretend nothing happened."
+            ></div>
+
+            <div
+                class="type-line big"
+                data-text="Look again. 😂"
+            ></div>
+
         </div>
-
-        <p class="ending-line">
-            And then, in Grade 11 English Literature tuition...
-            you texted me.
-        </p>
 
         <button
-            class="continue-button"
-            onclick="nextScene()"
+            class="story-button"
+            id="button2"
+            onclick="goToSlide(3)"
         >
             Continue ♡
         </button>
@@ -2985,105 +3292,12 @@ h1 {
 
 
 <!-- =========================================================
-     3. SHY GLANCES
-========================================================= -->
-
-<section
-    class="scene seminar"
-    id="story2"
->
-
-    <div class="seminar-content">
-
-        <div class="seminar-date">
-            December 2024 — February 2025
-        </div>
-
-        <h2 class="seminar-title">
-            Across the room
-        </h2>
-
-        <p class="seminar-subtitle">
-            We were both on opposite sides.
-        </p>
-
-        <div class="room">
-
-            <div class="side-label girls-label">
-                Girls' side
-            </div>
-
-            <div class="side-label boys-label">
-                Boys' side
-            </div>
-
-            <div class="aisle"></div>
-
-            <div class="seats girls-seats">
-
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-
-            </div>
-
-            <div class="seats boys-seats">
-
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-
-            </div>
-
-            <div class="person girl">
-
-                <div class="person-head"></div>
-                <div class="person-body"></div>
-
-            </div>
-
-            <div class="person boy">
-
-                <div class="person-head"></div>
-                <div class="person-body"></div>
-
-            </div>
-
-            <div class="tiny-heart">
-                ♡
-            </div>
-
-        </div>
-
-        <div class="seminar-caption">
-
-            We were both so shy.<br>
-            Sometimes all we had<br>
-            were little glances.
-
-        </div>
-
-        <button
-            class="next-memory"
-            onclick="showValentine()"
-        >
-            February 14 ♡
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     4. FEBRUARY 14
+     SLIDE 3
 ========================================================= -->
 
 <section
     class="scene valentine"
-    id="valentine"
+    id="slide3"
 >
 
     <div class="petal petal1">🌸</div>
@@ -3093,32 +3307,23 @@ h1 {
 
     <div class="valentine-content">
 
-        <div class="val-date">
+        <div class="slide-date val-date">
             14 February 2025
         </div>
 
         <div class="birthday">
-            His birthday. 🎂
+            Your birthday. 🎂
         </div>
 
         <div class="cake">
             🎂
         </div>
 
-        <div class="envelope">
+        <div class="valentine-message">
 
-            <div class="envelope-heart">
-                ♡
-            </div>
+            Somewhere along the way,
+            everything started feeling a little different.
 
-        </div>
-
-        <div class="val-text">
-            Somewhere between the shy glances...
-        </div>
-
-        <div class="val-text second">
-            and everything we were too nervous to say...
         </div>
 
         <div class="love-reveal">
@@ -3130,8 +3335,8 @@ h1 {
         </div>
 
         <button
-            class="continue-button"
-            onclick="showCallScene()"
+            class="story-button"
+            onclick="goToSlide(4)"
         >
             Continue ♡
         </button>
@@ -3142,12 +3347,12 @@ h1 {
 
 
 <!-- =========================================================
-     5. FIRST CALL
+     SLIDE 4
 ========================================================= -->
 
 <section
     class="scene call-scene"
-    id="callScene"
+    id="slide4"
 >
 
     <div class="call-content">
@@ -3156,7 +3361,7 @@ h1 {
             6 March 2025
         </div>
 
-        <h2>
+        <h2 class="call-title">
             The first call
         </h2>
 
@@ -3179,22 +3384,13 @@ h1 {
         <div class="call-text">
 
             The first time we heard<br>
-            each other's voices.
-
-            <br><br>
-
-            A tiny step...
-
-            <br>
-
-            but it made everything feel
-            a little more real. 🤍
+            each other's voices. 🤍
 
         </div>
 
         <button
-            class="continue-button"
-            onclick="showMeeting()"
+            class="story-button"
+            onclick="goToSlide(5)"
         >
             March 27 ♡
         </button>
@@ -3205,12 +3401,12 @@ h1 {
 
 
 <!-- =========================================================
-     6. FIRST MEETING
+     SLIDE 5
 ========================================================= -->
 
 <section
     class="scene meeting"
-    id="meeting"
+    id="slide5"
 >
 
     <div class="star star1">✦</div>
@@ -3229,7 +3425,7 @@ h1 {
         </h2>
 
         <p class="meeting-subtitle">
-            After months of messages, calls and shy glances...
+            After months of messages, calls and everything in between...
         </p>
 
         <div class="street">
@@ -3294,8 +3490,8 @@ h1 {
         </div>
 
         <button
-            class="continue-button meeting-button"
-            onclick="showPause()"
+            class="story-button meeting-button"
+            onclick="goToSlide(6)"
         >
             Continue our story ♡
         </button>
@@ -3306,91 +3502,67 @@ h1 {
 
 
 <!-- =========================================================
-     7. JUNE - OCTOBER 2025
+     SLIDE 6
 ========================================================= -->
 
 <section
-    class="scene pause-one"
-    id="pauseOne"
+    class="scene pause-scene"
+    id="slide6"
 >
+
+    <div class="leaf leaf1">🍂</div>
+    <div class="leaf leaf2">🍃</div>
+    <div class="leaf leaf3">🍂</div>
 
     <div class="pause-content">
 
         <div class="pause-date">
-            June — 30 October 2025
+            June – October 2025
         </div>
 
         <h2 class="pause-title">
-            The quiet chapter.
+            The quiet chapter
         </h2>
 
-        <p class="pause-subtitle">
-            Sometimes loving someone means knowing when to let them be.
-        </p>
-
-        <div class="pause-card">
-
-            <div class="pause-icon">
-                🌙
-            </div>
-
-            <div class="pause-line">
-                I missed you.
-            </div>
-
-            <div class="pause-line">
-                More than I wanted to admit.
-            </div>
-
-            <div class="pause-line">
-                But I also knew we needed some distance.
-            </div>
-
+        <div class="pause-line">
+            And then came a chapter neither of us really wanted.
         </div>
 
-        <div class="pause-card">
-
-            <div class="pause-icon">
-                🤍
-            </div>
-
-            <div class="pause-line">
-                It wasn't because I stopped caring.
-            </div>
-
-            <div class="pause-line">
-                It was because I wanted us to stay
-                within what our religion allowed.
-            </div>
-
-            <div class="pause-quote">
-                "I'll come back."
-            </div>
-
+        <div class="pause-line">
+            We had to take a step back.
         </div>
 
-        <p class="pause-ending">
+        <div class="pause-line">
+            Not because I stopped caring.
+        </div>
 
-            And somehow, that promise made the silence
-            a little easier to carry.
+        <div class="pause-line">
+            Not because you stopped caring.
+        </div>
 
-            <br><br>
+        <div class="pause-line">
+            But because sometimes, loving someone also means knowing when to let them be.
+        </div>
 
-            I still missed you.
-            But beneath all that missing,
-            there was peace.
+        <div class="pause-line">
+            I missed you more than I probably ever admitted.
+        </div>
 
-            <br><br>
+        <div class="pause-line">
+            But somewhere in all that missing, I also felt at peace.
+        </div>
 
-            Because I believed you would find your way back.
-
-        </p>
+        <div class="pause-final">
+            Because you had promised me you'd come back.<br><br>
+            <strong>And for some reason, I believed you. 🤍</strong><br><br>
+            So I waited.
+        </div>
 
         <button
-            class="continue-button"
-            onclick="showRing()"
+            class="story-button"
+            onclick="goToSlide(7)"
         >
-            February 8, 2026 ♡
+            Continue ♡
         </button>
 
     </div>
@@ -3399,13 +3571,17 @@ h1 {
 
 
 <!-- =========================================================
-     8. FEBRUARY 8 2026
+     SLIDE 7
 ========================================================= -->
 
 <section
     class="scene ring-scene"
-    id="ringScene"
+    id="slide7"
 >
+
+    <div class="ring-sparkle s1">✦</div>
+    <div class="ring-sparkle s2">✧</div>
+    <div class="ring-sparkle s3">✦</div>
 
     <div class="ring-content">
 
@@ -3414,43 +3590,54 @@ h1 {
         </div>
 
         <h2 class="ring-title">
-            You came back.
+            My birthday. 🎂
         </h2>
 
-        <p class="ring-subtitle">
-            And this time, you came carrying something small...
-        </p>
-
-        <div class="ring-box">
-
-            <div class="ring-symbol">
-                💍
-            </div>
-
+        <div class="ring-text one">
+            I wasn't expecting much.
         </div>
 
-        <div class="ring-text">
+        <div class="ring-text two">
+            But you somehow managed to make my birthday special.
+        </div>
 
-            After all the waiting,
-            all the silence,
-            and all the moments where I wondered
-            what the future would look like...
+        <div class="ring-display">
+            💍
+        </div>
+
+        <div class="ring-joke">
+
+            <strong>you gave me a ring. 💍</strong>
 
             <br><br>
 
-            you gave me the ring.
+            I was still trying to process the fact that I had seen you that day...
+
+            <br>
+
+            and then you decided to make me look like a malfunctioning robot when I saw the ring, and stand there with shaky hands. 😭💍
 
         </div>
 
-        <div class="ring-final">
-            A little circle that somehow held so much meaning. ♡
+        <div class="ring-heart">
+
+            But honestly...
+
+            <br>
+
+            I don't think I'll ever forget the feeling of seeing it on my finger.
+
+            <br><br>
+
+            <strong>It wasn't just a ring to me. 🤍</strong>
+
         </div>
 
         <button
-            class="continue-button"
-            onclick="showGifts()"
+            class="story-button"
+            onclick="goToSlide(8)"
         >
-            February 15 ♡
+            Continue ♡
         </button>
 
     </div>
@@ -3459,80 +3646,52 @@ h1 {
 
 
 <!-- =========================================================
-     9. FEBRUARY 15 2026
+     SLIDE 8
 ========================================================= -->
 
 <section
-    class="scene gift-scene"
-    id="giftScene"
+    class="scene flowers-scene"
+    id="slide8"
 >
 
-    <div class="gift-content">
+    <div class="floating-petal fp1">🌸</div>
+    <div class="floating-petal fp2">🌷</div>
+    <div class="floating-petal fp3">🌸</div>
+    <div class="floating-petal fp4">🌷</div>
 
-        <div class="gift-date">
+    <div class="flowers-content">
+
+        <div class="flowers-date">
             15 February 2026
         </div>
 
-        <h2 class="gift-title">
-            The little things.
-        </h2>
-
-        <p class="gift-subtitle">
-            Flowers. Chocolate. And a day I still remember.
-        </p>
-
-        <div class="gifts">
-
-            <div class="gift-item">
-
-                <div class="gift-emoji">
-                    🌷
-                </div>
-
-                <div class="gift-label">
-                    Flowers
-                </div>
-
-            </div>
-
-            <div class="gift-item">
-
-                <div class="gift-emoji">
-                    🍫
-                </div>
-
-                <div class="gift-label">
-                    Chocolate
-                </div>
-
-            </div>
-
+        <div class="flower-bouquet">
+            💐
         </div>
 
-        <div class="gift-text">
+        <div class="chocolate">
+            🍫
+        </div>
 
-            Sometimes it isn't the grand gestures
-            that stay with you.
+        <div class="flowers-text one">
+            And then came the flowers and chocolate. 🌷🍫
+        </div>
 
+        <div class="flowers-text two">
+            I honestly loved it.
+        </div>
+
+        <div class="flowers-final">
+            You probably didn't know how happy it made me.
             <br><br>
-
-            Sometimes it's flowers in your hands,
-            chocolate beside you,
-            and the quiet happiness of knowing
-            that someone remembered.
-
-            <br><br>
-
-            And for me,
-            this became one of those memories.
-
+            <strong>And yes, I still remember that day very clearly. 🤍</strong>
         </div>
 
         <button
-            class="continue-button"
-            onclick="showPain()"
+            class="story-button"
+            onclick="goToSlide(9)"
         >
-            July 2, 2026 ♡
+            Continue ♡
         </button>
 
     </div>
@@ -3541,82 +3700,71 @@ h1 {
 
 
 <!-- =========================================================
-     10. JULY - AUGUST 2026
+     SLIDE 9
 ========================================================= -->
 
 <section
-    class="scene pain-scene"
-    id="painScene"
+    class="scene storm-scene"
+    id="slide9"
 >
 
-    <div class="pain-content">
+    <div class="storm-darkness"></div>
 
-        <div class="pain-date">
-            2 July — 23 August 2026
+    <div class="rain" id="rain">
+
+        <!-- Rain drops generated by JS -->
+
+    </div>
+
+    <div class="thunder"></div>
+
+    <div class="storm-content">
+
+        <div class="storm-date">
+            2 July – 23 August 2026
         </div>
 
-        <h2 class="pain-title">
-            Another quiet chapter.
+        <h2 class="storm-title">
+            The hardest part.
         </h2>
 
-        <p class="pain-subtitle">
-            This time, the silence hurt a little more.
-        </p>
-
-        <div class="pain-card">
-
-            <div class="pain-icon">
-                🌧️
-            </div>
-
-            <p>
-                There were days when I missed you
-                so badly that everything seemed quieter
-                without you.
-            </p>
-
-            <p>
-                There were questions.
-                There was uncertainty.
-                There were moments when I didn't know
-                where our story was going.
-            </p>
-
+        <div class="storm-line l1">
+            Then came the hardest part.
         </div>
 
-        <div class="pain-card">
-
-            <div class="pain-icon">
-                🤍
-            </div>
-
-            <p>
-                But even through the hurt,
-                a part of me still remembered
-                everything we'd already survived.
-            </p>
-
-            <p>
-                We had already found our way back once.
-            </p>
-
+        <div class="storm-line l2">
+            There were arguments.
         </div>
 
-        <p class="pain-ending">
+        <div class="storm-line l3">
+            Misunderstandings.
+        </div>
 
-            And eventually...
+        <div class="storm-line l4">
+            Words that hurt more than we meant them to.
+        </div>
 
+        <div class="storm-line l5">
+            Some days felt really dark.
+        </div>
+
+        <div class="storm-line l6">
+            There were times when I didn't know what was going to happen to us.
+        </div>
+
+        <div class="storm-final">
+            But even through all of that...
             <br><br>
-
-            we found our way back again.
-
-        </p>
+            <strong>
+                I still hoped we'd find our way back to each other. 🤍
+            </strong>
+        </div>
 
         <button
-            class="continue-button"
-            onclick="showReturn()"
+            class="story-button"
+            onclick="goToSlide(10)"
         >
-            August 23 ♡
+            Continue ♡
         </button>
 
     </div>
@@ -3625,13 +3773,22 @@ h1 {
 
 
 <!-- =========================================================
-     11. AUGUST 23 2026
+     SLIDE 10
 ========================================================= -->
 
 <section
     class="scene return-scene"
-    id="returnScene"
+    id="slide10"
 >
+
+    <div class="return-rain">
+        <!-- generated rain -->
+    </div>
+
+    <div class="return-cloud cloud1"></div>
+    <div class="return-cloud cloud2"></div>
+
+    <div class="return-sun"></div>
 
     <div class="return-content">
 
@@ -3640,57 +3797,40 @@ h1 {
         </div>
 
         <h2 class="return-title">
-            We found our way back.
+            And somehow...
         </h2>
 
-        <p class="return-subtitle">
-            Not because everything had been easy...
-        </p>
-
-        <div class="return-heart">
-            ♡
+        <div class="return-line r1">
+            after everything,
         </div>
 
-        <div class="return-text">
-
-            But because, somehow,
-            after all the distance,
-            all the hurt,
-            and all the things we couldn't control...
-
-            <br><br>
-
-            we were still here.
-
+        <div class="return-line r2">
+            <strong>we found our way back.</strong>
         </div>
 
-        <div class="return-quote">
-
-            Some chapters are about finding each other.
-            Some are about learning how to keep each other.
-
+        <div class="return-line r3">
+            It wasn't perfect.
         </div>
 
-        <div class="return-text">
+        <div class="return-line r4">
+            We still had things to understand.
+        </div>
 
-            And maybe this chapter
-            was about learning that love isn't only
-            about holding on.
+        <div class="return-line r5">
+            But we were here again.
+        </div>
 
-            <br><br>
-
-            Sometimes,
-            it's about letting go for the right reasons
-            and trusting that what is meant to return
-            will find its way back.
-
+        <div class="return-final">
+            And honestly,
+            <br>
+            <strong>that's all I wanted. 🤍</strong>
         </div>
 
         <button
-            class="continue-button"
-            onclick="showFinal()"
+            class="story-button"
+            onclick="goToSlide(11)"
         >
-            October 30, 2026 ♡
+            Continue ♡
         </button>
 
     </div>
@@ -3699,13 +3839,18 @@ h1 {
 
 
 <!-- =========================================================
-     12. TWO YEARS
+     SLIDE 11
 ========================================================= -->
 
 <section
     class="scene final-scene"
-    id="finalScene"
+    id="slide11"
 >
+
+    <div class="memory m1">💌</div>
+    <div class="memory m2">💍</div>
+    <div class="memory m3">🌷</div>
+    <div class="memory m4">♡</div>
 
     <div class="final-content">
 
@@ -3717,61 +3862,58 @@ h1 {
             Two years. ❤️
         </h2>
 
-        <div class="final-heart">
-            ♡
+        <div class="final-line f1">
+            And after everything...
         </div>
 
-        <div class="final-text">
+        <div class="final-line f2">
+            I think my favourite part of our story is that it was never perfect.
+        </div>
 
-            Two years since one tiny
-            <strong>hey</strong>
-            quietly changed everything.
+        <div class="final-line f3">
+            We laughed.
+        </div>
+
+        <div class="final-line f4">
+            We argued.
+        </div>
+
+        <div class="final-line f5">
+            We hurt each other.
+        </div>
+
+        <div class="final-line f6">
+            We missed each other.
+        </div>
+
+        <div class="final-emphasis">
+            We found our way back.
+            <br>
+            <strong>And somehow, through all of it, it's still you. 🤍</strong>
+        </div>
+
+        <div class="final-future">
+
+            I don't know what the future has planned for us.
 
             <br><br>
 
-            Two years of messages,
-            glances,
-            calls,
-            awkward meetings,
-            distance,
-            promises,
-            coming back,
-            and growing together.
+            But if this is only the beginning...
+
+            <br><br>
+
+            <strong>
+                I can't wait to see what comes next. ♡
+            </strong>
 
         </div>
 
-        <div class="final-list">
-
-            💌 30 October 2024 — The first text<br>
-
-            👀 December 2024 — February 2025 —
-            The shy glances<br>
-
-            🎂 14 February 2025 — The first "I love you"<br>
-
-            📞 6 March 2025 — The first call<br>
-
-            🌙 27 March 2025 — The first meeting<br>
-
-            🤍 June — October 2025 — The quiet chapter<br>
-
-            💍 8 February 2026 — The ring<br>
-
-            🌷 15 February 2026 — Flowers + chocolate<br>
-
-            🌧️ 2 July — 23 August 2026 — The painful pause<br>
-
-            ❤️ 30 October 2026 — Two years
-
-        </div>
-
-        <div class="final-line">
-            And somehow...
-        </div>
-
-        <div class="forever">
-            this is still our story. ♡
-        </div>
+        <button
+            class="story-button"
+            onclick="goToSlide(12)"
+        >
+            One last thing... ♡
+        </button>
 
     </div>
 
@@ -3779,178 +3921,414 @@ h1 {
 
 
 <!-- =========================================================
-     JAVASCRIPT
+     SLIDE 12
 ========================================================= -->
+
+<section
+    class="scene feedback-scene"
+    id="slide12"
+>
+
+    <div class="feedback-content">
+
+        <h2 class="feedback-title">
+            Okay... that's it. 😭
+        </h2>
+
+        <div class="feedback-line fb1">
+            I hope you enjoyed my little masterpiece.
+        </div>
+
+        <div class="feedback-line fb2">
+            I spent WAY too much time making this,
+            so please appreciate it properly. 😭
+        </div>
+
+        <div class="feedback-line fb3">
+            <strong>AHEM.</strong>
+        </div>
+
+        <div class="feedback-line fb4">
+            Your feedback will be accepted now. 👀
+        </div>
+
+        <div class="feedback-line fb5">
+            Compliments are highly encouraged.
+            <br>
+            Criticism will be carefully ignored. ❤️
+            <br><br>
+            <strong>Anywayyy, that's all from me. 😭</strong>
+        </div>
+
+        <button
+            class="feedback-button"
+            onclick="goToSlide(1)"
+        >
+            Replay Our Story ♡
+        </button>
+
+    </div>
+
+</section>
+
 
 <script>
 
+/* =========================================================
+   SLIDE SYSTEM
+========================================================= */
 
-function showScene(current, next) {
+let currentSlide = 1;
 
-    document.getElementById(current).style.display = "none";
 
-    document.getElementById(next).style.display = "flex";
+/* =========================================================
+   GO TO SLIDE
+========================================================= */
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+function goToSlide(number) {
+
+    const oldSlide =
+        document.getElementById(
+            "slide" + currentSlide
+        );
+
+    const newSlide =
+        document.getElementById(
+            "slide" + number
+        );
+
+    if (!newSlide) return;
+
+
+    oldSlide.classList.remove("active");
+
+    /*
+        Small delay allows CSS animations
+        to restart correctly.
+    */
+
+    setTimeout(() => {
+
+        newSlide.classList.add("active");
+
+        currentSlide = number;
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        restartSlideAnimations(newSlide);
+
+    }, 100);
+
+}
+
+
+/* =========================================================
+   RESTART ANIMATIONS
+========================================================= */
+
+function restartSlideAnimations(slide) {
+
+    const animatedElements =
+        slide.querySelectorAll(
+            "*"
+        );
+
+    animatedElements.forEach(element => {
+
+        element.style.animation = "none";
+
+        /*
+            Force browser reflow so
+            animation starts again.
+        */
+
+        void element.offsetWidth;
+
+        element.style.animation = "";
+
     });
-}
 
 
-/* =========================================================
-   OPENING → FIRST TEXT
-========================================================= */
+    /*
+        Special handling for Slide 2
+    */
 
-function beginStory() {
+    if (slide.id === "slide2") {
 
-    showScene(
-        "opening",
-        "story1"
-    );
+        startTypewriter();
 
-}
+    }
 
 
-/* =========================================================
-   FIRST TEXT → SHY GLANCES
-========================================================= */
+    /*
+        Special handling for storm
+    */
 
-function nextScene() {
+    if (slide.id === "slide9") {
 
-    showScene(
-        "story1",
-        "story2"
-    );
+        createRain();
+
+    }
 
 }
 
 
 /* =========================================================
-   SHY GLANCES → VALENTINE
+   TYPEWRITER
 ========================================================= */
 
-function showValentine() {
+let typewriterStarted = false;
 
-    showScene(
-        "story2",
-        "valentine"
-    );
+function startTypewriter() {
+
+    const lines =
+        document.querySelectorAll(
+            "#slide2 .type-line"
+        );
+
+    const button =
+        document.getElementById(
+            "button2"
+        );
+
+    lines.forEach(line => {
+
+        line.innerHTML = "";
+        line.classList.remove("show");
+
+    });
+
+    button.style.opacity = "0";
+
+    let lineIndex = 0;
+
+
+    function typeLine() {
+
+        if (lineIndex >= lines.length) {
+
+            setTimeout(() => {
+
+                button.style.opacity = "1";
+
+                button.style.animation =
+                    "buttonAppear 1.5s ease forwards";
+
+            }, 700);
+
+            return;
+        }
+
+
+        const line =
+            lines[lineIndex];
+
+        const text =
+            line.getAttribute(
+                "data-text"
+            );
+
+        line.classList.add("show");
+
+        let character = 0;
+
+
+        const cursor =
+            document.createElement(
+                "span"
+            );
+
+        cursor.className =
+            "type-cursor";
+
+
+        function typeCharacter() {
+
+            if (character < text.length) {
+
+                line.textContent =
+                    text.substring(
+                        0,
+                        character + 1
+                    );
+
+                line.appendChild(cursor);
+
+                character++;
+
+                setTimeout(
+                    typeCharacter,
+                    character < 15 ? 45 : 32
+                );
+
+            } else {
+
+                cursor.remove();
+
+                lineIndex++;
+
+                setTimeout(
+                    typeLine,
+                    lineIndex === 0 ? 400 : 650
+                );
+
+            }
+
+        }
+
+        typeCharacter();
+
+    }
+
+    typeLine();
 
 }
 
 
 /* =========================================================
-   VALENTINE → FIRST CALL
+   RAIN GENERATOR
 ========================================================= */
 
-function showCallScene() {
+function createRain() {
 
-    showScene(
-        "valentine",
-        "callScene"
-    );
+    const rain =
+        document.getElementById(
+            "rain"
+        );
+
+    if (!rain) return;
+
+    rain.innerHTML = "";
+
+
+    const numberOfDrops =
+        window.innerWidth < 600
+        ? 90
+        : 150;
+
+
+    for (
+        let i = 0;
+        i < numberOfDrops;
+        i++
+    ) {
+
+        const drop =
+            document.createElement(
+                "div"
+            );
+
+        drop.className =
+            "drop";
+
+
+        drop.style.left =
+            Math.random() * 100 + "%";
+
+
+        drop.style.animationDuration =
+            (0.45 + Math.random() * 0.55)
+            + "s";
+
+
+        drop.style.animationDelay =
+            -(Math.random() * 2)
+            + "s";
+
+
+        drop.style.opacity =
+            0.2 +
+            Math.random() * 0.55;
+
+
+        rain.appendChild(drop);
+
+    }
 
 }
 
 
 /* =========================================================
-   CALL → FIRST MEETING
+   RETURN SCENE RAIN
 ========================================================= */
 
-function showMeeting() {
+function createReturnRain() {
 
-    showScene(
-        "callScene",
-        "meeting"
-    );
+    const container =
+        document.querySelector(
+            ".return-rain"
+        );
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+
+    for (
+        let i = 0;
+        i < 70;
+        i++
+    ) {
+
+        const drop =
+            document.createElement(
+                "div"
+            );
+
+        drop.style.position =
+            "absolute";
+
+        drop.style.top =
+            "-50px";
+
+        drop.style.left =
+            Math.random() * 100 + "%";
+
+        drop.style.width =
+            "1px";
+
+        drop.style.height =
+            "40px";
+
+        drop.style.background =
+            "rgba(210,220,235,0.45)";
+
+        drop.style.transform =
+            "rotate(18deg)";
+
+        drop.style.animation =
+            "rainFall " +
+            (0.7 + Math.random() * 0.5) +
+            "s linear infinite";
+
+        drop.style.animationDelay =
+            -(Math.random() * 3) +
+            "s";
+
+        container.appendChild(drop);
+
+    }
 
 }
 
 
 /* =========================================================
-   MEETING → JUNE-OCTOBER PAUSE
+   INITIAL SETUP
 ========================================================= */
 
-function showPause() {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    showScene(
-        "meeting",
-        "pauseOne"
-    );
+        createRain();
 
-}
+        createReturnRain();
 
-
-/* =========================================================
-   PAUSE → RING
-========================================================= */
-
-function showRing() {
-
-    showScene(
-        "pauseOne",
-        "ringScene"
-    );
-
-}
-
-
-/* =========================================================
-   RING → FLOWERS + CHOCOLATE
-========================================================= */
-
-function showGifts() {
-
-    showScene(
-        "ringScene",
-        "giftScene"
-    );
-
-}
-
-
-/* =========================================================
-   GIFTS → PAINFUL PAUSE
-========================================================= */
-
-function showPain() {
-
-    showScene(
-        "giftScene",
-        "painScene"
-    );
-
-}
-
-
-/* =========================================================
-   PAINFUL PAUSE → RETURN
-========================================================= */
-
-function showReturn() {
-
-    showScene(
-        "painScene",
-        "returnScene"
-    );
-
-}
-
-
-/* =========================================================
-   RETURN → TWO YEARS
-========================================================= */
-
-function showFinal() {
-
-    showScene(
-        "returnScene",
-        "finalScene"
-    );
-
-}
-
+    }
+);
 
 </script>
 
